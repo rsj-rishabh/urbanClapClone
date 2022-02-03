@@ -18,7 +18,7 @@ func GetConfig() *Config {
 			Dialect:  "mysql",
 			Username: "root",
 			Password: "@dmin1234",
-			Name:     "employee",
+			Name:     "urbanClapClone",
 			Charset:  "utf8",
 		},
 	}
