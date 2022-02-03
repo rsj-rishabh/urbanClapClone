@@ -72,6 +72,15 @@ func (a *App) GetUser(w http.ResponseWriter, r *http.Request) {
 	handler.GetUser(a.DB, w, r)
 }
 
+// Handlers and manages Service Lists
+func (a *App) CreateService(w http.ResponseWriter, r *http.Request) {
+	handler.CreateService(a.DB, w, r)
+}
+
+func (a *App) GetService(w http.ResponseWriter, r *http.Request) {
+	handler.GetService(a.DB, w, r)
+}
+
 // Run the app on it's router
 func (a *App) Run(host string) {
 	log.Fatal(http.ListenAndServe(host, a.Router))

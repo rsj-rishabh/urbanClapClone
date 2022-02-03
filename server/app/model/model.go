@@ -15,8 +15,16 @@ type UccUsers struct {
 	Password string `gorm:"not null; size:20" json:"password"`
 }
 
+type UccServices struct {
+	gorm.Model
+	ServiceID   int    `gorm:"not null" json:"serviceid"`
+	ServiceName string `gorm:"unique; not null; size:20" json:"servicename"`
+	ServiceType string `gorm:" not null" json:"servicetype"`
+}
+
 // DBMigrate will create and migrate the tables, and then make the some relationships if necessary
 func DBMigrate(db *gorm.DB) *gorm.DB {
 	db.AutoMigrate(&UccUsers{})
+	db.AutoMigrate(&UccServices{})
 	return db
 }
