@@ -1,0 +1,45 @@
+<style>
+
+  .toolbar {
+    position: absolute;
+    top: 0;
+    left: 0px;
+    right: 0;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    background-color: black;
+    color: white;
+    font-weight: 600;
+    font-size: large;
+
+  }
+
+</style>
+
+<!-- Toolbar -->
+<div class="toolbar" role="banner">
+  
+  <span>Urban Clap</span>
+  <div class = toolbarButtons>
+  <button type="button" mdbBtn color="light" mdbWavesEffect class="loginButton"><a routerLink="/login" routerLinkActive="active">Login</a></button>
+  <button type="button" mdbBtn color="light" mdbWavesEffect><a routerLink="/register" routerLinkActive="active">Register</a></button>
+  </div>
+  <!-- <ul>
+  <li>
+  <a routerLink="/app" routerLinkActive="active">app</a></li>
+  <li>
+  <a routerLink="/login" routerLinkActive="active">login </a> </li>
+</ul> -->
+</div>
+
+
+ <nav>
+  <!-- <ul>
+    <li><a routerLink="/app" routerLinkActive="active">app</a></li>
+    <li><a routerLink="/login" routerLinkActive="active">login Component</a></li>
+  </ul> -->
+</nav>
+
+
+<router-outlet></router-outlet>
