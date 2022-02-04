@@ -7,21 +7,3 @@
 .title{
     color: white;
 }
-.center {
-    margin-left: 50%;
-    margin-right: 50%;
-    margin-top: 10%;
-    width: 10%;
-    height: 40%;
-    border: 5px solid #FFFF00;
-    padding: 10px;
-}
-.service-container{
-    width: 30%;
-    height: 10%;
-    display: inline;
-}
-.list-class{
-    display: inline;
-    list-style-type: none;
-}
