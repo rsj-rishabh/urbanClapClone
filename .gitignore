@@ -24,9 +24,6 @@ go.work
 .DS_Store
 Thumbs.db
 
-# Folders to expclude
-# .angular/cache
-
 # IDE - VSCode  
 .vscode/*  
 !.vscode/settings.json  
