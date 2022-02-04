@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup,FormControl } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-login',
@@ -11,12 +12,17 @@ export class LoginComponent implements OnInit {
     username : new FormControl(''),
     password : new FormControl(''),
   });
+  loginData = [];
 
   onSubmit() {
-    console.warn(this.loginForm.value);
+    this.http.get<any>('http://localhost:3000/user/nancy').subscribe(data => {
+      this.loginData = data;
+  })
+    console.warn(this.loginData);
+
   }
   
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
   }
