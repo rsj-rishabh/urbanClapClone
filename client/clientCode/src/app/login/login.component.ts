@@ -3,6 +3,8 @@ import { FormGroup,FormControl } from '@angular/forms';
 import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
 import {HttpClientModule} from '@angular/common/http';
 import { map } from 'rxjs/operators';
+import { ServicesComponent } from '../services/services.component';
+import {Router} from '@angular/router'
 
 @Component({
   selector: 'app-login',
@@ -21,7 +23,8 @@ export class LoginComponent implements OnInit {
     this.http.get('http://localhost:3000/user/'+this.loginForm.value.username, {responseType:'json', observe:'response'})
     .subscribe(response => {
       if(response.status == 200)
-        alert("login success");
+        // alert("login success");
+        this.router.navigate(['\services']);
     },
     err => {
       alert("user does not exist");
@@ -30,7 +33,7 @@ export class LoginComponent implements OnInit {
     
   }
   
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient,public router:Router) { }
 
   ngOnInit(): void {
     
