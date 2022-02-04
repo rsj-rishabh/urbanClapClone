@@ -1,11 +1,9 @@
 <p>register works!</p>
 <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class = "registerForm">
-    <label for="first-name">First Name : </label>
-    <input id="first-name" type="text" formControlName="firstname">
+    <label for="name">Name : </label>
+    <input id="name" type="text" formControlName="name">
   <br><br>
-  <label for="last-name">Last Name : </label>
-    <input id="last-name" type="text" formControlName="lastname">
-  <br><br>
+
   <label for="user-name">Username : </label>
     <input id="user-name" type="text" formControlName="username">
   <br><br>
@@ -14,8 +12,8 @@
     <label for="email">Email : </label>
     <input id="email" type="email" formControlName="email">
   <br><br>
-  <label for="phone">Phone number : </label>
-    <input id="phone" type="number" formControlName="phone">
+  <label for="gender">Gender : </label>
+    <input id="gender" type="text" formControlName="gender">
   <br><br>
     <button type="submit" [disabled]="!registerForm.valid">Register</button>
 </form>
