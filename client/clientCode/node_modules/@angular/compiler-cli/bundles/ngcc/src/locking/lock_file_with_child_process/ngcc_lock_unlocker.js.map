@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": ["../../../../../../../../../../packages/compiler-cli/ngcc/src/locking/lock_file_with_child_process/ngcc_lock_unlocker.ts"],
+  "mappings": ";;;;;;;;;;;;;;;;;AAAA,AAkBA,IAAM,KAAK,IAAI;AAIf,IAAM,WAAW,SAAS,QAAQ,KAAK,OAAQ;AAC/C,IAAM,SAAS,IAAI,cAAc;AAGjC,IAAM,OAAO,QAAQ,KAAK;AAG1B,IAAM,eAAe,GAAG,QAAQ,QAAQ,KAAK;AAE7C,OAAO,MAAM,gCAAgC,QAAQ,4BAA4B;AACjF,OAAO,MAAM,yBAAyB;AAMtC,QAAQ,GAAG,cAAc,MAAK;AAC5B,iBAAe,IAAI,QAAQ,cAAc;;",
+  "names": []
+}

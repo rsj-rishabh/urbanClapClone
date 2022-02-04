@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": ["../../../../../../packages/compiler-cli/src/ngtsc/logging/src/logger.ts", "../../../../../../packages/compiler-cli/src/ngtsc/logging/src/console_logger.ts", "../../../../../../packages/compiler-cli/src/ngtsc/logging/index.ts"],
+  "mappings": ";;;;;;AAAA,AAoBA,IAAY;AAAZ,AAAA,UAAY,WAAQ;AAClB,YAAA,UAAA,WAAA,KAAA;AACA,YAAA,UAAA,UAAA,KAAA;AACA,YAAA,UAAA,UAAA,KAAA;AACA,YAAA,UAAA,WAAA,KAAA;GAJU,YAAA,YAAQ;;;ACpBpB,AASA,IAAM,QAAQ;AACd,IAAM,MAAM;AACZ,IAAM,SAAS;AACf,IAAM,OAAO;AAEN,IAAM,QAAQ,GAAG,aAAa;AAC9B,IAAM,OAAO,GAAG,iBAAiB;AACjC,IAAM,QAAQ,GAAG,YAAY;AAQ9B,0BAAoB;EACxB,YAAmB,OAAe;AAAf,SAAA,QAAA;;EACnB,SAAS,MAAc;AACrB,QAAI,KAAK,SAAS,SAAS;AAAO,cAAQ,MAAM,OAAO,GAAG;;EAE5D,QAAQ,MAAc;AACpB,QAAI,KAAK,SAAS,SAAS;AAAM,cAAQ,KAAK,GAAG;;EAEnD,QAAQ,MAAc;AACpB,QAAI,KAAK,SAAS,SAAS;AAAM,cAAQ,KAAK,MAAM,GAAG;;EAEzD,SAAS,MAAc;AACrB,QAAI,KAAK,SAAS,SAAS;AAAO,cAAQ,MAAM,OAAO,GAAG;;;ACpC9D",
+  "names": []
+}
