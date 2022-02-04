@@ -93,6 +93,7 @@
 
   .fw-bolder {
     font-weight: bolder !important;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   }
 
   .text-center {
@@ -184,13 +185,8 @@
   }
 
   .px-lg-5 {
-    padding-right: 3rem !important;
-    padding-left: 3rem !important;
-  }
-
-  .px-4 {
-    padding-right: 1.5rem !important;
-    padding-left: 1.5rem !important;
+    padding-right: 8rem !important;
+    padding-left: 8rem !important;
   }
 
   .text-white {
