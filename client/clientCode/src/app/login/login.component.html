@@ -5,5 +5,5 @@
   <br><br>
     <label for="pass-word">Password : </label>
     <input id="pass-word" type="password" formControlName="password"><br><br>
-    <button type="submit" [disabled]="!loginForm.valid">Login</button>
+    <button type="submit" routerLink="/services" routerLinkActive="active" [disabled]="!loginForm.valid">Login</button>
 </form>
