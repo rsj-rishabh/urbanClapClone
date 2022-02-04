@@ -39,6 +39,8 @@ func (a *App) Initialize(config *config.Config) {
 // Set all required routers
 func (a *App) setRouters() {
 	// Routing for handling the projects
+	a.Get("/services", a.GetAllServices)
+	a.Post("/services", a.CreateService)
 	a.Post("/user", a.CreateUser)
 	a.Get("/user/{username}", a.GetUser)
 }
@@ -63,6 +65,15 @@ func (a *App) Delete(path string, f func(w http.ResponseWriter, r *http.Request)
 	a.Router.HandleFunc(path, f).Methods("DELETE")
 }
 
+// Handlers to manage Services Data
+func (a *App) GetAllServices(w http.ResponseWriter, r *http.Request) {
+	handler.GetAllServices(a.DB, w, r)
+}
+
+func (a *App) CreateService(w http.ResponseWriter, r *http.Request) {
+	handler.CreateService(a.DB, w, r)
+}
+
 // Handlers to manager Users Data
 func (a *App) CreateUser(w http.ResponseWriter, r *http.Request) {
 	handler.CreateUser(a.DB, w, r)
@@ -70,15 +81,6 @@ func (a *App) CreateUser(w http.ResponseWriter, r *http.Request) {
 
 func (a *App) GetUser(w http.ResponseWriter, r *http.Request) {
 	handler.GetUser(a.DB, w, r)
-}
-
-// Handlers and manages Service Lists
-func (a *App) CreateService(w http.ResponseWriter, r *http.Request) {
-	handler.CreateService(a.DB, w, r)
-}
-
-func (a *App) GetService(w http.ResponseWriter, r *http.Request) {
-	handler.GetService(a.DB, w, r)
 }
 
 // Run the app on it's router
