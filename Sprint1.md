@@ -3,12 +3,11 @@
 ## User stories (Goal):
 
 The user stories selected to run through the first sprint cycle are:
-* As a user, I want to book a professional home service.
+* As a user, I want to browse all the professional home services provided.
     * I should have a list to select the service I want.
 * As a user, I want to register myself to the application so that I can keep my account private.
     * I should be able to use to use email or phone along with the password.
 * As a user, I should be able to log into of the application using my unique ID and password.
-* As a user I should be able to securely logout of the application so that no one else can access my account.
 
 
 ## Sprint Requirements (Review):
@@ -47,7 +46,7 @@ All APIs are RESTful and contain 4 major endpoints (CRUD) create, read, update a
 
 
 ## Demonstration:
-Video with demo of system (Link: )
+Video with demo of system (Link: https://youtu.be/qFLba_CxBwM)
 1. Front-end Demo (with mocked up back-end)
 2. Back-end Demo (command line or Postman)
 
