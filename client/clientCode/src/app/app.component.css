@@ -4,12 +4,29 @@
 .loginButton{
     margin: 8px;
 }
+
+.toolbar {
+  position: absolute;
+  top: 0;
+  left: 0px;
+  right: 0;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  background-color: black;
+  color: white;
+  font-weight: 600;
+  font-size: large;
+
+}
+
 .title{
     color: white;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     text-decoration: none;
     font-size: 120%;
     margin-left: 4%;
+    cursor: pointer;
 }
 
 .btn-title{
@@ -64,3 +81,5 @@
     box-shadow: rgba(72, 95, 199, .25) 0 0 0 .125em;
   }
 
+
+  

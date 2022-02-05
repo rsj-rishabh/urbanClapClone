@@ -4,6 +4,7 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { ServicesComponent } from './services/services.component';
+import { LandingComponent } from './landing/landing.component';
 import { HttpClientModule } from '@angular/common/http';
 
 const routes: Routes = [
@@ -17,7 +18,12 @@ const routes: Routes = [
   },
   {
     path: 'home',
-    component: AppComponent
+    component: LandingComponent
+  },
+  { 
+    path: '',
+    redirectTo: '/home', 
+    pathMatch: 'full' 
   },
   {
     path: 'services',
