@@ -1,0 +1,85 @@
+.toolbarButtons{
+    margin-left: 75%;
+}
+.loginButton{
+    margin: 8px;
+}
+
+.toolbar {
+  position: absolute;
+  top: 0;
+  left: 0px;
+  right: 0;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  background-color: black;
+  color: white;
+  font-weight: 600;
+  font-size: large;
+
+}
+
+.title{
+    color: white;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-decoration: none;
+    font-size: 120%;
+    margin-left: 4%;
+    cursor: pointer;
+}
+
+.btn-title{
+    color: black;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-decoration: none;
+    font-size: 80%;
+    margin-left: 6%;
+}
+
+.button-60 {
+    align-items: center;
+    appearance: none;
+    background-color: #fff;
+    border: 1px solid #dbdbdb;
+    border-radius: .375em;
+    box-shadow: none;
+    box-sizing: border-box;
+    color: #363636;
+    cursor: pointer;
+    display: inline-flex;
+    font-family: BlinkMacSystemFont,-apple-system,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 1rem;
+    height: 2em;
+    justify-content: center;
+    line-height: 1.5;
+    padding: calc(.5em - 1px) 1em;
+    position: relative;
+    text-align: center;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: top;
+    white-space: nowrap;
+  }
+  
+  .button-60:active {
+    border-color: #4a4a4a;
+    outline: 0;
+  }
+  
+  .button-60:focus {
+    border-color: #485fc7;
+    outline: 0;
+  }
+  
+  .button-60:hover {
+    border-color: #b5b5b5;
+  }
+  
+  .button-60:focus:not(:active) {
+    box-shadow: rgba(72, 95, 199, .25) 0 0 0 .125em;
+  }
+
+
+  
