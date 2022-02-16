@@ -17,17 +17,19 @@ export class RegisterComponent implements OnInit {
     username: new FormControl(''),
     password : new FormControl(''),
   });
-
   onSubmit() {
-    // this.http.post('http://localhost:3000/user', this.registerForm.value)
-    // .subscribe(response => {
-    //   console.log(response)
-        alert("Registration success");
-    // },
-    // err => {
-    //   alert("user exists already");
-    // }
-    // )
+    const headers = {
+      "Content-Type": "application/x-www-form-urlencoded",
+    }
+    this.http.post<any>('http://localhost:3000/user',this.registerForm.value,{headers})
+    .subscribe(response => {
+      console.log(response)
+       alert("Registration success");
+    },
+    err => {
+      //alert("user exists already");
+    }
+    )
     console.warn(this.registerForm.value);
   }
   constructor(private http: HttpClient) { }

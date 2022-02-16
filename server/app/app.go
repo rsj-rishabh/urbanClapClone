@@ -76,6 +76,12 @@ func (a *App) CreateService(w http.ResponseWriter, r *http.Request) {
 
 // Handlers to manager Users Data
 func (a *App) CreateUser(w http.ResponseWriter, r *http.Request) {
+	fmt.Println("Called Routes: /User Method:POST")
+	w.Header().Set("Access-Control-Allow-Origin", "*")
+	w.Header().Set("Content-Type", "application/json")
+	w.Header().Set("Access-Control-Allow-Methods", "POST")
+	w.Header().Set("Access-Control-Allow-Headers", "Content-Type")
+	w.Header().Set("Accept", "application/x-www-form-urlencoded")
 	handler.CreateUser(a.DB, w, r)
 }
 
