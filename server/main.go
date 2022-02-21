@@ -12,7 +12,7 @@ func main() {
 
 	app := &app.App{}
 	app.Initialize(config)
+	app.DBMigrate()
 	fmt.Println("Working server on port:3000")
 	app.Run(":3000")
-
 }
