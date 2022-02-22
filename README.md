@@ -17,3 +17,9 @@ The <strong>“UrbanClapClone”</strong> (name to be finalized) web application
 * Framework : Angular
 * Backend : GoLang
 * Database : SQL (GORM Library)
+
+## Development Methodology:
+* Each contributor pushes code in their own branch (mostly named after them).
+* A pull request is created to merge the code to `master` branch which is our development branch.
+* After each sprint, the final code is merged with `main` branch which is our final working product.
+* A checkpoint branch is also created after each sprint for the purpose of tracking changes between two sprints.
