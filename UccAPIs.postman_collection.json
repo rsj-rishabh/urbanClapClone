@@ -1,0 +1,295 @@
+{
+	"info": {
+		"_postman_id": "afc0102d-a4a2-4814-82a2-a9b8cf630a81",
+		"name": "UccAPIs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Add user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"alex\",\n    \"email\": \"alex@ufl.edu\",\n    \"gender\": \"F\",\n    \"username\": \"alex\",\n    \"password\": \"alex1\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Add user",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"alex\",\n    \"email\": \"alex@ufl.edu\",\n    \"gender\": \"F\",\n    \"username\": \"alex\",\n    \"password\": \"alex1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Accept",
+							"value": "application/x-www-form-urlencoded"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Content-Type"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "POST"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "http://localhost:4200"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 22 Feb 2022 00:32:35 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "95"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 4,\n    \"name\": \"alex\",\n    \"username\": \"alex\",\n    \"password\": \"alex1\",\n    \"email\": \"alex@ufl.edu\",\n    \"gender\": \"F\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Get user details",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/user/dummy",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"dummy"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get user details",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/user/dummy",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"dummy"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "http://localhost:4200"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 22 Feb 2022 00:33:36 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "104"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 1,\n    \"name\": \"Dummy Duck\",\n    \"username\": \"dummy\",\n    \"password\": \"dumdum\",\n    \"email\": \"dummy@ufl.edu\",\n    \"gender\": \"M\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Get all services",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/services",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"services"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get all services",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/services",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"services"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "http://localhost:4200"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 22 Feb 2022 00:34:25 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "639"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 1,\n        \"name\": \"AC Maintanence\",\n        \"description\": \"Any type of AC maintanence such as filter cleaning, part replacement, etc.\",\n        \"username\": \"Electronics\"\n    },\n    {\n        \"id\": 2,\n        \"name\": \"Plumbing\",\n        \"description\": \"Sanitary and household plumbing. No sewage service.\",\n        \"username\": \"Household\"\n    },\n    {\n        \"id\": 3,\n        \"name\": \"Saloon\",\n        \"description\": \"Haricut, massage, nailwork, makeup, etc.\",\n        \"username\": \"Personal Care\"\n    },\n    {\n        \"id\": 4,\n        \"name\": \"Furniture Repair\",\n        \"description\": \"Furniture frame repair, drilling, fitting new furniture, etc.\",\n        \"username\": \"Household\"\n    },\n    {\n        \"id\": 5,\n        \"name\": \"Exterminator\",\n        \"description\": \"Pest control, wildlife evac, alligator emergency, etc.\",\n        \"username\": \"Animal/Pet\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Get bookings from a given user",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/bookings/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"bookings",
+						"2"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get bookings from a given user",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/bookings/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"bookings",
+								"2"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "http://localhost:4200"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 22 Feb 2022 00:36:10 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "135"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 2,\n    \"user_id\": 0,\n    \"service_id\": 3,\n    \"date\": \"2022-02-15T16:30:00Z\",\n    \"start_time\": \"2022-02-15T16:30:00Z\",\n    \"end_time\": \"2022-02-15T17:30:00Z\"\n}"
+				}
+			]
+		}
+	]
+}
