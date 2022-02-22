@@ -9,13 +9,13 @@ import (
 )
 
 func GetAllServices(db *gorm.DB, w http.ResponseWriter, r *http.Request) {
-	services := []model.UccServices{}
+	services := []model.Service{}
 	db.Find(&services)
 	respondJSON(w, http.StatusOK, services)
 }
 
 func CreateService(db *gorm.DB, w http.ResponseWriter, r *http.Request) {
-	services := model.UccServices{}
+	services := model.Service{}
 
 	decoder := json.NewDecoder(r.Body)
 	if err := decoder.Decode(&services); err != nil {
