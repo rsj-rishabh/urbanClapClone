@@ -17,7 +17,7 @@ func CreateUser(db *gorm.DB, w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Access-Control-Allow-Headers", "Content-Type")
 
 	fmt.Println("Logged CreateUser:POST")
-	user := model.UccUsers{}
+	user := model.User{}
 
 	decoder := json.NewDecoder(r.Body)
 	if err := decoder.Decode(&user); err != nil {
@@ -45,9 +45,9 @@ func GetUser(db *gorm.DB, w http.ResponseWriter, r *http.Request) {
 }
 
 // getUserOr404 gets a user instance if exists, or respond the 404 error otherwise
-func getUserOr404(db *gorm.DB, username string, w http.ResponseWriter, r *http.Request) *model.UccUsers {
-	user := model.UccUsers{}
-	if err := db.First(&user, model.UccUsers{Username: username}).Error; err != nil {
+func getUserOr404(db *gorm.DB, username string, w http.ResponseWriter, r *http.Request) *model.User {
+	user := model.User{}
+	if err := db.First(&user, model.User{Username: username}).Error; err != nil {
 		respondError(w, http.StatusNotFound, err.Error())
 		return nil
 	}
