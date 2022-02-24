@@ -232,7 +232,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3000/api/bookings/2",
+					"raw": "http://localhost:3000/api/bookings/3",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -241,7 +241,7 @@
 					"path": [
 						"api",
 						"bookings",
-						"2"
+						"3"
 					]
 				}
 			},
@@ -288,6 +288,162 @@
 					],
 					"cookie": [],
 					"body": "{\n    \"id\": 2,\n    \"user_id\": 0,\n    \"service_id\": 3,\n    \"date\": \"2022-02-15T16:30:00Z\",\n    \"start_time\": \"2022-02-15T16:30:00Z\",\n    \"end_time\": \"2022-02-15T17:30:00Z\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Book a service",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 5,\n    \"user_id\": 3,\n    \"service_id\": 4,\n    \"date\": \"2022-02-15\",\n    \"start_time\": \"12:30\",\n    \"end_time\": \"13:30\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/bookService",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"bookService"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Book a service",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 2,\n    \"user_id\": 1,\n    \"service_id\": 3,\n    \"date\": \"2022-02-15\",\n    \"start_date\": \"11:30\",\n    \"end_date\": \"13:30\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/bookService",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"bookService"
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Accept",
+							"value": "application/x-www-form-urlencoded"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Content-Type"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "POST"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "http://localhost:4200"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 24 Feb 2022 05:02:08 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "65"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"Error 1062: Duplicate entry '2' for key 'bookings.id'\"\n}"
+				},
+				{
+					"name": "Book a service",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 4,\n    \"user_id\": 1,\n    \"service_id\": 4,\n    \"date\": \"2022-02-15\",\n    \"start_time\": \"11:30\",\n    \"end_time\": \"13:30\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/bookService",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"bookService"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Accept",
+							"value": "application/x-www-form-urlencoded"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Content-Type"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "POST"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "http://localhost:4200"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 24 Feb 2022 06:01:06 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "232"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 4,\n    \"user_id\": 1,\n    \"service_id\": 4,\n    \"date\": \"2022-02-15\",\n    \"start_time\": \"11:30\",\n    \"end_time\": \"13:30\",\n    \"User\": {\n        \"id\": 0,\n        \"name\": \"\",\n        \"username\": \"\",\n        \"password\": \"\",\n        \"email\": \"\",\n        \"gender\": \"\"\n    },\n    \"Service\": {\n        \"id\": 0,\n        \"name\": \"\",\n        \"description\": \"\",\n        \"username\": \"\"\n    }\n}"
 				}
 			]
 		}

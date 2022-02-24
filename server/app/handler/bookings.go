@@ -17,7 +17,7 @@ func CreateBooking(db *gorm.DB, w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Access-Control-Allow-Methods", "POST")
 	w.Header().Set("Access-Control-Allow-Headers", "Content-Type")
 
-	fmt.Println("Logged CreateUser:POST")
+	fmt.Println("Logged CreateBooking:POST")
 	booking := model.Booking{}
 
 	decoder := json.NewDecoder(r.Body)

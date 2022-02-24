@@ -21,12 +21,10 @@ type Service struct {
 }
 
 type Booking struct {
-	Id        uint    `gorm:"size:10;unique;auto_increment:true" json:"id"`
-	UserId    uint    `gorm:"size:10" json:"user_id"`
-	ServiceId uint    `gorm:"primary_key;auto_increment:false;default:1" json:"service_id"`
-	Date      string  `gorm:"primary_key;auto_increment:false" json:"date"`
-	StartTime string  `gorm:"primary_key;auto_increment:false;default:'00:00'" json:"start_time"`
-	EndTime   string  `gorm:"primary_key;auto_increment:false;default:'00:00'" json:"end_time"`
-	User      User    `gorm:"foreignkey:user_id;references:UserId`
-	Service   Service `gorm:"foreignkey:service_id;references:ServiceId`
+	Id        uint   `gorm:"size:10;unique;auto_increment:true" json:"id"`
+	UserId    uint   `gorm:"size:10" json:"user_id"`
+	ServiceId uint   `gorm:"primary_key;auto_increment:false;default:1" json:"service_id"`
+	Date      string `gorm:"primary_key;auto_increment:false" json:"date"`
+	StartTime string `gorm:"primary_key;auto_increment:false;default:'00:00'" json:"start_time"`
+	EndTime   string `gorm:"primary_key;auto_increment:false;default:'00:00'" json:"end_time"`
 }
