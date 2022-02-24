@@ -1,8 +1,6 @@
 package model
 
 import (
-	"time"
-
 	_ "github.com/jinzhu/gorm/dialects/mysql"
 )
 
@@ -23,10 +21,10 @@ type Service struct {
 }
 
 type Booking struct {
-	Id        uint      `gorm:"size:10;unique;auto_increment:true" json:"id"`
-	UserId    uint      `json:"user_id"`
-	ServiceId uint      `gorm:"primary_key;auto_increment:false;default:1" json:"service_id"`
-	Date      time.Time `gorm:"primary_key;auto_increment:false" json:"date"`
-	StartTime time.Time `gorm:"primary_key;auto_increment:false" json:"start_time"`
-	EndTime   time.Time `gorm:"primary_key;auto_increment:false" json:"end_time"`
+	Id        uint   `gorm:"size:10;unique;auto_increment:true" json:"id"`
+	UserId    uint   `gorm:"size:10" json:"user_id"`
+	ServiceId uint   `gorm:"primary_key;auto_increment:false;default:1" json:"service_id"`
+	Date      string `gorm:"primary_key;auto_increment:false" json:"date"`
+	StartTime string `gorm:"primary_key;auto_increment:false;default:'00:00'" json:"start_time"`
+	EndTime   string `gorm:"primary_key;auto_increment:false;default:'00:00'" json:"end_time"`
 }

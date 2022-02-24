@@ -1,8 +1,6 @@
 package app
 
 import (
-	"time"
-
 	"github.com/rsj-rishabh/urbanClapClone/server/app/model"
 )
 
@@ -77,26 +75,26 @@ func (a *App) DBMigrate() {
 	// Create booking table
 	a.DB.Create((&model.Booking{
 		Id:        1,
-		UserId:    0,
-		ServiceId: 0,
-		Date:      time.Date(2022, 2, 15, 12, 30, 0, 0, time.UTC),
-		StartTime: time.Date(2022, 2, 15, 12, 30, 0, 0, time.UTC),
-		EndTime:   time.Date(2022, 2, 15, 13, 30, 0, 0, time.UTC),
+		UserId:    1,
+		ServiceId: 1,
+		Date:      "2022-02-15",
+		StartTime: "12:30",
+		EndTime:   "13:30",
 	}))
 	a.DB.Create((&model.Booking{
 		Id:        2,
-		UserId:    0,
-		ServiceId: 3,
-		Date:      time.Date(2022, 2, 15, 16, 30, 0, 0, time.UTC),
-		StartTime: time.Date(2022, 2, 15, 16, 30, 0, 0, time.UTC),
-		EndTime:   time.Date(2022, 2, 15, 17, 30, 0, 0, time.UTC),
+		UserId:    2,
+		ServiceId: 2,
+		Date:      "2022-02-15",
+		StartTime: "16:30",
+		EndTime:   "17:30",
 	}))
 	a.DB.Create((&model.Booking{
 		Id:        3,
 		UserId:    3,
-		ServiceId: 2,
-		Date:      time.Date(2022, 2, 15, 16, 30, 0, 0, time.UTC),
-		StartTime: time.Date(2022, 2, 15, 16, 30, 0, 0, time.UTC),
-		EndTime:   time.Date(2022, 2, 15, 17, 30, 0, 0, time.UTC),
+		ServiceId: 3,
+		Date:      "2022-02-15",
+		StartTime: "16:30",
+		EndTime:   "17:30",
 	}))
 }
