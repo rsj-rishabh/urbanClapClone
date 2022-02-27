@@ -63,6 +63,15 @@
     outline:none;
 }
 
+.login-form .form-group input:hover {
+    border-bottom:1px solid whitesmoke;
+}
+
+.login-form .form-group input:hover::-webkit-input-placeholder {
+    color: whitesmoke;
+    opacity: 0.8;
+}
+
 .login-form .forgot {
     display:block;
     text-align:center;
