@@ -72,7 +72,7 @@
     opacity: 0.8;
 }
 
-.login-form .forgot {
+.login-form .sign-up {
     display:block;
     text-align:center;
     font-size:12px;
@@ -82,7 +82,7 @@
     margin-top: 10px;
 }
 
-.login-form .forgot:hover, .login-form .forgot:active {
+.login-form .sign-up:hover, .login-form .sign-up:active {
     color: rgb(245, 229, 229);
     opacity:0.9;
     text-decoration:none;
