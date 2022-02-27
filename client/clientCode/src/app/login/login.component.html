@@ -9,7 +9,10 @@
         <div class="illustration"><i class="icon ion-ios-locked-outline"></i></div>
         <div class="form-group"><input class="form-control" type="email" name="email" placeholder="Email"></div>
         <div class="form-group"><input class="form-control" type="password" name="password" placeholder="Password"></div>
-        <div class="form-group"><button class="btn btn-primary btn-block" routerLink="/login" routerLinkActive="active" type="submit">Log In</button></div><a href="#" class="forgot">Forgot your email or password?</a>
+        <div class="form-group">
+          <button class="btn btn-primary btn-block" routerLink="/login" routerLinkActive="active" onclick="$('#exampleModalCenter').modal('hide')" type="submit">Log In</button>
+        </div>
+        <a href="#" class="forgot" routerLink="/register" routerLinkActive="active" onclick="$('#exampleModalCenter').modal('hide')">Don't have an account? Sign Up.</a>
       </form>
 
     </div>

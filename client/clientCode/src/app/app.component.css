@@ -37,6 +37,17 @@
     margin-left: 6%;
 }
 
+.toolbar button:hover{
+    background:#1e2833;
+    color: white;
+    border: 1px solid whitesmoke;
+    outline:none;
+}
+
+.toolbar button:hover > .btn-title{
+  color: white;
+}
+
 .button-60 {
     align-items: center;
     appearance: none;
