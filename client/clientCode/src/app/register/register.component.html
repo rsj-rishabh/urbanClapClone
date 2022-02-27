@@ -1,5 +1,4 @@
-<p>register works!</p>
-<form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class = "registerForm">
+<!-- <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class = "registerForm">
     <label for="name">Name : </label>
     <input id="name" type="text" formControlName="name">
   <br><br>
@@ -16,4 +15,43 @@
     <input id="gender" type="text" formControlName="gender">
   <br><br>
     <button type="submit" [disabled]="!registerForm.valid">Register</button>
-</form>
+</form> -->
+
+<div class="wrapper">
+  <div class="inner">
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+      <h3>User Registration</h3>
+      <div class="form-wrapper">
+        <input type="text" placeholder="Full Name" class="form-control" formControlName="name">
+      </div>
+      <div class="form-wrapper">
+        <input type="text" placeholder="Username" class="form-control" formControlName="username">
+        <i class="zmdi zmdi-account"></i>
+      </div>
+      <div class="form-wrapper">
+        <input type="text" placeholder="Email Address" class="form-control" formControlName="email">
+        <i class="zmdi zmdi-email"></i>
+      </div>
+      <div class="form-wrapper">
+        <select name="" id="" class="form-control" formControlName="gender">
+          <option value="" disabled selected>Gender</option>
+          <option value="male">Male</option>
+          <option value="femal">Female</option>
+          <option value="other">Other</option>
+        </select>
+        <i class="zmdi zmdi-caret-down" style="font-size: 17px"></i>
+      </div>
+      <div class="form-wrapper">
+        <input type="password" placeholder="Password" class="form-control" formControlName="password">
+        <i class="zmdi zmdi-lock"></i>
+      </div>
+      <div class="form-wrapper">
+        <input type="password" placeholder="Confirm Password" class="form-control">
+        <i class="zmdi zmdi-lock"></i>
+      </div>
+      <button [disabled]="!registerForm.valid">Register
+        <i class="zmdi zmdi-arrow-right"></i>
+      </button>
+    </form>
+  </div>
+</div>

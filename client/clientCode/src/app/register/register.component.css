@@ -1,3 +1,176 @@
 .registerForm{
     margin-top: 50px;
 }
+
+
+input, textarea, select, button {
+    color: whitesmoke;
+    background: #1e2833;
+    font-size: 13px;
+    opacity: 0.5; 
+}
+
+input:focus {
+    color: whitesmoke;
+    background: #1e2833;
+    font-size: 13px;
+}
+
+input:hover, select:hover {
+    color: whitesmoke;
+    background: #1e2833;
+    font-size: 13px;
+    opacity: 0.9;
+}
+
+input:focus ::-webkit-input-placeholder{
+    color: transparent;
+    opacity: 0;
+}
+
+
+a:hover {
+    text-decoration: none; 
+}
+
+:focus {
+    outline: none; 
+}
+
+.wrapper {
+    min-height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center; 
+}
+
+.inner {
+    padding: 20px;
+    background: #1e2833;
+    max-width: 850px;
+    margin: auto;
+    display: flex;
+    border-radius: 4px;
+    margin-top: 8%; 
+}
+
+.inner .image-holder {
+    width: 50%; 
+}
+
+.inner form {
+    width: 464px;
+    padding-top: 36px;
+    padding-left: 45px;
+    padding-right: 45px; }
+
+.inner h3 {
+    text-transform: capitalize;
+    font-size: 25px;
+    text-align: center;
+    margin-bottom: 28px;
+    color:whitesmoke;
+    text-transform: capitalize; 
+}
+
+.form-group {
+    display: flex; 
+}
+
+.form-group input {
+    width: 50%; 
+}
+
+.form-group input:first-child {
+    margin-right: 25px; 
+}
+
+.form-wrapper {
+    position: relative; 
+}
+
+.form-wrapper i {
+    position: absolute;
+    bottom: 9px;
+    right: 0; 
+}
+
+.form-control {
+    border: 1px solid whitesmoke;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    border-radius: 0px;
+    display: block;
+    width: 100%;
+    height: 30px;
+    padding: 0;
+    margin-bottom: 25px; 
+}
+
+.form-control::-webkit-input-placeholder {
+    font-size: 13px;
+    color: whitesmoke; 
+}
+
+.form-control::-moz-placeholder {
+    font-size: 13px;
+    color: whitesmoke;     
+}
+
+.form-control:-ms-input-placeholder {
+    font-size: 13px;
+    color: whitesmoke;
+}
+
+.form-control:-moz-placeholder {
+    font-size: 13px;
+    color: whitesmoke;
+}
+
+select {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+    padding-left: 20px; 
+}
+
+select option[value=""][disabled] {
+    display: none; 
+}
+
+button {
+    border: none;
+    width: 164px;
+    height: 51px;
+    margin: auto;
+    margin-top: 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    background: whitesmoke;
+    opacity: 1;
+    font-size: 15px;
+    color: #1e2833;
+    vertical-align: middle;
+}
+
+button i {
+    margin-left: 10px;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0); 
+}
+
+button:hover i, button:focus i, button:active i {
+    -webkit-animation-name: hvr-icon-wobble-horizontal;
+    animation-name: hvr-icon-wobble-horizontal;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+    -webkit-animation-iteration-count: 1;
+    animation-iteration-count: 1; 
+}
