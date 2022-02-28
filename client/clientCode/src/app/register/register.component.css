@@ -23,18 +23,31 @@ input:hover, select:hover {
     opacity: 0.9;
 }
 
+input:hover ~ i{
+    color: whitesmoke;
+    font-size: small;
+    opacity: 0.9;
+}
+
+select:hover ~ i{
+    color: whitesmoke;
+    font-size: small;
+    opacity: 0.9;
+}
+
+i:hover ~ input{
+    color: whitesmoke;
+    font-size: small;
+    opacity: 0.9;
+}
+
+.clickable {
+    cursor: pointer;
+}
+
 input:focus ::-webkit-input-placeholder{
     color: transparent;
     opacity: 0;
-}
-
-
-a:hover {
-    text-decoration: none; 
-}
-
-:focus {
-    outline: none; 
 }
 
 .wrapper {
@@ -74,26 +87,23 @@ a:hover {
     text-transform: capitalize; 
 }
 
-.form-group {
-    display: flex; 
-}
-
-.form-group input {
-    width: 50%; 
-}
-
-.form-group input:first-child {
-    margin-right: 25px; 
-}
-
 .form-wrapper {
     position: relative; 
 }
 
 .form-wrapper i {
     position: absolute;
-    bottom: 9px;
+    bottom: 4px;
     right: 0; 
+    color: whitesmoke;
+    font-size: small;
+    opacity: 0.5;
+}
+
+.form-wrapper i:hover {
+    color: whitesmoke;
+    font-size: small;
+    opacity: 0.9;
 }
 
 .form-control {
@@ -112,21 +122,6 @@ a:hover {
 .form-control::-webkit-input-placeholder {
     font-size: 13px;
     color: whitesmoke; 
-}
-
-.form-control::-moz-placeholder {
-    font-size: 13px;
-    color: whitesmoke;     
-}
-
-.form-control:-ms-input-placeholder {
-    font-size: 13px;
-    color: whitesmoke;
-}
-
-.form-control:-moz-placeholder {
-    font-size: 13px;
-    color: whitesmoke;
 }
 
 select {
@@ -160,17 +155,13 @@ button {
 
 button i {
     margin-left: 10px;
-    -webkit-transform: translateZ(0);
-    transform: translateZ(0); 
 }
 
-button:hover i, button:focus i, button:active i {
-    -webkit-animation-name: hvr-icon-wobble-horizontal;
-    animation-name: hvr-icon-wobble-horizontal;
-    -webkit-animation-duration: 1s;
-    animation-duration: 1s;
-    -webkit-animation-timing-function: ease-in-out;
-    animation-timing-function: ease-in-out;
-    -webkit-animation-iteration-count: 1;
-    animation-iteration-count: 1; 
+button:hover {
+    background: #1e2833;
+    opacity: 1;
+    font-size: 15px;
+    color: whitesmoke;
+    border: 1px solid whitesmoke;
 }
+

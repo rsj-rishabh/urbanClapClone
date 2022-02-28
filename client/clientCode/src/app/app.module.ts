@@ -9,6 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ServicesComponent } from './services/services.component';
 import { LandingComponent } from './landing/landing.component';
 import { ServiceBookingComponent } from './service-booking/service-booking.component';
+import * as $ from 'jquery';
 
 @NgModule({
   declarations: [

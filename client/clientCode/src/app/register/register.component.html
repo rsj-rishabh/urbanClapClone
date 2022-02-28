@@ -26,11 +26,11 @@
       </div>
       <div class="form-wrapper">
         <input type="text" placeholder="Username" class="form-control" formControlName="username">
-        <i class="zmdi zmdi-account"></i>
+        <i class="bi bi-person-fill"></i>
       </div>
       <div class="form-wrapper">
         <input type="text" placeholder="Email Address" class="form-control" formControlName="email">
-        <i class="zmdi zmdi-email"></i>
+        <i class="bi bi-envelope-fill"></i>
       </div>
       <div class="form-wrapper">
         <select name="" id="" class="form-control" formControlName="gender">
@@ -39,18 +39,20 @@
           <option value="femal">Female</option>
           <option value="other">Other</option>
         </select>
-        <i class="zmdi zmdi-caret-down" style="font-size: 17px"></i>
+        <i class="bi bi-caret-down-fill" style="font-size: 10px"></i>
       </div>
       <div class="form-wrapper">
-        <input type="password" placeholder="Password" class="form-control" formControlName="password">
-        <i class="zmdi zmdi-lock"></i>
+        <input id="pword" type="password" placeholder="Password" class="form-control" formControlName="password">
+        <i *ngIf="pword" (click)="changeStatus('pword')" class="bi bi-eye-slash-fill clickable"></i>
+        <i *ngIf="!pword" (click)="changeStatus('pword')" class="bi bi-eye-fill clickable"></i>
       </div>
       <div class="form-wrapper">
-        <input type="password" placeholder="Confirm Password" class="form-control">
-        <i class="zmdi zmdi-lock"></i>
+        <input id="cpword" type="password" placeholder="Confirm Password" class="form-control">
+        <i *ngIf="cpword" (click)="changeStatus('cpword')" class="bi bi-eye-slash-fill clickable"></i>
+        <i *ngIf="!cpword" (click)="changeStatus('cpword')" class="bi bi-eye-fill clickable"></i>
       </div>
       <button [disabled]="!registerForm.valid">Register
-        <i class="zmdi zmdi-arrow-right"></i>
+        <i class="bi bi-arrow-right-square-fill"></i>
       </button>
     </form>
   </div>
