@@ -10,6 +10,7 @@ import { map } from 'rxjs/operators';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
+  
   registerForm = new FormGroup({
     name: new FormControl(''),
     email: new FormControl(''),
@@ -17,6 +18,10 @@ export class RegisterComponent implements OnInit {
     username: new FormControl(''),
     password : new FormControl(''),
   });
+
+  pword = true;
+  cpword = true;
+
   onSubmit() {
     const headers = {
       "Content-Type": "application/x-www-form-urlencoded",
@@ -32,9 +37,31 @@ export class RegisterComponent implements OnInit {
     )
     console.warn(this.registerForm.value);
   }
+  
   constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
+    
+  }
+
+  changeStatus(elementId:String){
+    if(elementId === 'pword'){
+      if(this.pword){
+        this.pword = false;
+        $('#'+elementId).prop('type','text');
+      }else{
+        this.pword = true;
+        $('#'+elementId).prop('type','password');
+      }
+    } else if (elementId === 'cpword'){
+      if(this.cpword){
+        this.cpword = false;
+        $('#'+elementId).prop('type','text');
+      }else{
+        this.cpword = true;
+        $('#'+elementId).prop('type','password');
+      }
+    }
   }
 
 }
