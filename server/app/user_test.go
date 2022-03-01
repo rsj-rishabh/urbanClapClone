@@ -116,3 +116,29 @@ func TestDbMigrate(a *App) *gorm.DB {
 		EndTime:   "17:30",
 	}))
 }
+
+func TestGetAUser(t *testing.T) {
+
+	// setup database
+	app.TestDbMigrate()
+	var jsonStr = []byte(`{"username":"dummy","password":"dumdum"}`)
+
+	req, _ := http.NewRequest("POST", "/user", nil)
+	req.Header().Set("Access-Control-Allow-Origin", "*")
+	req.Header().Set("Content-Type", "application/x-www-form-urlencoded")
+	req.Header().Set("Access-Control-Allow-Methods", "POST")
+	req.Header().Set("Access-Control-Allow-Headers", "Content-Type")
+
+
+	w := httptest.NewRecorder()
+	handler := http.HandlerFunc(GetUser)
+	handler.ServeHTTP(w,req)
+
+	if status := rr.Code; status != http.StatusOK {
+		t.Errorf("handler returned wrong status code: got %v want %v",
+			status, http.StatusOK)
+	}
+	// assert.Equal(t, 200, w.Code)
+	b, _ := json.Marshal(user)
+	assert.Equal(t, string(b), w.Body.String())
+}
