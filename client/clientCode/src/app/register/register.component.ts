@@ -26,7 +26,7 @@ export class RegisterComponent implements OnInit {
     const headers = {
       "Content-Type": "application/x-www-form-urlencoded",
     }
-    this.http.post<any>('http://localhost:3000/user',this.registerForm.value,{headers})
+    this.http.post<any>('http://localhost:3000/api/user',this.registerForm.value,{headers})
     .subscribe(response => {
       console.log(response)
        alert("Registration success");
