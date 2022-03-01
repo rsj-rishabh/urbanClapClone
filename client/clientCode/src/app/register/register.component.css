@@ -35,12 +35,6 @@ select:hover ~ i{
     opacity: 0.9;
 }
 
-i:hover ~ input{
-    color: whitesmoke;
-    font-size: small;
-    opacity: 0.9;
-}
-
 .clickable {
     cursor: pointer;
 }

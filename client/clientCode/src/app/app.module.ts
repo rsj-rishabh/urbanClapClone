@@ -24,7 +24,7 @@ import * as $ from 'jquery';
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule  
   ],
   providers: [],
   bootstrap: [AppComponent]
