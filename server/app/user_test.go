@@ -142,3 +142,33 @@ func TestGetAUser(t *testing.T) {
 	b, _ := json.Marshal(user)
 	assert.Equal(t, string(b), w.Body.String())
 }
+
+func TestCreateAUser(t *testing.T) {
+
+	// setup database
+	app.TestDbMigrate()
+	var jsonStr = []byte(`{"Id":4,"Name":"xyz","Username":"xyz","Password":"xyz@pqr.com","Email":"xyz@gmail.com","Gender":"F"}`)
+	
+	req, _ := http.NewRequest("POST", "/user", jsonStr)
+
+	// req.Header.Set("Content-Type", "application/json")
+	req.Header().Set("Access-Control-Allow-Origin", "*")
+	req.Header().Set("Content-Type", "application/x-www-form-urlencoded")
+	req.Header().Set("Access-Control-Allow-Methods", "POST")
+	req.Header().Set("Access-Control-Allow-Headers", "Content-Type")
+
+	w := httptest.NewRecorder()
+	handler := http.HandlerFunc(CreateUser)
+	handler.ServeHTTP(w,req)
+
+	if status := rr.Code; status != http.StatusCreated {
+		t.Errorf("handler returned wrong status code: got %v want %v",
+			status, http.StatusCreated)
+	}
+	expected := `{"Id":4,"Name":"xyz","Username":"xyz","Password":"xyz@pqr.com","Email":"xyz@gmail.com","Gender":"F"}`
+	if w.Body.String() != expected {
+		t.Errorf("handler returned unexpected body: got %v want %v",
+			w.Body.String(), expected)
+	}
+	// assert.Equal(t, string(b), w.Body.String())
+}
