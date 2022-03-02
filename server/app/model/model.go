@@ -17,7 +17,7 @@ type Service struct {
 	Id          uint   `gorm:"size:10;primary_key;" json:"id"`
 	Name        string `gorm:"size:50" json:"name"`
 	Description string `gorm:"size:200" json:"description"`
-	Category    string `gorm:"size:30;default:'Other'" json:"username"`
+	Category    string `gorm:"size:30;default:'Other'" json:"category"`
 }
 
 type Booking struct {
