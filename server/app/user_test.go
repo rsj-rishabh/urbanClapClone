@@ -172,3 +172,21 @@ func TestCreateAUser(t *testing.T) {
 	}
 	// assert.Equal(t, string(b), w.Body.String())
 }
+
+func TestGetBookings(t *testing.T) {
+
+	// setup database
+	app.TestDbMigrate()
+	req, _ := http.NewRequest("GET", "/bookings/{custId}",1)
+	w := httptest.NewRecorder()
+	handler := http.HandleFunc(GetBookings)
+	handler.ServeHTTP(w,req)
+
+	if status := rr.Code; status != http.StatusOK {
+		t.Errorf("handler returned wrong status code: got %v want %v",
+			status, http.StatusOK)
+	}
+	// assert.Equal(t, 200, w.Code)
+	b, _ := json.Marshal(booking)
+	assert.Equal(t, string(b), w.Body.String())
+}
