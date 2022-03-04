@@ -9,6 +9,7 @@ import (
 	"github.com/jinzhu/gorm"
 	"github.com/rsj-rishabh/urbanClapClone/server/app/handler"
 	"github.com/rsj-rishabh/urbanClapClone/server/config"
+	// "gorm.io/driver/sqlite"
 )
 
 // App has router and db instances
@@ -25,12 +26,7 @@ func (a *App) Initialize(config *config.Config) {
 		config.DB.Name,
 		config.DB.Charset)
 
-	db, err := gorm.Open(config.DB.Dialect, dbURI)
-	if err != nil {
-		log.Fatal("Could not connect database")
-	} else {
-		fmt.Println("Connected to database")
-	}
+	db, _ := gorm.Open(config.DB.Dialect, dbURI)
 
 	a.DB = db
 	a.Router = mux.NewRouter().PathPrefix("/api").Subrouter()
@@ -43,7 +39,7 @@ func (a *App) setRouters() {
 	a.Get("/services", a.GetAllServices)
 	a.Post("/services", a.CreateService)
 	a.Post("/user", a.CreateUser)
-	a.Get("/user/{username}", a.GetUser)
+	a.Post("/user", a.GetUser)
 	a.Get("/bookings/{custId}", a.GetBookings)
 	a.Post("/bookService", a.CreateBooking)
 }

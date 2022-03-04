@@ -27,6 +27,18 @@ func CreateBooking(db *gorm.DB, w http.ResponseWriter, r *http.Request) {
 	}
 	defer r.Body.Close()
 
+	var bookings []model.Booking
+	db.Where("service_id = ? ", booking.ServiceId).First(&bookings)
+
+	for _, b := range bookings {
+		start := b.StartTime
+		end := b.EndTime
+		if !(booking.EndTime < start || booking.StartTime > end) {
+			respondError(w, http.StatusInternalServerError, "Time slot unavailable")
+			return
+		}
+	}
+
 	if err := db.Save(&booking).Error; err != nil {
 		respondError(w, http.StatusInternalServerError, err.Error())
 		return
