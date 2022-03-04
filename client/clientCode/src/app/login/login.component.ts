@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit {
   loginData = [];
 
   onSubmit() {
-    this.http.get('http://localhost:3000/user/'+this.loginForm.value.username, {responseType:'json', observe:'response'})
+    this.http.get('http://localhost:3000/api/user/'+this.loginForm.value.username, {responseType:'json', observe:'response'})
     .subscribe(response => {
       if(response.status == 200)
         // alert("login success");

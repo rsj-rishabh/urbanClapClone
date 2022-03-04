@@ -1,9 +1,20 @@
-<!-- <p>login works!</p> -->
-<form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class = "loginForm">
-    <label for="user-name">Username : </label>
-    <input id="user-name" type="text" formControlName="username">
-  <br><br>
-    <label for="pass-word">Password : </label>
-    <input id="pass-word" type="password" formControlName="password"><br><br>
-    <button type="submit" routerLink="/services" routerLinkActive="active" [disabled]="!loginForm.valid">Login</button>
-</form>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+
+      <form class="login-form">
+        <h2 class="sr-only">User Login</h2>
+        <div class="illustration"><i class="icon ion-ios-locked-outline"></i></div>
+        <div class="form-group"><input class="form-control" type="email" name="email" placeholder="Email"></div>
+        <div class="form-group"><input class="form-control" type="password" name="password" placeholder="Password"></div>
+        <div class="form-group">
+          <button class="btn btn-primary btn-block" routerLink="/services" routerLinkActive="active" onclick="$('#exampleModalCenter').modal('hide')" type="submit">Log In</button>
+        </div>
+        <a href="#" class="sign-up" routerLink="/register" routerLinkActive="active" onclick="$('#exampleModalCenter').modal('hide')">Don't have an account? Sign Up.</a>
+      </form>
+
+    </div>
+  </div>
+</div>

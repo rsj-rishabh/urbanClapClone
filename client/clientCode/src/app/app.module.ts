@@ -8,6 +8,8 @@ import { RegisterComponent } from './register/register.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ServicesComponent } from './services/services.component';
 import { LandingComponent } from './landing/landing.component';
+import { ServiceBookingComponent } from './service-booking/service-booking.component';
+import * as $ from 'jquery';
 
 @NgModule({
   declarations: [
@@ -15,13 +17,14 @@ import { LandingComponent } from './landing/landing.component';
     LoginComponent,
     RegisterComponent,
     ServicesComponent,
-    LandingComponent
+    LandingComponent,
+    ServiceBookingComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule  
   ],
   providers: [],
   bootstrap: [AppComponent]
