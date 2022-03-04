@@ -13,7 +13,7 @@
   height: 60px;
   display: flex;
   align-items: center;
-  background-color: black;
+  background-color: #1e2833 !important;
   color: white;
   font-weight: 600;
   font-size: large;
@@ -30,11 +30,22 @@
 }
 
 .btn-title{
-    color: black;
+    color: #434a52;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     text-decoration: none;
     font-size: 80%;
     margin-left: 6%;
+}
+
+.toolbar button:hover{
+    background:#1e2833;
+    color: white;
+    border: 1px solid whitesmoke;
+    outline:none;
+}
+
+.toolbar button:hover > .btn-title{
+  color: white;
 }
 
 .button-60 {
@@ -45,7 +56,7 @@
     border-radius: .375em;
     box-shadow: none;
     box-sizing: border-box;
-    color: #363636;
+    color: #434a52;
     cursor: pointer;
     display: inline-flex;
     font-family: BlinkMacSystemFont,-apple-system,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
@@ -64,7 +75,7 @@
   }
   
   .button-60:active {
-    border-color: #4a4a4a;
+    border-color: #434a52;
     outline: 0;
   }
   
