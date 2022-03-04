@@ -1,5 +1,5 @@
 describe('Urban Clap Clone Landing Page Test', () => {
-    beforeEach(() => {
+    before(() => {
       cy.visit('http://localhost:4200/');
     });
   
@@ -12,7 +12,7 @@ describe('Urban Clap Clone Landing Page Test', () => {
     });
 
     it('has the login button', () => {
-        cy.get('button.loginButton').should('contain.text','Login');
+        cy.get('button#login').should('contain.text','Login');
     });
 
     it('has the register button', () => {

@@ -22,13 +22,7 @@
 
 .login-form .sr-only {
     text-align: center;
-}
-
-.login-form .illustration {
-    text-align:center;
-    padding:15px 0 20px;
-    font-size:100px;
-    color:#2980ef;
+    margin-bottom: 40px;
 }
 
 .login-form .form-control {
