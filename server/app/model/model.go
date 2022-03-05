@@ -1,31 +1,30 @@
 package model
 
 import (
-	"github.com/jinzhu/gorm"
-
 	_ "github.com/jinzhu/gorm/dialects/mysql"
 )
 
-type UccUsers struct {
-	gorm.Model
-	Name     string `gorm:"not null; size:70" json:"name"`
-	Email    string `gorm:"not null; size:50" json:"email"`
-	Gender   string `gorm:"not null; size:1; check:gender==M || gender==F" json:"gender"`
-	Username string `gorm:"unique; not null; size:20" json:"username"`
-	Password string `gorm:"not null; size:20" json:"password"`
+type User struct {
+	Id       uint   `gorm:"size:10;primary_key;" json:"id"`
+	Name     string `gorm:"size:70" json:"name"`
+	Username string `gorm:"size:20; unique" json:"username"`
+	Password string `gorm:"size:20" json:"password"`
+	Email    string `gorm:"size:50" json:"email"`
+	Gender   string `gorm:"size:1; check:gender==M || gender==F" json:"gender"`
 }
 
-type UccServices struct {
-	gorm.Model
-	Code        int64  `gorm:"unique; not null" json:"code"`
-	Name        string `gorm:"not null; size:50" json:"name"`
-	Description string `gorm:"not null; size:200" json:"description"`
-	Gender      string `gorm:"size:1; check:gender==M || gender==F" json:"gender"`
-	Category    string `gorm:"size:30; default:'Other'" json:"username"`
+type Service struct {
+	Id          uint   `gorm:"size:10;primary_key;" json:"id"`
+	Name        string `gorm:"size:50" json:"name"`
+	Description string `gorm:"size:200" json:"description"`
+	Category    string `gorm:"size:30;default:'Other'" json:"category"`
 }
 
-// DBMigrate will create and migrate the tables, and then make the some relationships if necessary
-func DBMigrate(db *gorm.DB) *gorm.DB {
-	db.AutoMigrate(&UccUsers{}, &UccServices{})
-	return db
+type Booking struct {
+	Id        uint   `gorm:"size:10;unique;auto_increment:true" json:"id"`
+	UserId    uint   `gorm:"size:10" json:"user_id"`
+	ServiceId uint   `gorm:"primary_key;auto_increment:false;default:1" json:"service_id"`
+	Date      string `gorm:"primary_key;auto_increment:false" json:"date"`
+	StartTime string `gorm:"primary_key;auto_increment:false;default:'00:00'" json:"start_time"`
+	EndTime   string `gorm:"primary_key;auto_increment:false;default:'00:00'" json:"end_time"`
 }

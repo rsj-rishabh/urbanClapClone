@@ -13,7 +13,7 @@ export class ServicesComponent implements OnInit {
 
   ngOnInit() {      
     // Simple GET request with response type <any>
-    this.http.get<any>('http://localhost:3000/services').subscribe(data => {
+    this.http.get<any>('http://localhost:3000/api/services').subscribe(data => {
         console.log('Hi')
         this.servicesData = data;
     })
