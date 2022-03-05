@@ -26,7 +26,7 @@ describe('LoginComponent', () => {
     // const fixture = TestBed.createComponent(LoginComponent);
     const usernameContainer = fixture.debugElement.nativeElement.querySelector('.username-container');
     const passwordContainer = fixture.debugElement.nativeElement.querySelector('.password-container');
-    const loginBtnContainer = fixture.debugElement.nativeElement.querySelector('.login-btn-container');
+    const loginBtnContainer = fixture.debugElement.nativeElement.querySelector('.nvmlogin-btn-container');
     expect(usernameContainer).toBeDefined();
     expect(passwordContainer).toBeDefined();
     expect(loginBtnContainer).toBeDefined();
