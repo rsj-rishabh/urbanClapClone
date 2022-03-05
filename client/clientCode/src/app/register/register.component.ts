@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup,FormControl } from '@angular/forms';
 import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
-import {HttpClientModule} from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { map } from 'rxjs/operators';
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-register',

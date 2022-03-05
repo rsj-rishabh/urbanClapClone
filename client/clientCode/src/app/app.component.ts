@@ -9,10 +9,5 @@ import { HttpClient } from '@angular/common/http';
 export class AppComponent {
   title = 'UC Clone';
   constructor(private http: HttpClient) { }
-
-  
-
-
-
 }
 
