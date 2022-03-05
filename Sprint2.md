@@ -47,12 +47,6 @@ All APIs are RESTful and contain 4 major endpoints (CRUD) create, read, update a
 - Cleaned up repository structure and removed cached libraries.
 
 
-## Demonstration:
-Video with demo of system (Link: https://youtu.be/qFLba_CxBwM)
-1. Front-end Demo (with mocked up back-end)
-2. Back-end Demo (command line or Postman)
-
-
 ## API Endpoints:
 "/services" - GET calls *GetAllServices* and returns all the services present in the database
 
