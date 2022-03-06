@@ -59,10 +59,14 @@ Below mentions issueswhich would be the primary focus at the start of Sprint 3.
 
 
 ## API Endpoints:
-"/services" - GET calls *GetAllServices* and returns all the services present in the database
+"/getServices" - GET calls *GetAllServices* and returns all the services present in the database
 
-"/services" - POST calls *CreateService* add a new service to the application
+"/createService" - POST calls *CreateService* add a new service to the application
 
-"/user" - POST calls *CreateUser* function and registers new user to the database 
+"/register" - POST calls *CreateUser* function and registers new user to the database 
  
-"/user/{username}" - GET takes {username} and calls *GetUser* to return the user with the give username if prresent in the database else return 404.
+"/login" - GET takes {username} and calls *GetUser* to return the user with the given username if present in the database else return 404.
+
+"/getBookings/{custId}" - GET takes {custId} i.e. the user ID and calls *GetBookings* function to return the user with the given username if present in the database else return 404.
+
+"/bookService" - POST calles *CreateBooking* function to return the booking details if a service is booked or throw an error.
