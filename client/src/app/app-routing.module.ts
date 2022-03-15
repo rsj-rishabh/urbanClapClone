@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
-import { RegisterComponent } from './register/register.component';
-import { ServicesComponent } from './services/services.component';
-import { LandingComponent } from './landing/landing.component';
+import { RegisterComponent } from './components/register/register.component';
+import { ServicesComponent } from './components/services/services.component';
+import { LandingComponent } from './components/landing/landing.component';
 import { HttpClientModule } from '@angular/common/http';
 
 const routes: Routes = [
