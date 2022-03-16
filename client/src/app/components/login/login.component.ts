@@ -22,6 +22,7 @@ export class LoginComponent implements OnInit {
   onSubmit() {
     this.http.get('http://localhost:3000/api/user/'+this.loginForm.value.username, {responseType:'json', observe:'response'})
     .subscribe(response => {
+      console.log(response);
       if(response.status == 200)
         // alert("login success");
         this.router.navigate(['\services']);

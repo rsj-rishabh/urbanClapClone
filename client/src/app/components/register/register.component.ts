@@ -25,15 +25,18 @@ export class RegisterComponent implements OnInit {
 
   onSubmit() {
     const headers = {
-      "Content-Type": "application/x-www-form-urlencoded",
+      "Content-Type": "application/x-www-form-urlencoded"
+      //"Access-Control-Allow-Headers": "Content-Type",
+      //"Access-Control-Allow-Methods": "POST",
+      //"Access-Control-Allow-Origin": "*"
     }
-    this.http.post<any>('http://localhost:3000/api/user',this.registerForm.value,{headers})
+    this.http.post<any>('http://localhost:3000/api/register',this.registerForm.value,{headers})
     .subscribe(response => {
-      console.log(response)
-       alert("Registration success");
+      console.log(response);
+      alert("Registration success");
     },
     err => {
-      //alert("user exists already");
+      alert("user exists already");
     }
     )
     console.warn(this.registerForm.value);

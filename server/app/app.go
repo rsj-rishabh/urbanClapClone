@@ -82,20 +82,19 @@ func (a *App) GetServicesInCity(w http.ResponseWriter, r *http.Request) {
 func (a *App) CreateUser(w http.ResponseWriter, r *http.Request) {
 	fmt.Println("Called Routes: /User Method:POST")
 	w.Header().Set("Access-Control-Allow-Origin", "*")
-	w.Header().Set("Content-Type", "application/json")
+	w.Header().Set("Content-Type", "application/x-www-form-urlencoded")
 	w.Header().Set("Access-Control-Allow-Methods", "POST")
 	w.Header().Set("Access-Control-Allow-Headers", "Content-Type")
-	w.Header().Set("Accept", "application/x-www-form-urlencoded")
+	//w.Header().Set("Accept", "application/x-www-form-urlencoded")
 	handler.CreateUser(a.DB, w, r)
 }
 
 func (a *App) CreateBooking(w http.ResponseWriter, r *http.Request) {
 	fmt.Println("Called Routes: /User Method:POST")
 	w.Header().Set("Access-Control-Allow-Origin", "*")
-	w.Header().Set("Content-Type", "application/json")
+	w.Header().Set("Content-Type", "application/x-www-form-urlencoded")
 	w.Header().Set("Access-Control-Allow-Methods", "POST")
 	w.Header().Set("Access-Control-Allow-Headers", "Content-Type")
-	w.Header().Set("Accept", "application/x-www-form-urlencoded")
 	handler.CreateBooking(a.DB, w, r)
 }
 
