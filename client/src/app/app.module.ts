@@ -9,6 +9,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { ServicesComponent } from './components/services/services.component';
 import { LandingComponent } from './components/landing/landing.component';
 import { ServiceBookingComponent } from './components/service-booking/service-booking.component';
+import { NavbarComponent } from './components/shared/navbar/navbar.component';
+import { FooterComponent } from './components/shared/footer/footer.component';
 // import * as $ from 'jquery';
 
 @NgModule({
@@ -18,7 +20,9 @@ import { ServiceBookingComponent } from './components/service-booking/service-bo
     RegisterComponent,
     ServicesComponent,
     LandingComponent,
-    ServiceBookingComponent
+    ServiceBookingComponent,
+    NavbarComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

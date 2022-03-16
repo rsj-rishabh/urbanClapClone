@@ -1,6 +1,7 @@
 .toolbarButtons{
-    margin-left: 75%;
+    text-align: right;
 }
+
 .loginButton{
     margin: 8px;
 }
