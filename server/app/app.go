@@ -99,6 +99,10 @@ func (a *App) CreateBooking(w http.ResponseWriter, r *http.Request) {
 }
 
 func (a *App) GetUser(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Access-Control-Allow-Origin", "*")
+	w.Header().Set("Content-Type", "application/x-www-form-urlencoded")
+	w.Header().Set("Access-Control-Allow-Methods", "POST")
+	w.Header().Set("Access-Control-Allow-Headers", "Content-Type")
 	handler.GetUser(a.DB, w, r)
 }
 
