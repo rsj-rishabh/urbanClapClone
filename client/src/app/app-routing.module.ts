@@ -5,11 +5,16 @@ import { RegisterComponent } from './components/register/register.component';
 import { ServicesComponent } from './components/services/services.component';
 import { LandingComponent } from './components/landing/landing.component';
 import { HttpClientModule } from '@angular/common/http';
+import { LoginComponent } from './components/login/login.component';
 
 const routes: Routes = [
   {
     path: 'register',
     component: RegisterComponent,
+  },
+  {
+    path: 'login',
+    component: LoginComponent,
   },
   {
     path: 'home',

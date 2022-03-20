@@ -9,8 +9,12 @@
   </div>
   <div class="col-sm-3">
     <div class="toolbarButtons">
-      <button id="login" type="submit" color="light" class="btn loginButton button-60"
+      <!-- <button id="login" type="submit" color="light" class="btn loginButton button-60"
         onclick="$('#loginModal').modal('show')">
+        <a class="btn-title">Login</a>
+      </button> -->
+      <button id="login" type="button" color="light" class="btn loginButton button-60" routerLink="/login"
+        routerLinkActive="active">
         <a class="btn-title">Login</a>
       </button>
       <button id="register" type="button" mdbBtn color="light" mdbWavesEffect class="loginButton button-60"
@@ -20,8 +24,6 @@
     </div>
   </div>
 </div>
-
-<app-login></app-login>
 
 <router-outlet></router-outlet>
 
