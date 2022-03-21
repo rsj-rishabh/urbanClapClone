@@ -11,6 +11,7 @@ import { LandingComponent } from './components/landing/landing.component';
 import { ServiceBookingComponent } from './components/service-booking/service-booking.component';
 import { NavbarComponent } from './components/shared/navbar/navbar.component';
 import { FooterComponent } from './components/shared/footer/footer.component';
+import { BookingsComponent } from './components/bookings/bookings.component';
 // import * as $ from 'jquery';
 
 @NgModule({
@@ -22,7 +23,8 @@ import { FooterComponent } from './components/shared/footer/footer.component';
     LandingComponent,
     ServiceBookingComponent,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+    BookingsComponent
   ],
   imports: [
     BrowserModule,
