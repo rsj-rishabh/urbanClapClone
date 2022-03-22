@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup,FormControl } from '@angular/forms';
-import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
-import { HttpClientModule } from '@angular/common/http';
-import { map } from 'rxjs/operators';
+import { HttpClient } from '@angular/common/http';
+import{ GlobalConstants } from '../../common/global-constants';
 import * as $ from 'jquery';
 
 @Component({
@@ -10,6 +9,7 @@ import * as $ from 'jquery';
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
 })
+
 export class RegisterComponent implements OnInit {
   
   registerForm = new FormGroup({
@@ -26,11 +26,9 @@ export class RegisterComponent implements OnInit {
   onSubmit() {
     const headers = {
       "Content-Type": "application/x-www-form-urlencoded"
-      //"Access-Control-Allow-Headers": "Content-Type",
-      //"Access-Control-Allow-Methods": "POST",
-      //"Access-Control-Allow-Origin": "*"
     }
-    this.http.post<any>('http://localhost:3000/api/register',this.registerForm.value,{headers})
+
+    this.http.post('http://localhost:3000/api/register',this.registerForm.value,{headers})
     .subscribe(response => {
       console.log(response);
       alert("Registration success");
