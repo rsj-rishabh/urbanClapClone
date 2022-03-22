@@ -4,6 +4,7 @@ import (
 	_ "github.com/jinzhu/gorm/dialects/mysql"
 )
 
+//User
 type User struct {
 	Id       uint   `gorm:"size:10;primary_key;" json:"id"`
 	Name     string `gorm:"size:70" json:"name"`
@@ -13,6 +14,7 @@ type User struct {
 	Gender   string `gorm:"size:1; check:gender==M || gender==F" json:"gender"`
 }
 
+//Service
 type Service struct {
 	Id          uint   `gorm:"size:10;primary_key;" json:"id"`
 	Name        string `gorm:"size:50" json:"name"`
@@ -20,6 +22,7 @@ type Service struct {
 	Category    string `gorm:"size:30;default:'Other'" json:"category"`
 }
 
+//Booking
 type Booking struct {
 	Id          uint   `gorm:"size:10;unique;auto_increment:true" json:"id"`
 	UserId      uint   `gorm:"size:10" json:"user_id"`
@@ -30,6 +33,7 @@ type Booking struct {
 	IsCancelled bool   `gorm:"type:bool;default:false" json:"is_cancelled"`
 }
 
+//City
 type CityServiceMapping struct {
 	Id        uint   `gorm:"size:10;unique;auto_increment:true" json:"id"`
 	CityName  string `gorm:"size:200" json:"cityname"`
