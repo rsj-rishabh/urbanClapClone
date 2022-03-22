@@ -20,7 +20,6 @@ export class ServicesComponent implements OnInit {
   }
 
   ngOnInit() {
-    
     this.http.get<any>('http://localhost:3000/api/getServices')
       .subscribe(data => {
         console.log(data);
