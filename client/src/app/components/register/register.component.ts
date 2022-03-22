@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup,FormControl } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
-import{ GlobalConstants } from '../../common/global-constants';
-import * as $ from 'jquery';
 
 @Component({
   selector: 'app-register',
@@ -18,61 +16,113 @@ export class RegisterComponent implements OnInit {
     gender : new FormControl(''),
     username: new FormControl(''),
     password : new FormControl(''),
+    confirmPassword: new FormControl('')
   });
 
-  pword = true;
-  cpword = true;
+  isAlpha(text: string) {
+    var letters = /^[A-Za-z]+$/
+    if(text.match(letters)) {
+      return true
+    }
+    return false
+  }
+
+  validateEmail(mail: string) {
+    if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail)) {
+      return true
+    }
+    return false
+  }
+
+  validatePass(pass: string) {
+    var passw=  /^[A-Za-z]\w{7,14}$/;
+    if (pass.match(passw)) { 
+      return true;
+    } else { 
+      return false;
+    }
+  }
+
+  validateUser(user: string) {
+    var userTmp = /^[a-z0-9_-]{3,16}$/;
+    if (user.match(userTmp)) {
+      return true
+    } else {
+      return false
+    }
+  }
+
+  validation(valName: string, valEmail: string, valUser: string, valPass: string, valConf: string) {
+    // Name validation
+    var splitValName = valName.split(' ')
+    if (splitValName.length == 2) {
+      if (this.isAlpha(splitValName[0]) && this.isAlpha(splitValName[1])) {
+        console.log('Full name validated.\n')
+      } else {
+        alert('Full name is not valid. Only alphabets are allowed.')
+        return false
+      }
+    } else {
+      alert('Please enter first name as well as last name.')
+      return false
+    }
+
+    // Email validation
+    if (this.validateEmail(valEmail)) {
+      console.log('Email validated.\n')
+    } else {
+      alert('Please enter a valid email address.')
+      return false
+    }
+
+    // Username validation
+    if (this.validateUser(valUser)) {
+      console.log('Username validated.\n')
+    } else {
+      alert('Please enter a valid username.')
+      return false
+    }
+
+    // Password validation
+    if (this.validatePass(valPass)) {
+      console.log('Password validated.\n')
+    } else {
+      alert('Please enter a valid password.')
+      return false
+    }
+
+    if (valPass == valConf) {
+      console.log('Password confirmed.')
+    } else {
+      alert('Password and Confirm Password are not matching.')
+      return false
+    }
+
+    return true
+  }
 
   onSubmit() {
     const headers = {
       "Content-Type": "application/x-www-form-urlencoded"
     }
 
-    this.http.post('http://localhost:3000/api/register',this.registerForm.value,{headers})
-    .subscribe(response => {
-      console.log(response);
-      alert("Registration success");
-    },
-    err => {
-      alert("user exists already");
+    var formValues = this.registerForm.value
+
+    if ( this.validation(formValues['name'], formValues['email'], formValues['username'], formValues['password'], formValues['confirmPassword']) ) {
+      console.log('User details validated successfully.')
+      this.http.post('http://localhost:3000/api/register',formValues,{headers})
+        .subscribe(response => {
+          console.log(response);
+          alert("Registration success");
+        },
+        err => {
+          alert("user exists already");
+        }
+      )
     }
-    )
-    console.warn(this.registerForm.value);
   }
   
   constructor(private http: HttpClient) { }
 
-  ngOnInit(): void {
-    
-  }
-
-  changeStatus(elementId:String){
-    if(elementId === 'pword'){
-      if(this.pword){
-        this.pword = false;
-        $('#'+elementId).prop('type','text');
-      }else{
-        this.pword = true;
-        $('#'+elementId).prop('type','password');
-      }
-    } else if (elementId === 'cpword'){
-      if(this.cpword){
-        this.cpword = false;
-        $('#'+elementId).prop('type','text');
-      }else{
-        this.cpword = true;
-        $('#'+elementId).prop('type','password');
-      }
-    }
-  }
-
-  highlight(elementId:String){
-    $('#'+elementId).css({'color': 'whitesmoke','background': '#1e2833','font-size': '13px','opacity': '0.9'});
-  }
-
-  playdown(elementId:String){
-    $('#'+elementId).css({'color': 'whitesmoke','background': '#1e2833','font-size': '13px','opacity': '0.5'});
-  }
-
-
+  ngOnInit(): void { }
 }
