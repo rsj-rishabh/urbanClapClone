@@ -9,6 +9,11 @@ The user stories selected to run through the first sprint cycle are:
     * I should be able to use to use email or phone along with the password.
 * As a user, I should be able to log into of the application using my unique ID and password.
 
+## Responsibilities: 
+* Prateek Kumar Goel ([Github](https://github.com/pkgprateek)) - Backend
+* Rishabh Jaiswal ([Github](https://github.com/rsj-rishabh)) - Backend
+* Raghunandhan Vaidy ([Github](https://github.com/Skillic-Kaiser)) - Frontend
+* Madhuri Uppu ([Github](https://github.com/MadhuriUppu)) - Frontend
 
 ## Sprint Requirements (Review):
 Frontend:
