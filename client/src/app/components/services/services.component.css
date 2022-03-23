@@ -25,10 +25,14 @@
   text-align: center;
 }
 
+.py-5 {
+  padding-top: 5rem!important;
+}
+
 .box {
-  background: #fff;
+  background: #fff; 
   border-radius: 6px;
-  box-shadow: 0 2px 0 0 #e5e5e5;
+  box-shadow: 0 2px 1px 1px #e5e5e5;
   margin: 0 0 2em 0;
   padding: 3em;
 }
@@ -91,6 +95,11 @@ ul.actions {
   list-style: none;
   margin-left: -1em;
   padding-left: 0;
+}
+
+ul.actions :hover{
+  background-color: #1e2833 !important;
+  color: white;
 }
 
 ul.actions.special li:first-child {
