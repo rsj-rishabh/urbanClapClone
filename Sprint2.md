@@ -7,6 +7,11 @@ The user stories selected to run through the first sprint cycle are:
 * As a user, I want to see the services booked by me.
 * As a user, I should be able to log into of the application using my unique ID and password.
 
+## Responsibilities: 
+* Prateek Kumar Goel ([Github](https://github.com/pkgprateek)) - Frontend
+* Rishabh Jaiswal ([Github](https://github.com/rsj-rishabh)) - Backend
+* Raghunandhan Vaidy ([Github](https://github.com/Skillic-Kaiser)) - Frontend
+* Madhuri Uppu ([Github](https://github.com/MadhuriUppu)) - Backend
 
 ## Sprint Requirements (Review):
 Frontend:
