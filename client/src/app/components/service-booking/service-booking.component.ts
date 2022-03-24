@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup,FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-service-booking',
@@ -7,7 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ServiceBookingComponent implements OnInit {
 
+  bookingForm = new FormGroup({
+    name: new FormControl(''),
+    email: new FormControl(''),
+    gender : new FormControl(''),
+    username: new FormControl(''),
+    password : new FormControl(''),
+    confirmPassword: new FormControl('')
+  });
+
   constructor() { }
+
+  onSubmit() { }
 
   ngOnInit(): void {
   }

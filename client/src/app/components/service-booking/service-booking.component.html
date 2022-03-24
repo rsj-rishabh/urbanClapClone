@@ -1,1 +1,38 @@
-<p>service-booking works!</p>
+<div class="content">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <img src="images/undraw_remotely_2j6y.svg" alt="Image" class="img-fluid">
+        </div>
+        <div class="col-md-6 contents">
+          <div class="row justify-content-center">
+            <div class="col-md-8">
+              <div class="mb-4">
+                <h3>Book A Service</h3>
+                <p class="mb-4">Service Name Here</p>
+              </div>
+  
+              <form [formGroup]="bookingForm" (ngSubmit)="onSubmit()">
+  
+                <p>Enter date for service</p>
+                <div class="form-group mb-4">
+                  <input type="date" formControlName="date" value="01/01/2022">
+                </div>
+  
+                <p>Enter time for service</p>
+                <div class="form-group mb-4">
+                  <input type="time" formControlName="time" value="22:00">
+                </div>
+  
+                <input type="submit" value="Book" class="btn btn-block btn-primary">
+  
+              </form>
+  
+            </div>
+          </div>
+  
+        </div>
+  
+      </div>
+    </div>
+  </div>
