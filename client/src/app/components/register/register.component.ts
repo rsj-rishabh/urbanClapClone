@@ -113,7 +113,7 @@ export class RegisterComponent implements OnInit {
       this.http.post('http://localhost:3000/api/register',formValues,{headers})
         .subscribe(response => {
           console.log(response);
-          alert("Registration success");
+          confirm("Registration success");
         },
         err => {
           alert("user exists already");
