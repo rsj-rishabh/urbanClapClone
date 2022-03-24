@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup,FormControl } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router'
-import{ GlobalConstants } from '../../common/global-constants';
+import { GlobalConstants } from '../../common/global-constants';
+import { AppComponent } from 'src/app/app.component';
 
 @Component({
   selector: 'app-login',
@@ -29,6 +30,7 @@ export class LoginComponent implements OnInit {
       Response => {
         console.log(Response);
         new GlobalConstants().setUserInfo({'name': 'Rishabh Jaiswal', 'gender': 'M'});
+        GlobalConstants.isLoggedIn = true;
         this.router.navigate(['/services']);
       },
       error => {

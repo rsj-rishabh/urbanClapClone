@@ -5,7 +5,7 @@ export class GlobalConstants {
     public lastName: string = "lastName";
     public gender: string = "gender";
 
-    public isLoggedIn: boolean = false;
+    public static isLoggedIn: boolean = false;
 
     /**
      * setUserInfo

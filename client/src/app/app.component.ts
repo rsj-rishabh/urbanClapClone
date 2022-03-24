@@ -8,6 +8,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class AppComponent {
   title = 'UC Clone';
+  // isLoggedIn = false;
   constructor(private http: HttpClient) { }
 }
 
