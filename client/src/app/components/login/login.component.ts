@@ -30,7 +30,7 @@ export class LoginComponent implements OnInit {
       Response => {
         console.log(Response);
         new GlobalConstants().setUserInfo({'name': 'Rishabh Jaiswal', 'gender': 'M'});
-        GlobalConstants.isLoggedIn = true;
+        localStorage.setItem('isLoggedIn', 'true');
         this.router.navigate(['/services']);
       },
       error => {

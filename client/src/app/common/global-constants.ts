@@ -5,7 +5,7 @@ export class GlobalConstants {
     public lastName: string = "lastName";
     public gender: string = "gender";
 
-    public static isLoggedIn: boolean = false;
+    // public isLoggedIn: boolean = false;
 
     /**
      * setUserInfo
@@ -18,4 +18,13 @@ export class GlobalConstants {
         }
         console.log('[Golbal Constants]: user info for '+this.firstName+' '+this.lastName+' is set to '+this.gender);
     }
+
+    // setLoginStatus(status : boolean) {
+    //     this.isLoggedIn = status;
+    //     console.log('[Golbal Constants]: loginstatus: ' + status + ', isloggedin variable: ' + this.isLoggedIn);
+    // }
+
+    // getLoginStatus() {
+    //     return this.isLoggedIn;
+    // }
 }

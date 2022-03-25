@@ -8,7 +8,7 @@ import { GlobalConstants } from 'src/app/common/global-constants';
 })
 export class NavbarComponent implements OnInit {
 
-  isLoggedIn = GlobalConstants.isLoggedIn;
+  isLoggedIn = localStorage.getItem('isLoggedIn');
 
   constructor() { }
 

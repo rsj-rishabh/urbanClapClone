@@ -10,14 +10,23 @@
           onclick="$('#loginModal').modal('show')">
           <a class="btn-title">Login</a>
         </button> -->
-      <button id="login" type="button" color="light" class="btn loginButton button-60" routerLink="/login"
-        routerLinkActive="active">
-        <a class="btn-title">Login</a>
-      </button>
-      <button id="register" type="button" mdbBtn color="light" mdbWavesEffect class="loginButton button-60"
-        routerLink="/register" routerLinkActive="active">
-        <a class="btn-title">Register</a>
-      </button>
+      <div *ngIf="isLoggedIn; else loggedOut">
+        <button id="logout" type="button" mdbBtn color="light" mdbWavesEffect class="loginButton button-60"
+        routerLink="/logout" routerLinkActive="active">
+        <a class="btn-title">Logout</a>
+        </button>
+      </div>
+      <ng-template #loggedOut>
+        <button id="login" type="button" color="light" class="btn loginButton button-60" routerLink="/login"
+          routerLinkActive="active">
+          <a class="btn-title">Login</a>
+        </button>
+        <button id="register" type="button" mdbBtn color="light" mdbWavesEffect class="loginButton button-60"
+          routerLink="/register" routerLinkActive="active">
+          <a class="btn-title">Register</a>
+        </button>
+      </ng-template>
+
     </div>
   </div>
 </div>

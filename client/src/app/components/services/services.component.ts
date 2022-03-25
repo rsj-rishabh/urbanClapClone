@@ -11,15 +11,22 @@ import { GlobalConstants } from 'src/app/common/global-constants';
 export class ServicesComponent implements OnInit {
 
   servicesData = [];
+  isLoggedIn = localStorage.getItem('isLoggedIn');
+  
   constructor(private http: HttpClient) { }
 
   ngOnInit() {  
-    
-    console.log(GlobalConstants.isLoggedIn);
+
+    if (this.isLoggedIn) {
+      console.log(this.isLoggedIn);
+    }
+    else {
+      console.log("not logged in")
+    }
     
     this.http.get<any>('http://localhost:3000/api/getServices')
       .subscribe(data => {
-        console.log(data)
+        console.log(data);
         this.servicesData = data;
       }
     )
