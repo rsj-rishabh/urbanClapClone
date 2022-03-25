@@ -8,6 +8,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './components/login/login.component';
 import { BookingsComponent } from './components/bookings/bookings.component';
 import { ServiceBookingComponent } from './components/service-booking/service-booking.component';
+import { NavbarComponent } from './components/shared/navbar/navbar.component';
 
 const routes: Routes = [
   {
@@ -45,4 +46,5 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes), HttpClientModule],
   exports: [RouterModule, HttpClientModule]
 })
+
 export class AppRoutingModule { }

@@ -11,9 +11,8 @@
           <a class="btn-title">Login</a>
         </button> -->
       <div *ngIf="isLoggedIn; else loggedOut">
-        <button id="logout" type="button" mdbBtn color="light" mdbWavesEffect class="loginButton button-60"
-        routerLink="/logout" routerLinkActive="active">
-        <a class="btn-title">Logout</a>
+        <button id="logout" type="button" mdbBtn color="light" mdbWavesEffect class="loginButton button-60">
+        <a class="btn-title" (click)="logout()">Logout</a>
         </button>
       </div>
       <ng-template #loggedOut>

@@ -12,6 +12,7 @@ import { AppComponent } from 'src/app/app.component';
 })
 
 export class LoginComponent implements OnInit {
+  isLoggedIn = localStorage.getItem('isLoggedIn')
   
   loginForm = new FormGroup({
     username : new FormControl(''),
@@ -41,6 +42,11 @@ export class LoginComponent implements OnInit {
   
   constructor(private http: HttpClient,public router:Router) { }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {
+    this.isLoggedIn = localStorage.getItem('isLoggedIn')
+    if (this.isLoggedIn == 'true') {
+      this.router.navigate(['/services']);
+    }
+  }
 
 }
