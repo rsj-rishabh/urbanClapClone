@@ -6,7 +6,8 @@ Requests can be made with http.
 
 1. "/getServices" 
 
-This API endpoint retrieves the list of services that the end-user can avail. This is a GET request.The services are be divided into the following categories:
+This API endpoint retrieves the list of services that the end-user can avail. This is a GET request.
+The services are be divided into the following categories:
 
 a. Electronics
 b. Household
@@ -32,18 +33,61 @@ The JSON returned by this API has the following form:
 2. "/createService"
 
 This API endpoint creates a new service as specified by the end-user. This is a POST request.
+This  is sent with the default "Content-Type" header of "application/x-www-form-urlencoded" 
+which sends the request as a single query string with name/vale pairs separated by '&'.
+
 The format of the JSON to be sent in this POST request is as follows:
 
 {
-        "id": 1234,
         "name": "New Service",
         "description": "New Service description",
         "category": "Electronics/Household/Personal Care/Animal/Pet"
 }
 
-3. 
+3. "/register"
 
-"/register" - POST calls *CreateUser* function and registers new user to the database 
+This API endpoint registers a new user. This is a POST request. This  is sent with the default 
+"Content-Type" header of "application/x-www-form-urlencoded" which sends the request as a single 
+query string with name/vale pairs separated by '&'.
+
+The format of the JSON to be sent in this POST request is as follows:
+
+{
+        "name": "New  Name",
+        "username": "New Username",
+        "email": "New Email"
+        "gender":"M/F"
+        "password":"ExPw1234"
+}
+
+| Parameter     | Type    | Details                                       |
+| ------------- |:-------:| ---------------------------------------------:|
+| id            | Integer | Unique identifier for the user.               |
+| name          | String  | Name of the user. Must contain First and 
+                            Last name separated by space.                 |
+| username      | String  | Username of the user.                         |
+| email         | String  | Email ID of the user. Must be of the form
+                            'xxxxx@xxx.xxx'                               |
+| gender        | String  | Gender of the user. Can be either 'M' or 'F'. |
+| password      | String  | Password for the user. Has to be between 7 to 
+                            14 characters in length and must contain 
+                            atleast one lower case character, one upper 
+                            case character and one number.                | 
+
+4. "/login"
+
+This API endpoint logs in a new user. This is a POST request. This request is sent with the default 
+"Content-Type" header of "application/x-www-form-urlencoded" which sends the request as a single 
+query string with name/vale pairs separated by '&'. If the user credentials match with that in the
+database, it returns the user details in JSON format as mentioned in the description for "/register"
+or it returns a '404 Not Found' error.
+
+The format of the JSON to be sent in this POST request is as follows:
+
+{
+        "username": "Logging In Username",
+        "password":"Logging In password"
+}
  
 "/login" - GET takes {username} and calls *GetUser* to return the user with the given username if present in the database else return 404.
 
