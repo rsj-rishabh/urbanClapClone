@@ -17,12 +17,7 @@ export class ServicesComponent implements OnInit {
 
   ngOnInit() {  
 
-    if (this.isLoggedIn) {
-      console.log(this.isLoggedIn);
-    }
-    else {
-      console.log("not logged in")
-    }
+    this.isLoggedIn = localStorage.getItem('isLoggedIn');
     
     this.http.get<any>('http://localhost:3000/api/getServices')
       .subscribe(data => {

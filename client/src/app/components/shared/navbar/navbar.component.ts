@@ -13,6 +13,7 @@ export class NavbarComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    this.isLoggedIn = localStorage.getItem('isLoggedIn');
   }
 
 }
