@@ -1,4 +1,4 @@
-**********************************************API Documentation**************************************************************
+## API Documentation
 
 The urbanClapClone's API is a JSON-based API. All requests are made to endpoints beginning with: 'http://localhost:3000/api'.
 Requests can be made with http.
