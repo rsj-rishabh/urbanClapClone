@@ -28,10 +28,15 @@ export class LoginComponent implements OnInit {
     console.log(post);
 
     post.subscribe(
-      Response => {
-        console.log(Response);
-        new GlobalConstants().setUserInfo({'name': 'Rishabh Jaiswal', 'gender': 'M'});
-        localStorage.setItem('isLoggedIn', 'true');
+      data => {
+        console.log(data);
+        localStorage.setItem('id', data['id' as keyof typeof data].toString())
+        localStorage.setItem('name', data['name' as keyof typeof data].toString())
+        localStorage.setItem('username', data['name' as keyof typeof data].toString())
+        localStorage.setItem('password', data['name' as keyof typeof data].toString())
+        localStorage.setItem('email', data['name' as keyof typeof data].toString())
+        localStorage.setItem('gender', data['gender' as keyof typeof data].toString())
+        localStorage.setItem('isLoggedIn', 'true')
         this.router.navigate(['/services']).then(() => {
           window.location.reload();
         });;
