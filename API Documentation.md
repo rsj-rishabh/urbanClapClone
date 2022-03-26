@@ -176,11 +176,7 @@ The format of the JSON to be sent in this POST request is as follows:
 
 {
     "user_id": "User ID of the user",
-    "service_id": "ID of the service",
-    "date": "YYYY-MM-DD",
-    "start_time": "HH:MM",
-    "end_time": "HH:MM",
-    "is_cancelled": true/false
+    "service_id": "ID of the service"
 }
 
 9. "/getCancelledBookings"
