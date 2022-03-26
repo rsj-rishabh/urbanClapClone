@@ -189,6 +189,7 @@ a '404 Not Found' error.
 The format of the JSON returned by this GET request is as follows:
 
 {
+    "id": "ID of the booking",
     "user_id": "User ID of the user",
     "service_id": "ID of the service",
     "date": "YYYY-MM-DD",
