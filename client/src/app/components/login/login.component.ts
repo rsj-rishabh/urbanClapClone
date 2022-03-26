@@ -32,7 +32,9 @@ export class LoginComponent implements OnInit {
         console.log(Response);
         new GlobalConstants().setUserInfo({'name': 'Rishabh Jaiswal', 'gender': 'M'});
         localStorage.setItem('isLoggedIn', 'true');
-        this.router.navigate(['/services']);
+        this.router.navigate(['/services']).then(() => {
+          window.location.reload();
+        });;
       },
       error => {
         alert('Login failed!')
