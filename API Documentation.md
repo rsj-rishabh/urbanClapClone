@@ -190,7 +190,7 @@ This matches the "user_id" of the JSON in the request and finds Bookings which h
 field set to true along with a '200 OK' status. If the "user_id" field cannot be found, it returns 
 a '404 Not Found' error.
 
-The format of the JSON to be sent in this POST request is as follows:
+The format of the JSON returned by this GET request is as follows:
 
 {
     "user_id": "User ID of the user",
