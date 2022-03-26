@@ -10,10 +10,11 @@ import { Router } from '@angular/router';
 
 export class NavbarComponent implements OnInit {
 
-  isLoggedIn = localStorage.getItem('isLoggedIn');
+  isLoggedIn:boolean = false;
 
   logout() {
     localStorage.setItem('isLoggedIn', 'false');
+    this.ngOnInit();
     this.router.navigate(['/']);
   }
 
@@ -21,7 +22,12 @@ export class NavbarComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.isLoggedIn = localStorage.getItem('isLoggedIn');
+    if (localStorage.getItem('isLoggedIn') == 'true') {
+      this.isLoggedIn = true;
+    }
+    else {
+      this.isLoggedIn = false;
+    }
   }
 
 }
