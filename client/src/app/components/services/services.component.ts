@@ -11,6 +11,8 @@ import { GlobalConstants } from 'src/app/common/global-constants';
 export class ServicesComponent implements OnInit {
 
   servicesData = [];
+
+  
   
   constructor(private http: HttpClient) { }
 

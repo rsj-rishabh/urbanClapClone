@@ -6,108 +6,13 @@
         </div>
     </div>
 </header>
-<!-- Section-->
-<!-- <section class="py-5">
-    <div class="container px-lg-5 mt-5">
-        <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-            <div *ngFor="let data of servicesData" class="col mb-5">
-                <div class="card h-100">
-                
-                    <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
-            
-                    <div class="card-body p-4">
-                        <div class="text-center">
-                        
-                            <h3 class="fw-bolder">{{data["name"]}}</h3>
-                            <h5 class="fw-bolder">{{data["username"]}}</h5>
-                            
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section> -->
 <section class="container" id="main">
     <div class="row">
-        <div class="col-6 col-12-narrower">
-
+        <div class="col-6 col-12-narrower" *ngFor="let service of servicesData">
             <section class="box special">
                 <span class="image featured"><img src="../../../assets/images/pic02.jpg" alt="" /></span>
-                <h3>Haircut</h3>
-                <p>Integer volutpat ante et accumsan commophasellus sed aliquam feugiat lorem aliquet ut enim rutrum
-                    phasellus iaculis accumsan dolore magna aliquam veroeros.</p>
-                <ul class="actions special">
-                    <li><a href="#" class="button alt">Book Now</a></li>
-                </ul>
-            </section>
-
-        </div>
-        <div class="col-6 col-12-narrower">
-
-            <section class="box special">
-                <span class="image featured"><img src="../../../assets/images/pic03.jpg" alt="" /></span>
-                <h3>Haircut + Beard</h3>
-                <p>Integer volutpat ante et accumsan commophasellus sed aliquam feugiat lorem aliquet ut enim rutrum
-                    phasellus iaculis accumsan dolore magna aliquam veroeros.</p>
-                <ul class="actions special">
-                    <li><a href="#" class="button alt">Book Now</a></li>
-                </ul>
-            </section>
-
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-6 col-12-narrower">
-
-            <section class="box special">
-                <span class="image featured"><img src="../../../assets/images/pic02.jpg" alt="" /></span>
-                <h3>Hair Coloring</h3>
-                <p>Integer volutpat ante et accumsan commophasellus sed aliquam feugiat lorem aliquet ut enim rutrum
-                    phasellus iaculis accumsan dolore magna aliquam veroeros.</p>
-                <ul class="actions special">
-                    <li><a href="#" class="button alt">Book Now</a></li>
-                </ul>
-            </section>
-
-        </div>
-        <div class="col-6 col-12-narrower">
-
-            <section class="box special">
-                <span class="image featured"><img src="../../../assets/images/pic03.jpg" alt="" /></span>
-                <h3>Haircut + Massage</h3>
-                <p>Integer volutpat ante et accumsan commophasellus sed aliquam feugiat lorem aliquet ut enim rutrum
-                    phasellus iaculis accumsan dolore magna aliquam veroeros.</p>
-                <ul class="actions special">
-                    <li><a href="#" class="button alt">Book Now</a></li>
-                </ul>
-            </section>
-
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-6 col-12-narrower">
-
-            <section class="box special">
-                <span class="image featured"><img src="../../../assets/images/pic02.jpg" alt="" /></span>
-                <h3>Face & Neck De-Tan</h3>
-                <p>Integer volutpat ante et accumsan commophasellus sed aliquam feugiat lorem aliquet ut enim rutrum
-                    phasellus iaculis accumsan dolore magna aliquam veroeros.</p>
-                <ul class="actions special">
-                    <li><a href="#" class="button alt">Book Now</a></li>
-                </ul>
-            </section>
-
-        </div>
-        <div class="col-6 col-12-narrower">
-
-            <section class="box special">
-                <span class="image featured"><img src="../../../assets/images/pic03.jpg" alt="" /></span>
-                <h3>Anti Dandruf Therapy</h3>
-                <p>Integer volutpat ante et accumsan commophasellus sed aliquam feugiat lorem aliquet ut enim rutrum
-                    phasellus iaculis accumsan dolore magna aliquam veroeros.</p>
+                <h3>{{service['name']}}</h3>
+                <p>{{service['description']}}</p>
                 <ul class="actions special">
                     <li><a href="#" class="button alt">Book Now</a></li>
                 </ul>
