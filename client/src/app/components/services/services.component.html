@@ -14,7 +14,7 @@
                 <h3>{{service['name']}}</h3>
                 <p>{{service['description']}}</p>
                 <ul class="actions special">
-                    <li><a href="#" class="button alt">Book Now</a></li>
+                    <li><a href="#" class="button alt" (click)="bookService(service['id'])">Book Now</a></li>
                 </ul>
             </section>
 

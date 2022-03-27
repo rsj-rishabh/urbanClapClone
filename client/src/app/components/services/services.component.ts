@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { GlobalConstants } from 'src/app/common/global-constants';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-services',
@@ -11,10 +12,12 @@ import { GlobalConstants } from 'src/app/common/global-constants';
 export class ServicesComponent implements OnInit {
 
   servicesData = [];
+  
+  constructor(private http: HttpClient, private router: Router) { }
 
-  
-  
-  constructor(private http: HttpClient) { }
+  bookService(serviceId: string) {
+    this.router.navigate(['/bookService'], {queryParams: {service_id: serviceId}});
+  }
 
   ngOnInit() {
     
