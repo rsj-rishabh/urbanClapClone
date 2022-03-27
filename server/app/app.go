@@ -36,11 +36,11 @@ func (a *App) Initialize(config *config.Config) {
 // Set all required routers
 func (a *App) setRouters() {
 	// Routing for handling the projects
-	a.Get("/services", a.GetAllServices)
-	a.Post("/services", a.CreateService)
-	a.Post("/user", a.CreateUser)
-	a.Post("/user", a.GetUser)
-	a.Get("/bookings/{custId}", a.GetBookings)
+	a.Get("/getServices", a.GetAllServices)
+	a.Post("/createService", a.CreateService)
+	a.Post("/register", a.CreateUser)
+	a.Post("/login", a.GetUser)
+	a.Get("/getBookings/{custId}", a.GetBookings)
 	a.Post("/bookService", a.CreateBooking)
 	a.Post("/getServicesOfCity", a.GetServicesInCity)
 }
