@@ -10,9 +10,10 @@ func (a *App) DBMigrate() {
 	a.DB.AutoMigrate().DropTable(&model.User{})
 	a.DB.AutoMigrate().DropTable(&model.Service{})
 	a.DB.AutoMigrate().DropTable(&model.Booking{})
+	a.DB.AutoMigrate().DropTable(&model.CityServiceMapping{})
 
 	// Migrate the schema
-	a.DB.AutoMigrate(&model.User{}, &model.Service{}, &model.Booking{})
+	a.DB.AutoMigrate(&model.User{}, &model.Service{}, &model.Booking{}, &model.CityServiceMapping{})
 
 	// Create users table
 	a.DB.Create(&model.User{
@@ -96,5 +97,29 @@ func (a *App) DBMigrate() {
 		Date:      "2022-02-15",
 		StartTime: "16:30",
 		EndTime:   "17:30",
+	}))
+	a.DB.Create((&model.CityServiceMapping{
+		CityName:  "Newyork",
+		ServiceId: 3,
+	}))
+	a.DB.Create((&model.CityServiceMapping{
+		CityName:  "Newyork",
+		ServiceId: 2,
+	}))
+	a.DB.Create((&model.CityServiceMapping{
+		CityName:  "LA",
+		ServiceId: 2,
+	}))
+	a.DB.Create((&model.CityServiceMapping{
+		CityName:  "LA",
+		ServiceId: 3,
+	}))
+	a.DB.Create((&model.CityServiceMapping{
+		CityName:  "Boston",
+		ServiceId: 1,
+	}))
+	a.DB.Create((&model.CityServiceMapping{
+		CityName:  "Boston",
+		ServiceId: 2,
 	}))
 }
