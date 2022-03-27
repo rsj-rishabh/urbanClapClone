@@ -28,3 +28,9 @@ type Booking struct {
 	StartTime string `gorm:"primary_key;auto_increment:false;default:'00:00'" json:"start_time"`
 	EndTime   string `gorm:"primary_key;auto_increment:false;default:'00:00'" json:"end_time"`
 }
+
+type CityServiceMapping struct {
+	Id        uint   `gorm:"size:10;unique;auto_increment:true" json:"id"`
+	CityName  string `gorm:"size:200" json:"cityname"`
+	ServiceId uint   `gorm:"size:10" json:"service_id"`
+}

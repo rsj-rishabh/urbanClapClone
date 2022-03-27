@@ -42,6 +42,7 @@ func (a *App) setRouters() {
 	a.Post("/login", a.GetUser)
 	a.Get("/getBookings/{custId}", a.GetBookings)
 	a.Post("/bookService", a.CreateBooking)
+	a.Post("/getServicesOfCity", a.GetServicesInCity)
 }
 
 // Wrap the router for GET method
@@ -71,6 +72,10 @@ func (a *App) GetAllServices(w http.ResponseWriter, r *http.Request) {
 
 func (a *App) CreateService(w http.ResponseWriter, r *http.Request) {
 	handler.CreateService(a.DB, w, r)
+}
+
+func (a *App) GetServicesInCity(w http.ResponseWriter, r *http.Request) {
+	handler.GetServicesInCity(a.DB, w, r)
 }
 
 // Handlers to manager Users Data
