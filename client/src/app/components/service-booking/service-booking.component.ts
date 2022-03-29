@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup,FormControl } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { Router, ActivatedRoute } from '@angular/router';
+import { GlobalConstants } from 'src/app/common/global-constants';
 
 @Component({
   selector: 'app-service-booking',
@@ -28,15 +29,31 @@ export class ServiceBookingComponent implements OnInit {
       var endTime: number = +this.bookingForm.value.time.split(':')[0] + 1
 
       var inpObject = {
-        'user_id': localStorage.getItem('id'),
-        'service_id': serviceId,
+        'user_id': Number(localStorage.getItem('id')),
+        'service_id': Number(serviceId),
         'date': this.bookingForm.value.date,
         'start_time': this.bookingForm.value.time,
         'end_time': endTime.toString() + ':' + this.bookingForm.value.time.split(':')[1]
       }
       console.log(inpObject)
-    }
 
+      const headers = {
+        "Content-Type": "application/x-www-form-urlencoded"
+      }
+  
+      var post = this.http.post(GlobalConstants.apiURL+'bookService',inpObject,{headers});
+      console.log(post);
+
+      post.subscribe(
+        data => {
+          console.log(data);
+          confirm('Service booked! Thank you.')
+        },
+        err => {
+          alert(err)
+        }
+      )
+    }
   }
 
   ngOnInit(): void { }
