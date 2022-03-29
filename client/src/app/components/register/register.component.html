@@ -70,19 +70,37 @@
         <div class="row justify-content-center">
           <div class="col-md-8">
             <div class="mb-4">
-              <h3>Sign In</h3>
-              <p class="mb-4">Lorem ipsum dolor sit amet elit. Sapiente sit aut eos consectetur adipisicing.</p>
+              <h3>Sign Up</h3>
+              <p class="mb-4">You are one step away from making your life easier.</p>
             </div>
             <form action="#" method="post">
-              <div class="form-group first">
+              <div class="form-group mb-4">
+                <label for="fullname">Full Name</label>
+                <input type="text" class="form-control" id="fullname">
+              </div>
+              <div class="form-group mb-4">
                 <label for="username">Username</label>
                 <input type="text" class="form-control" id="username">
-
+              </div>
+              <div class="form-group mb-4">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email">
+              </div>
+              <div class="form-group mb-4">
+                <select class="form-select" name="gender" id="gender">
+                  <option selected>Open this select menu</option>
+                  <option value="male">Male</option>
+                  <option value="female">Female</option>
+                  <option value="other">Other</option>
+                </select>
               </div>
               <div class="form-group last mb-4">
                 <label for="password">Password</label>
                 <input type="password" class="form-control" id="password">
-
+              </div>
+              <div class="form-group last mb-4">
+                <label for="confirm-password">Confirm Password</label>
+                <input type="password" class="form-control" id="confirm-password">
               </div>
 
               <div class="d-flex mb-5 align-items-center">
@@ -93,21 +111,7 @@
                 <span class="ml-auto"><a href="#" class="forgot-pass">Forgot Password</a></span>
               </div>
 
-              <input type="submit" value="Log In" class="btn btn-block btn-primary">
-
-              <span class="d-block text-left my-4 text-muted">&mdash; or login with &mdash;</span>
-
-              <div class="social-login">
-                <a href="#" class="facebook">
-                  <span class="icon-facebook mr-3"></span>
-                </a>
-                <a href="#" class="twitter">
-                  <span class="icon-twitter mr-3"></span>
-                </a>
-                <a href="#" class="google">
-                  <span class="icon-google mr-3"></span>
-                </a>
-              </div>
+              <input type="submit" value="Sign Up" class="btn btn-block btn-primary">
             </form>
           </div>
         </div>
