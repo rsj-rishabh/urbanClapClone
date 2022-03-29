@@ -47,30 +47,35 @@ func (a *App) DBMigrate() {
 		Name:        "AC Maintanence",
 		Description: "Any type of AC maintanence such as filter cleaning, part replacement, etc.",
 		Category:    "Electronics",
+		ImageName:   "air_conditioning.jpg",
 	})
 	a.DB.Create(&model.Service{
 		Id:          2,
 		Name:        "Plumbing",
 		Description: "Sanitary and household plumbing. No sewage service.",
 		Category:    "Household",
+		ImageName:   "plumbing.jpg",
 	})
 	a.DB.Create(&model.Service{
 		Id:          3,
 		Name:        "Saloon",
 		Description: "Haricut, massage, nailwork, makeup, etc.",
 		Category:    "Personal Care",
+		ImageName:   "saloon.jpg",
 	})
 	a.DB.Create(&model.Service{
 		Id:          4,
 		Name:        "Furniture Repair",
 		Description: "Furniture frame repair, drilling, fitting new furniture, etc.",
 		Category:    "Household",
+		ImageName:   "furniture_repair.jpg",
 	})
 	a.DB.Create(&model.Service{
 		Id:          5,
 		Name:        "Exterminator",
 		Description: "Pest control, wildlife evac, alligator emergency, etc.",
 		Category:    "Animal/Pet",
+		ImageName:   "pest_control.jpg",
 	})
 
 	// Create booking table
