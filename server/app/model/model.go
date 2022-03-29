@@ -19,7 +19,8 @@ type Service struct {
 	Id          uint   `gorm:"size:10;primary_key;" json:"id"`
 	Name        string `gorm:"size:50" json:"name"`
 	Description string `gorm:"size:200" json:"description"`
-	Category    string `gorm:"size:30;default:'Other'" json:"category"`
+	Category    string `gorm:"size:30; default: 'Other'" json:"category"`
+	ImageName   string `gorm:"size:80; default: 'default.jpg'" json:"image_name"`
 }
 
 //Booking
