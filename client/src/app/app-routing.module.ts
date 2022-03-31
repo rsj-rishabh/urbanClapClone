@@ -8,6 +8,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './components/login/login.component';
 import { BookingsComponent } from './components/bookings/bookings.component';
 import { ServiceBookingComponent } from './components/service-booking/service-booking.component';
+import { LogoutComponent } from './components/logout/logout.component';
 import { NavbarComponent } from './components/shared/navbar/navbar.component';
 
 const routes: Routes = [
@@ -39,6 +40,10 @@ const routes: Routes = [
   {
     path: 'bookService',
     component: ServiceBookingComponent
+  },
+  { 
+    path: 'logout',
+    component: LogoutComponent 
   }
 ];
 
