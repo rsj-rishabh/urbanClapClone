@@ -24,7 +24,6 @@ export class LoginComponent implements OnInit {
     .subscribe(response => {
       console.log(response);
       if(response.status == 200)
-        // alert("login success");
         this.router.navigate(['\services']);
     },
     err => {
