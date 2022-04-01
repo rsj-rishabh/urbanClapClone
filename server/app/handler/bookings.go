@@ -46,6 +46,22 @@ func CreateBooking(db *gorm.DB, w http.ResponseWriter, r *http.Request) {
 	respondJSON(w, http.StatusCreated, booking)
 }
 
+func GetCancelledBookings(db *gorm.DB, w http.ResponseWriter, r *http.Request) {
+	vars := mux.Vars(r)
+
+	userId := vars["userId"]
+	i, err := strconv.Atoi(userId)
+	if err == nil {
+		fmt.Print("Good")
+	}
+	cancelledBookings := model.Booking{}
+	if err := db.Where("user_id = ? AND is_cancelled = ?", i, true).Find(&cancelledBookings).Error; err != nil {
+		respondError(w, http.StatusNotFound, err.Error())
+	}
+	respondJSON(w, http.StatusOK, cancelledBookings)
+
+}
+
 func CancelBooking(db *gorm.DB, w http.ResponseWriter, r *http.Request) {
 	booking := model.Booking{}
 
