@@ -6,6 +6,7 @@ import { ServicesComponent } from './components/services/services.component';
 import { LandingComponent } from './components/landing/landing.component';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './components/login/login.component';
+import { BookingsComponent } from './components/bookings/bookings.component';
 
 const routes: Routes = [
   {
@@ -28,6 +29,10 @@ const routes: Routes = [
   {
     path: 'services',
     component: ServicesComponent
+  },
+  {
+    path: 'bookings',
+    component: BookingsComponent
   }
 ];
 
