@@ -1,0 +1,205 @@
+
+  .display-4 {
+    font-size: calc(1.475rem + 2.7vw);
+    font-weight: 300;
+    line-height: 1.2;
+  }
+  
+  @media (min-width: 1200px) {
+    .display-4 {
+      font-size: 3.5rem;
+    }
+  }
+
+  @media (min-width: 576px) {
+    .container-sm, .container {
+      max-width: 540px;
+    }
+  }
+  @media (min-width: 768px) {
+    .container-md, .container-sm, .container {
+      max-width: 720px;
+    }
+  }
+  @media (min-width: 992px) {
+    .container-lg, .container-md, .container-sm, .container {
+      max-width: 960px;
+    }
+  }
+  @media (min-width: 1200px) {
+    .container-xl, .container-lg, .container-md, .container-sm, .container {
+      max-width: 1140px;
+    }
+  }
+  @media (min-width: 1400px) {
+    .container-xxl, .container-xl, .container-lg, .container-md, .container-sm, .container {
+      max-width: 1320px;
+    }
+  }
+
+
+  .row {
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 0;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: calc(-1 * var(--bs-gutter-y));
+    margin-right: calc(-0.5 * var(--bs-gutter-x));
+    margin-left: calc(-0.5 * var(--bs-gutter-x));
+  }
+
+  .row > * {
+    flex-shrink: 0;
+    width: 100%;
+    max-width: 100%;
+    padding-right: calc(var(--bs-gutter-x) * 0.5);
+    padding-left: calc(var(--bs-gutter-x) * 0.5);
+    margin-top: var(--bs-gutter-y);
+  }
+
+  .col {
+    flex: 1 0 0%;
+  }
+
+  .row-cols-xl-4 > * {
+    flex: 0 0 auto;
+    width: 25%;
+  }
+
+  .row-cols-md-3 > * {
+    flex: 0 0 auto;
+    width: 33.3333333333%;
+  }
+
+  .row-cols-2 > * {
+    flex: 0 0 auto;
+    width: 20%;
+  }
+
+  
+
+  .mb-5 {
+    margin-bottom: 3rem !important;
+  }
+
+  .bg-dark {
+    --bs-bg-opacity: 1;
+    background-color: rgba(var(--bs-dark-rgb), var(--bs-bg-opacity)) !important;
+  }
+
+  .py-5 {
+    padding-top: 2%;
+  }
+
+  .fw-bolder {
+    font-weight: bolder !important;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  .text-center {
+    text-align: center !important;
+  }
+
+  .card-body {
+    flex: 1 1 auto;
+    padding: 1rem 1rem;
+  }
+
+  .p-4 {
+    padding: 1.5rem !important;
+  }
+
+  .card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    border-radius: 0.25rem;
+  }
+ 
+.card-img-top{
+  width: 100%;
+  border-top-left-radius: calc(0.25rem - 1px);
+  border-top-right-radius: calc(0.25rem - 1px);
+}
+
+.card-group > .card {
+  margin-bottom: 0.75rem;
+}
+@media (min-width: 576px) {
+  .card-group {
+    display: flex;
+    flex-flow: row wrap;
+  }
+  .card-group > .card {
+    flex: 1 0 0%;
+    margin-bottom: 0;
+  }
+  .card-group > .card + .card {
+    margin-left: 0;
+    border-left: 0;
+  }
+  .card-group > .card:not(:last-child) {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  .card-group > .card:not(:last-child) .card-img-top,
+.card-group > .card:not(:last-child) .card-header {
+    border-top-right-radius: 0;
+  }
+  .card-group > .card:not(:last-child) .card-img-bottom,
+.card-group > .card:not(:last-child) .card-footer {
+    border-bottom-right-radius: 0;
+  }
+  .card-group > .card:not(:first-child) {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+  .card-group > .card:not(:first-child) .card-img-top,
+    .card-group > .card:not(:first-child) .card-header {
+    border-top-left-radius: 0;
+  }
+}
+
+
+.h-100 {
+    height: 100% !important;
+  }
+
+  
+
+  .justify-content-center {
+    justify-content: center !important;
+  }
+
+  .gx-4 {
+    --bs-gutter-x: 1.5rem;
+  }
+
+  .gx-lg-5 {
+    --bs-gutter-x: 3rem;
+  }
+
+  .px-lg-5 {
+    padding-right: 8rem !important;
+    padding-left: 8rem !important;
+  }
+
+  .text-white {
+    --bs-text-opacity: 1;
+    color: rgba(var(--bs-white-rgb), var(--bs-text-opacity)) !important;
+  }
+
+  .my-5 {
+    margin-top: 3rem !important;
+    margin-bottom: 3rem !important;
+  }
+
+  .my-md-5 {
+    margin-top: 3rem !important;
+    margin-bottom: 3rem !important;
+}
