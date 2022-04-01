@@ -28,7 +28,7 @@ func CreateBooking(db *gorm.DB, w http.ResponseWriter, r *http.Request) {
 	defer r.Body.Close()
 
 	var bookings []model.Booking
-	db.Where("service_id = ? ", booking.ServiceId).First(&bookings)
+	db.Where("service_id = ? ", booking.ServiceId).Find(&bookings)
 
 	for _, b := range bookings {
 		start := b.StartTime
