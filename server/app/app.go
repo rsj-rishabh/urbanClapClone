@@ -43,6 +43,8 @@ func (a *App) setRouters() {
 	a.Get("/getBookings/{custId}", a.GetBookings)
 	a.Post("/bookService", a.CreateBooking)
 	a.Post("/getServicesOfCity", a.GetServicesInCity)
+	a.Post("/cancelBooking", a.CancelBooking)
+	a.Get("/getCancelledBookings", a.GetCancelledBookings)
 }
 
 // Wrap the router for GET method
@@ -68,6 +70,14 @@ func (a *App) Delete(path string, f func(w http.ResponseWriter, r *http.Request)
 // Handlers to manage Services Data
 func (a *App) GetAllServices(w http.ResponseWriter, r *http.Request) {
 	handler.GetAllServices(a.DB, w, r)
+}
+
+func (a *App) GetCancelledBookings(w http.ResponseWriter, r *http.Request) {
+	handler.GetCancelledBookings(a.DB, w, r)
+}
+
+func (a *App) CancelBooking(w http.ResponseWriter, r *http.Request) {
+	handler.CancelBooking(a.DB, w, r)
 }
 
 func (a *App) CreateService(w http.ResponseWriter, r *http.Request) {

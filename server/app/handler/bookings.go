@@ -46,6 +46,53 @@ func CreateBooking(db *gorm.DB, w http.ResponseWriter, r *http.Request) {
 	respondJSON(w, http.StatusCreated, booking)
 }
 
+func GetCancelledBookings(db *gorm.DB, w http.ResponseWriter, r *http.Request) {
+	vars := mux.Vars(r)
+
+	userId := vars["userId"]
+	i, err := strconv.Atoi(userId)
+	if err == nil {
+		fmt.Print("Good")
+	}
+	cancelledBookings := model.Booking{}
+	if err := db.Where("user_id = ? AND is_cancelled = ?", i, true).Find(&cancelledBookings).Error; err != nil {
+		respondError(w, http.StatusNotFound, err.Error())
+	}
+	respondJSON(w, http.StatusOK, cancelledBookings)
+
+}
+
+func CancelBooking(db *gorm.DB, w http.ResponseWriter, r *http.Request) {
+	booking := model.Booking{}
+
+	err := r.ParseForm()
+	if err != nil {
+		respondError(w, http.StatusBadRequest, err.Error())
+		return
+	}
+
+	b := model.Booking{}
+
+	decoder := json.NewDecoder(r.Body)
+
+	if err := decoder.Decode(&b); err != nil {
+		respondError(w, http.StatusBadRequest, err.Error())
+		return
+	}
+	defer r.Body.Close()
+
+	db.Where("service_id = ? AND user_id = ?", b.ServiceId, b.UserId).Find(&booking)
+
+	if booking.IsCancelled == true {
+		respondJSON(w, http.StatusAlreadyReported, "Booking already cancelled")
+		return
+	}
+
+	db.Model(&booking).Where("service_id = ? AND user_id = ?", b.ServiceId, b.UserId).Update("is_cancelled", true)
+	respondJSON(w, http.StatusOK, "Booking is cancelled")
+
+}
+
 func GetBookings(db *gorm.DB, w http.ResponseWriter, r *http.Request) {
 	vars := mux.Vars(r)
 
