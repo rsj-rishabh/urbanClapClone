@@ -21,12 +21,13 @@ type Service struct {
 }
 
 type Booking struct {
-	Id        uint   `gorm:"size:10;unique;auto_increment:true" json:"id"`
-	UserId    uint   `gorm:"size:10" json:"user_id"`
-	ServiceId uint   `gorm:"primary_key;auto_increment:false;default:1" json:"service_id"`
-	Date      string `gorm:"primary_key;auto_increment:false" json:"date"`
-	StartTime string `gorm:"primary_key;auto_increment:false;default:'00:00'" json:"start_time"`
-	EndTime   string `gorm:"primary_key;auto_increment:false;default:'00:00'" json:"end_time"`
+	Id          uint   `gorm:"size:10;unique;auto_increment:true" json:"id"`
+	UserId      uint   `gorm:"size:10" json:"user_id"`
+	ServiceId   uint   `gorm:"primary_key;auto_increment:false;default:1" json:"service_id"`
+	Date        string `gorm:"primary_key;auto_increment:false" json:"date"`
+	StartTime   string `gorm:"primary_key;auto_increment:false;default:'00:00'" json:"start_time"`
+	EndTime     string `gorm:"primary_key;auto_increment:false;default:'00:00'" json:"end_time"`
+	IsCancelled bool   `gorm:"type:bool;default:false" json:"is_cancelled"`
 }
 
 type CityServiceMapping struct {
