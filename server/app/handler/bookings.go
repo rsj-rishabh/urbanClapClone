@@ -37,7 +37,7 @@ func CreateBooking(db *gorm.DB, w http.ResponseWriter, r *http.Request) {
 		date := b.Date
 		fmt.Println("date=" + date + " start=" + start + " end=" + end)
 		fmt.Println("date=" + booking.Date + " start=" + booking.StartTime + " end=" + booking.EndTime)
-		if booking.Date == date && booking.EndTime <= end && booking.StartTime > start {
+		if booking.Date == date && booking.EndTime <= end && booking.StartTime >= start {
 			respondError(w, http.StatusInternalServerError, "Time slot unavailable")
 			return
 		}
