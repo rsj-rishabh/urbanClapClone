@@ -53,6 +53,15 @@ All APIs are RESTful and contain 4 major endpoints (CRUD) create, read, update a
 - Cancelled Bookings API implemented
 
 
+## Sprint 3 Future Considerations:
+- SVG images are broken and needs to be fixed at various places including login/register
+- Order History / My Booking needs to be styled
+- Routing needs to be completed for footer
+- Content grid is missing on landing due to an error & will be resolved
+- Profile Page needs to be implemented
+- Complete Application flow will be tested use End-User's Perspective
+- Some security considerations will be take n care-off in last sprint
+- Some more end-to-end and unit tests will be added
 
 ## API Endpoints:
 This has been shifted to new and detailed API documentation.
