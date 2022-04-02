@@ -8,11 +8,15 @@ The user stories selected to run through the first sprint cycle are:
 * As a user, logout from the application succesfully.
 * As a user I want to chech my bookings
 
+#
+
 ## Responsibilities: 
 * Prateek Kumar Goel ([Github](https://github.com/pkgprateek)) - Frontend
 * Rishabh Jaiswal ([Github](https://github.com/rsj-rishabh)) - Frontend
 * Raghunandhan Vaidy ([Github](https://github.com/Skillic-Kaiser)) - Backend
 * Madhuri Uppu ([Github](https://github.com/MadhuriUppu)) - Backend
+
+#
 
 ## Sprint Requirements (Review):
 Frontend:
@@ -33,6 +37,8 @@ Backend:
 Additional Note:
 All APIs are RESTful and contain 4 major endpoints (CRUD) create, read, update and delete. The Backend uses POST and GET and all the data is parsed in JSON.
 
+#
+
 ## Sprint Status (Accomplished):
 
 - Fixed Navigation bar responsiveness
@@ -52,6 +58,7 @@ All APIs are RESTful and contain 4 major endpoints (CRUD) create, read, update a
 - Implemented APIs for service with Filters
 - Cancelled Bookings API implemented
 
+#
 
 ## Sprint 3 Future Considerations:
 - SVG images are broken and needs to be fixed at various places including login/register
@@ -63,5 +70,60 @@ All APIs are RESTful and contain 4 major endpoints (CRUD) create, read, update a
 - Some security considerations will be take n care-off in last sprint
 - Some more end-to-end and unit tests will be added
 
+
+#
+
+## Demo (Screenshots):
+
+1. Home - Landing
+
+<img src="./doc_assets/demo_01.jpeg" height="480px"/>
+<br><br>
+
+2. Home - Footer
+
+<img src="./doc_assets/demo_02.jpeg" height="480px"/>
+<br><br>
+
+3. SignIn - Page
+
+<img src="./doc_assets/demo_03.jpeg" height="480px"/>
+<br><br>
+
+4. SignIn - Validation
+
+<img src="./doc_assets/demo_04.jpeg" height="480px"/>
+<br><br>
+
+5. SignUp - Page
+
+<img src="./doc_assets/demo_05.jpeg" height="480px"/>
+<br><br>
+
+6. SignUp - Validation
+
+<img src="./doc_assets/demo_06.jpeg" height="480px"/>
+<br><br>
+<img src="./doc_assets/demo_07.jpeg" height="480px"/>
+<br><br>
+
+7. Services List
+
+<img src="./doc_assets/demo_08.jpeg" height="480px"/>
+<br><br>
+
+8. Service Booking - Date & Time
+
+<img src="./doc_assets/demo_09.jpeg" height="480px"/>
+<br><br>
+<img src="./doc_assets/demo_10.jpeg" height="480px"/>
+<br><br>
+
+9. Booking Confirmation - Alert
+
+<img src="./doc_assets/demo_11.jpeg" height="480px"/>
+
+#
+
 ## API Endpoints:
-This has been shifted to new and detailed API documentation.
+This has been shifted to new and detailed [API documentation.md](https://github.com/rsj-rishabh/urbanClapClone/blob/master/API%20Documentation.md)
