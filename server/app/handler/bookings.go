@@ -11,6 +11,8 @@ import (
 	"github.com/rsj-rishabh/urbanClapClone/server/app/model"
 )
 
+//Booking API
+
 func CreateBooking(db *gorm.DB, w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Access-Control-Allow-Origin", "*")
 	w.Header().Set("Content-Type", "application/x-www-form-urlencoded")
@@ -46,6 +48,7 @@ func CreateBooking(db *gorm.DB, w http.ResponseWriter, r *http.Request) {
 	respondJSON(w, http.StatusCreated, booking)
 }
 
+//Booking Cancellation API
 func GetCancelledBookings(db *gorm.DB, w http.ResponseWriter, r *http.Request) {
 	vars := mux.Vars(r)
 
