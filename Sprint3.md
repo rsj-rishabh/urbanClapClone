@@ -18,6 +18,11 @@ The user stories selected to run through the first sprint cycle are:
 
 #
 
+## Running the Project:
+Please check the root [repository description](https://github.com/rsj-rishabh/urbanClapClone) or main [README.md](https://github.com/rsj-rishabh/urbanClapClone/blob/master/README.md) for detailed instructions on installation and runninng the project successfully.
+
+#
+
 ## Sprint Requirements (Review):
 Frontend:
 1.	Landing UI
