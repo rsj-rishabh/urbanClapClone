@@ -88,24 +88,26 @@ func (a *App) DBMigrate() {
 		EndTime:     "13:30",
 		IsCancelled: false,
 	}))
-	a.DB.Create((&model.Booking{
-		Id:          2,
-		UserId:      2,
-		ServiceId:   2,
-		Date:        "2022-02-15",
-		StartTime:   "16:30",
-		EndTime:     "17:30",
-		IsCancelled: false,
-	}))
-	a.DB.Create((&model.Booking{
-		Id:          3,
-		UserId:      3,
-		ServiceId:   3,
-		Date:        "2022-02-15",
-		StartTime:   "16:30",
-		EndTime:     "17:30",
-		IsCancelled: false,
-	}))
+	// a.DB.Create((&model.Booking{
+	// 	Id:          2,
+	// 	UserId:      2,
+	// 	ServiceId:   2,
+	// 	Date:        "2022-02-15",
+	// 	StartTime:   "16:30",
+	// 	EndTime:     "17:30",
+	// 	IsCancelled: false,
+	// }))
+	// a.DB.Create((&model.Booking{
+	// 	Id:          3,
+	// 	UserId:      3,
+	// 	ServiceId:   3,
+	// 	Date:        "2022-02-15",
+	// 	StartTime:   "16:30",
+	// 	EndTime:     "17:30",
+	// 	IsCancelled: false,
+	// }))
+
+	// Create CityServiceMapping table
 	a.DB.Create((&model.CityServiceMapping{
 		CityName:  "Newyork",
 		ServiceId: 3,
