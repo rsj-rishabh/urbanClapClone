@@ -34,7 +34,10 @@ func CreateBooking(db *gorm.DB, w http.ResponseWriter, r *http.Request) {
 	for _, b := range bookings {
 		start := b.StartTime
 		end := b.EndTime
-		if !(booking.EndTime < start || booking.StartTime > end) {
+		date := b.Date
+		fmt.Println("date=" + date + " start=" + start + " end=" + end)
+		fmt.Println("date=" + booking.Date + " start=" + booking.StartTime + " end=" + booking.EndTime)
+		if booking.Date == date && booking.EndTime <= end && booking.StartTime > start {
 			respondError(w, http.StatusInternalServerError, "Time slot unavailable")
 			return
 		}
@@ -97,16 +100,12 @@ func CancelBooking(db *gorm.DB, w http.ResponseWriter, r *http.Request) {
 }
 
 func GetBookings(db *gorm.DB, w http.ResponseWriter, r *http.Request) {
-	// vars := mux.Vars(r)
-
-	// custId := vars["custId"]
 	userId := r.URL.Query()["userId"]
 	i, err := strconv.Atoi(userId[0])
-	fmt.Println("user id")
-	fmt.Println(i)
 	if err == nil {
-		fmt.Print("Good")
+		fmt.Println("No error")
 	}
+
 	booking := getBookingOr404(db, i, w, r)
 	if booking == nil {
 		return
@@ -121,9 +120,5 @@ func getBookingOr404(db *gorm.DB, custId int, w http.ResponseWriter, r *http.Req
 	if err := db.Where("user_id = ? AND is_cancelled = ?", custId, false).Find(&booking).Error; err != nil {
 		respondError(w, http.StatusNotFound, err.Error())
 	}
-	// if err := db.First(&booking, custId).Error; err != nil {
-	// 	respondError(w, http.StatusNotFound, err.Error())
-	// 	return nil
-	// }
 	return &booking
 }
