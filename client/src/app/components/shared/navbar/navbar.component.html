@@ -1,4 +1,4 @@
-<header id="header" class="alt">
+<header id="header" [ngClass]="this.currentRoute == '/' || this.currentRoute == '/home' || this.currentRoute == '/services' ? 'alt' : 'nav-alt'">
   <h3><a routerLink="/home">UrbanClapPro</a></h3>
   <nav id="nav">
     <ul>
