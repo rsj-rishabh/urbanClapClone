@@ -117,6 +117,9 @@ func (a *App) GetUser(w http.ResponseWriter, r *http.Request) {
 }
 
 func (a *App) GetBookings(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Access-Control-Allow-Origin", "*")
+	w.Header().Set("Content-Type", "application/x-www-form-urlencoded")
+	w.Header().Set("Access-Control-Allow-Headers", "Content-Type")
 	handler.GetBookings(a.DB, w, r)
 }
 

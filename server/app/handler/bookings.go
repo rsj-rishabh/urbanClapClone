@@ -106,9 +106,9 @@ func GetBookings(db *gorm.DB, w http.ResponseWriter, r *http.Request) {
 		fmt.Println("No error")
 	}
 
-	booking := getBookingOr404(db, i, w, r)
-	if booking == nil {
-		return
+	booking := []model.Booking{}
+	if err := db.Where("user_id = ? AND is_cancelled = ?", i, false).Find(&booking).Error; err != nil {
+		respondError(w, http.StatusNotFound, err.Error())
 	}
 
 	respondJSON(w, http.StatusOK, booking)
@@ -117,8 +117,6 @@ func GetBookings(db *gorm.DB, w http.ResponseWriter, r *http.Request) {
 // getUserOr404 gets a booking instance if exists, or respond the 404 error otherwise
 func getBookingOr404(db *gorm.DB, custId int, w http.ResponseWriter, r *http.Request) *model.Booking {
 	booking := model.Booking{}
-	if err := db.Where("user_id = ? AND is_cancelled = ?", custId, false).Find(&booking).Error; err != nil {
-		respondError(w, http.StatusNotFound, err.Error())
-	}
+
 	return &booking
 }
