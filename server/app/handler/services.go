@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"net/http"
+	"strconv"
 
 	"github.com/jinzhu/gorm"
 	"github.com/rsj-rishabh/urbanClapClone/server/app/model"
@@ -13,6 +14,22 @@ func GetAllServices(db *gorm.DB, w http.ResponseWriter, r *http.Request) {
 	services := []model.Service{}
 	db.Find(&services)
 	respondJSON(w, http.StatusOK, services)
+}
+
+func GetServiceInfo(db *gorm.DB, w http.ResponseWriter, r *http.Request) {
+	service := model.Service{}
+
+	serviceId := r.URL.Query()["serviceId"]
+	i, err := strconv.Atoi(serviceId[0])
+	if err == nil {
+		fmt.Println("No error")
+	}
+
+	if err := db.Where("id = ?", i).Find(&service).Error; err != nil {
+		respondError(w, http.StatusNotFound, err.Error())
+	}
+
+	respondJSON(w, http.StatusOK, service)
 }
 
 type city struct {

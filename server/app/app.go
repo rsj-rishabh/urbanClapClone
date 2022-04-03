@@ -45,6 +45,7 @@ func (a *App) setRouters() {
 	a.Post("/getServicesOfCity", a.GetServicesInCity)
 	a.Post("/cancelBooking", a.CancelBooking)
 	a.Get("/getCancelledBookings", a.GetCancelledBookings)
+	a.Get("/getServiceInfo", a.GetServiceInfo)
 }
 
 // Wrap the router for GET method
@@ -121,6 +122,13 @@ func (a *App) GetBookings(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/x-www-form-urlencoded")
 	w.Header().Set("Access-Control-Allow-Headers", "Content-Type")
 	handler.GetBookings(a.DB, w, r)
+}
+
+func (a *App) GetServiceInfo(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Access-Control-Allow-Origin", "*")
+	w.Header().Set("Content-Type", "application/x-www-form-urlencoded")
+	w.Header().Set("Access-Control-Allow-Headers", "Content-Type")
+	handler.GetServiceInfo(a.DB, w, r)
 }
 
 // Run the app on it's router
