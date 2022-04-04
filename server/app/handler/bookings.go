@@ -87,14 +87,14 @@ func CancelBooking(db *gorm.DB, w http.ResponseWriter, r *http.Request) {
 	}
 	defer r.Body.Close()
 
-	db.Where("service_id = ? AND user_id = ?", b.ServiceId, b.UserId).Find(&booking)
+	db.Where("id = ?", b.Id).Find(&booking)
 
 	if booking.IsCancelled == true {
 		respondJSON(w, http.StatusAlreadyReported, "Booking already cancelled")
 		return
 	}
 
-	db.Model(&booking).Where("service_id = ? AND user_id = ?", b.ServiceId, b.UserId).Update("is_cancelled", true)
+	db.Model(&booking).Where("id = ?", b.Id).Update("is_cancelled", true)
 	respondJSON(w, http.StatusOK, "Booking is cancelled")
 
 }
@@ -115,8 +115,7 @@ func GetBookings(db *gorm.DB, w http.ResponseWriter, r *http.Request) {
 }
 
 // getUserOr404 gets a booking instance if exists, or respond the 404 error otherwise
-func getBookingOr404(db *gorm.DB, custId int, w http.ResponseWriter, r *http.Request) *model.Booking {
+func getBookingInfo(db *gorm.DB, custId int, w http.ResponseWriter, r *http.Request) *model.Booking {
 	booking := model.Booking{}
-
 	return &booking
 }
