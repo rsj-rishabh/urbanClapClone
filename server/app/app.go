@@ -78,6 +78,11 @@ func (a *App) GetCancelledBookings(w http.ResponseWriter, r *http.Request) {
 }
 
 func (a *App) CancelBooking(w http.ResponseWriter, r *http.Request) {
+	fmt.Println("Called Routes: /cancelBooking Method:POST")
+	w.Header().Set("Access-Control-Allow-Origin", "*")
+	w.Header().Set("Content-Type", "application/x-www-form-urlencoded")
+	w.Header().Set("Access-Control-Allow-Methods", "POST")
+	w.Header().Set("Access-Control-Allow-Headers", "Content-Type")
 	handler.CancelBooking(a.DB, w, r)
 }
 

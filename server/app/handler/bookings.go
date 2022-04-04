@@ -102,8 +102,8 @@ func CancelBooking(db *gorm.DB, w http.ResponseWriter, r *http.Request) {
 func GetBookings(db *gorm.DB, w http.ResponseWriter, r *http.Request) {
 	userId := r.URL.Query()["userId"]
 	i, err := strconv.Atoi(userId[0])
-	if err == nil {
-		fmt.Println("No error")
+	if err != nil {
+		fmt.Println(err)
 	}
 
 	booking := []model.Booking{}
