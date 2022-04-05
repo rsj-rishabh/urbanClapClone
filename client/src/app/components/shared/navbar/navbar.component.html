@@ -1,45 +1,9 @@
-<!-- <div class="toolbar bg-dark" role="banner">
-  <div class="col-sm-3">
-    <span class="title" routerLink="/home" routerLinkActive="active"><a>Urban Clap Pro</a></span>
-  </div>
-  <div class="col-sm-6">
-  </div>
-  <div class="col-sm-3">
-    <div class="toolbarButtons"> -->
-      <!-- <button id="login" type="submit" color="light" class="btn loginButton button-60"
-          onclick="$('#loginModal').modal('show')">
-          <a class="btn-title">Login</a>
-        </button> -->
-      <!-- <div *ngIf="isLoggedIn; else loggedOut">
-        <button id="bookings" type="button" color="light" class="btn loginButton button-60" routerLink="/bookings"
-          routerLinkActive="active">
-          <a class="btn-title">My Bookings</a>
-        </button>
-        <button id="logout" type="button" mdbBtn color="light" mdbWavesEffect class="loginButton button-60">
-        <a class="btn-title" (click)="logout()">Logout</a>
-        </button>
-      </div>
-      <ng-template #loggedOut>
-        <button id="login" type="button" color="light" class="btn loginButton button-60" routerLink="/login"
-          routerLinkActive="active">
-          <a class="btn-title">Login</a>
-        </button>
-        <button id="register" type="button" mdbBtn color="light" mdbWavesEffect class="loginButton button-60"
-          routerLink="/register" routerLinkActive="active">
-          <a class="btn-title">Register</a>
-        </button>
-      </ng-template>
-
-    </div>
-  </div>
-</div> -->
-
 <header id="header" class="alt">
   <h3 ><a routerLink="/home">UrbanClapPro</a></h3>
   <nav id="nav">
     <ul>
       <li style="white-space: nowrap;"><a href="index.html">Home</a></li>
-      <li class="opener" style="user-select: none; cursor: pointer; white-space: nowrap;">
+      <!-- <li class="opener" style="user-select: none; cursor: pointer; white-space: nowrap;"> -->
         <!-- <a href="#" class="icon solid fa-angle-down">Layouts</a>
       <ul class="" style="user-select: none; display: none; position: absolute;">
           <li style="white-space: nowrap;"><a href="generic.html" style="display: block;">Generic</a></li>
@@ -56,12 +20,18 @@
           </li>
         </ul>
       </li> -->
-      <li style="white-space: nowrap;">
-        <a routerLink="/login" routerLinkActive="active">Sign In</a>
+      <li  *ngIf="!isLoggedIn; else loggedOut" style="white-space: nowrap;">
+        <a routerLink="/bookings" routerLinkActive="active">My Bookings</a>
+        <a routerLink="/logout" routerLinkActive="active" class="button">Logout</a>
       </li>
-      <li style="white-space: nowrap;">
-        <a routerLink="/register" routerLinkActive="active" class="button">Get Started</a>
-      </li>
+      <ng-template #loggedOut>
+        <li style="white-space: nowrap;">
+          <a routerLink="/login" routerLinkActive="active">Sign In</a>
+        </li>
+        <li style="white-space: nowrap;">
+          <a routerLink="/register" routerLinkActive="active" class="button">Get Started</a>
+        </li>
+      </ng-template>
     </ul>
   </nav>
 </header>
