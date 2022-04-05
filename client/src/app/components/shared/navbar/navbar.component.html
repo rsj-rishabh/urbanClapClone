@@ -1,16 +1,16 @@
-<div class="toolbar bg-dark" role="banner">
+<!-- <div class="toolbar bg-dark" role="banner">
   <div class="col-sm-3">
     <span class="title" routerLink="/home" routerLinkActive="active"><a>Urban Clap Pro</a></span>
   </div>
   <div class="col-sm-6">
   </div>
   <div class="col-sm-3">
-    <div class="toolbarButtons">
+    <div class="toolbarButtons"> -->
       <!-- <button id="login" type="submit" color="light" class="btn loginButton button-60"
           onclick="$('#loginModal').modal('show')">
           <a class="btn-title">Login</a>
         </button> -->
-      <div *ngIf="isLoggedIn; else loggedOut">
+      <!-- <div *ngIf="isLoggedIn; else loggedOut">
         <button id="bookings" type="button" color="light" class="btn loginButton button-60" routerLink="/bookings"
           routerLinkActive="active">
           <a class="btn-title">My Bookings</a>
@@ -32,4 +32,31 @@
 
     </div>
   </div>
-</div>
+</div> -->
+
+<header id="header" class="alt">
+  <h3 ><a routerLink="/home">UrbanClapPro</a></h3>
+  <nav id="nav">
+    <ul>
+      <li style="white-space: nowrap;"><a href="index.html">Home</a></li>
+      <li class="opener" style="user-select: none; cursor: pointer; white-space: nowrap;">
+        <a href="#" class="icon solid fa-angle-down">Layouts</a>
+        
+      <ul class="" style="user-select: none; display: none; position: absolute;">
+          <li style="white-space: nowrap;"><a href="generic.html" style="display: block;">Generic</a></li>
+          <li style="white-space: nowrap;"><a href="contact.html" style="display: block;">Contact</a></li>
+          <li style="white-space: nowrap;"><a href="elements.html" style="display: block;">Elements</a></li>
+          <li class="opener" style="user-select: none; cursor: pointer; white-space: nowrap;">
+            <a href="#" style="display: block;">Submenu</a>
+            <ul class="dropotron" style="user-select: none; display: none; position: absolute;">
+              <li style="white-space: nowrap;"><a href="#" style="display: block;">Option One</a></li>
+              <li style="white-space: nowrap;"><a href="#" style="display: block;">Option Two</a></li>
+              <li style="white-space: nowrap;"><a href="#" style="display: block;">Option Three</a></li>
+              <li style="white-space: nowrap;"><a href="#" style="display: block;">Option Four</a></li>
+            </ul>
+          </li>
+        </ul></li>
+      <li style="white-space: nowrap;"><a href="#" class="button">Sign Up</a></li>
+    </ul>
+  </nav>
+</header>
