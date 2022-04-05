@@ -98,6 +98,9 @@
    */
 
 /* Header */
+a {
+  text-decoration: none;
+}
 
 #page-wrapper {
   padding-top: 3em;
