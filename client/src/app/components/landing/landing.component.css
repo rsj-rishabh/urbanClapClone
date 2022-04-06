@@ -67,3 +67,10 @@
   background: #fff;
   color: #666 !important;
 }
+
+.actions {
+  list-style-type: none;
+}
+.actions li a {
+  text-decoration: none;
+}

@@ -21,6 +21,7 @@
         </ul>
       </li> -->
       <li  *ngIf="!isLoggedIn; else loggedOut" style="white-space: nowrap;">
+        <a routerLink="/services" routerLinkActive="active">Book a Service</a>
         <a routerLink="/bookings" routerLinkActive="active">My Bookings</a>
         <a routerLink="/logout" routerLinkActive="active" class="button">Logout</a>
       </li>
