@@ -69,32 +69,38 @@ func GetCancelledBookings(db *gorm.DB, w http.ResponseWriter, r *http.Request) {
 }
 
 func CancelBooking(db *gorm.DB, w http.ResponseWriter, r *http.Request) {
+	bookingId := r.URL.Query()["id"]
+	i, err := strconv.Atoi(bookingId[0])
+	if err != nil {
+		fmt.Println(err)
+	}
+
 	booking := model.Booking{}
 
-	err := r.ParseForm()
-	if err != nil {
-		respondError(w, http.StatusBadRequest, err.Error())
-		return
-	}
+	// err := r.ParseForm()
+	// if err != nil {
+	// 	respondError(w, http.StatusBadRequest, err.Error())
+	// 	return
+	// }
 
-	b := model.Booking{}
+	// b := model.Booking{}
 
-	decoder := json.NewDecoder(r.Body)
+	// decoder := json.NewDecoder(r.Body)
 
-	if err := decoder.Decode(&b); err != nil {
-		respondError(w, http.StatusBadRequest, err.Error())
-		return
-	}
-	defer r.Body.Close()
+	// if err := decoder.Decode(&b); err != nil {
+	// 	respondError(w, http.StatusBadRequest, err.Error())
+	// 	return
+	// }
+	// defer r.Body.Close()
 
-	db.Where("id = ?", b.Id).Find(&booking)
+	db.Where("id = ?", i).Find(&booking)
 
 	if booking.IsCancelled == true {
 		respondJSON(w, http.StatusAlreadyReported, "Booking already cancelled")
 		return
 	}
 
-	db.Model(&booking).Where("id = ?", b.Id).Update("is_cancelled", true)
+	db.Model(&booking).Where("id = ?", i).Update("is_cancelled", true)
 	respondJSON(w, http.StatusOK, "Booking is cancelled")
 
 }
