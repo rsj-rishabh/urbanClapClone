@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router'
 import { GlobalConstants } from 'src/app/common/global-constants';
 import { flatMap } from 'rxjs';
 
@@ -16,10 +17,10 @@ export class BookingsComponent implements OnInit {
 
   imageURL = GlobalConstants.imageURL;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, public router:Router) { }
 
   getServiceName(id:number) {
-    this.http.get<any>('http://localhost:3000/api/getServiceInfo?serviceId='+id)
+    this.http.get<any>(GlobalConstants.apiURL+'getServiceInfo?serviceId='+id)
       .subscribe(data => {
         this.myBookingsName.push( data.name );
       }
@@ -27,15 +28,30 @@ export class BookingsComponent implements OnInit {
   }
 
   getServiceDescription(id:number) {
-    this.http.get<any>('http://localhost:3000/api/getServiceInfo?serviceId='+id)
+    this.http.get<any>(GlobalConstants.apiURL+'getServiceInfo?serviceId='+id)
       .subscribe(data => {
         this.myBookingsDesc.push( data.description )
       }
     )
   }
 
+  cancelBooking(bookingId:number) {
+    this.http.get<any>(GlobalConstants.apiURL+'cancelBooking?id='+bookingId)
+      .subscribe(data => {
+        console.log(data)
+        confirm('Service cancelled! :-(\nHope to see you again.')
+        this.router.navigate(['/bookings']).then(() => {
+          window.location.reload();
+        });
+      },
+      err => {
+        alert(err)
+      }
+    )
+  }
+
   ngOnInit(): void {
-    this.http.get<any>('http://localhost:3000/api/getBookings?userId='+localStorage.getItem('id'))
+    this.http.get<any>(GlobalConstants.apiURL+'getBookings?userId='+localStorage.getItem('id'))
       .subscribe(data => {
         console.log("-----------------/ My bookings page /-----------------")
         console.log(data);

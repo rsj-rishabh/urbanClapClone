@@ -13,8 +13,10 @@
                         <h3>{{myBookingsName[i]}}</h3>
                         <h5>{{myBookingsDesc[i]}}</h5>
                         <p>{{service['date']}} {{service['start_time']}} to {{service['end_time']}}</p>
+                        <ul class="actions special">
+                            <li><a class="button alt" (click)="cancelBooking(service['id'])">Cancel</a></li>
+                        </ul>
                     </section>
-        
                 </div>
             </div>
         </section>
