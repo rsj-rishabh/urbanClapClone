@@ -1,28 +1,14 @@
 <header id="header" class="alt">
-  <h3 ><a routerLink="/home">UrbanClapPro</a></h3>
+  <h3><a routerLink="/home">UrbanClapPro</a></h3>
   <nav id="nav">
     <ul>
       <li style="white-space: nowrap;"><a href="index.html">Home</a></li>
-      <!-- <li class="opener" style="user-select: none; cursor: pointer; white-space: nowrap;"> -->
-        <!-- <a href="#" class="icon solid fa-angle-down">Layouts</a>
-      <ul class="" style="user-select: none; display: none; position: absolute;">
-          <li style="white-space: nowrap;"><a href="generic.html" style="display: block;">Generic</a></li>
-          <li style="white-space: nowrap;"><a href="contact.html" style="display: block;">Contact</a></li>
-          <li style="white-space: nowrap;"><a href="elements.html" style="display: block;">Elements</a></li>
-          <li class="opener" style="user-select: none; cursor: pointer; white-space: nowrap;">
-            <a href="#" style="display: block;">Submenu</a>
-            <ul class="dropotron" style="user-select: none; display: none; position: absolute;">
-              <li style="white-space: nowrap;"><a href="#" style="display: block;">Option One</a></li>
-              <li style="white-space: nowrap;"><a href="#" style="display: block;">Option Two</a></li>
-              <li style="white-space: nowrap;"><a href="#" style="display: block;">Option Three</a></li>
-              <li style="white-space: nowrap;"><a href="#" style="display: block;">Option Four</a></li>
-            </ul>
-          </li>
-        </ul>
-      </li> -->
-      <li  *ngIf="isLoggedIn; else loggedOut" style="white-space: nowrap;">
+      <li style="white-space: nowrap;">
         <a routerLink="/services" routerLinkActive="active">Book a Service</a>
+      </li>
+      <li *ngIf="isLoggedIn; else loggedOut" style="white-space: nowrap;">
         <a routerLink="/bookings" routerLinkActive="active">My Bookings</a>
+        <a routerLink="/bookings" routerLinkActive="active">Profile</a>
         <a routerLink="/logout" routerLinkActive="active" class="button">Logout</a>
       </li>
       <ng-template #loggedOut>
