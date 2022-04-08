@@ -8,7 +8,7 @@
       </li>
       <li *ngIf="isLoggedIn; else loggedOut" style="white-space: nowrap;">
         <a routerLink="/bookings" routerLinkActive="active">My Bookings</a>
-        <a routerLink="/bookings" routerLinkActive="active">Profile</a>
+        <a routerLink="/profile" routerLinkActive="active">Profile</a>
         <a routerLink="/logout" routerLinkActive="active" class="button">Logout</a>
       </li>
       <ng-template #loggedOut>
