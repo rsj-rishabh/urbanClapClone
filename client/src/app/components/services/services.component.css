@@ -13,6 +13,10 @@
   }
 }
 
+.service-header, .service-main {
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
 .container {
   margin-top: 2em;
 }
