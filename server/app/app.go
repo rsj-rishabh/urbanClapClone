@@ -39,7 +39,7 @@ func (a *App) setRouters() {
 	a.Get("/getServices", a.GetAllServices)
 	a.Post("/createService", a.CreateService)
 	a.Post("/register", a.CreateUser)
-	a.Post("/login", a.GetUser)
+	a.Post("/login", a.Login)
 	a.Get("/getBookings", a.GetBookings)
 	a.Post("/bookService", a.CreateBooking)
 	a.Post("/getServicesOfCity", a.GetServicesInCity)
@@ -113,12 +113,12 @@ func (a *App) CreateBooking(w http.ResponseWriter, r *http.Request) {
 	handler.CreateBooking(a.DB, w, r)
 }
 
-func (a *App) GetUser(w http.ResponseWriter, r *http.Request) {
+func (a *App) Login(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Access-Control-Allow-Origin", "*")
 	w.Header().Set("Content-Type", "application/x-www-form-urlencoded")
 	w.Header().Set("Access-Control-Allow-Methods", "POST")
 	w.Header().Set("Access-Control-Allow-Headers", "Content-Type")
-	handler.GetUser(a.DB, w, r)
+	handler.Login(a.DB, w, r)
 }
 
 func (a *App) GetBookings(w http.ResponseWriter, r *http.Request) {

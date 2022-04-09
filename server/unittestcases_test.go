@@ -166,7 +166,7 @@ func TestGetAUser(t *testing.T) {
 	req.Header.Set("Access-Control-Allow-Headers", "Content-Type")
 
 	w := httptest.NewRecorder()
-	handler := http.HandlerFunc(a.GetUser)
+	handler := http.HandlerFunc(a.Login)
 	handler.ServeHTTP(w, req)
 
 	if status := w.Code; status != http.StatusOK {
