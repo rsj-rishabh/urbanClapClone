@@ -10,7 +10,7 @@
     <div class="row">
         <div class="col-6 col-12-narrower" *ngFor="let service of servicesData">
             <section class="box special">
-                <span class="image featured"><img src="../../../assets/images/pic02.jpg" alt="" /></span>
+                <span class="image featured"><img src='{{imageURL + service["image_name"] }}' alt="" /></span>
                 <h3>{{service['name']}}</h3>
                 <p>{{service['description']}}</p>
                 <ul class="actions special">

@@ -12,6 +12,7 @@ import { Router } from '@angular/router';
 export class ServicesComponent implements OnInit {
 
   servicesData = [];
+  imageURL = GlobalConstants.imageURL;
   
   constructor(private http: HttpClient, private router: Router) { }
 
