@@ -32,9 +32,9 @@ export class LoginComponent implements OnInit {
         console.log(data);
         localStorage.setItem('id', data['id' as keyof typeof data].toString())
         localStorage.setItem('name', data['name' as keyof typeof data].toString())
-        localStorage.setItem('username', data['name' as keyof typeof data].toString())
-        localStorage.setItem('password', data['name' as keyof typeof data].toString())
-        localStorage.setItem('email', data['name' as keyof typeof data].toString())
+        localStorage.setItem('username', data['username' as keyof typeof data].toString())
+        localStorage.setItem('password', data['password' as keyof typeof data].toString())
+        localStorage.setItem('email', data['email' as keyof typeof data].toString())
         localStorage.setItem('gender', data['gender' as keyof typeof data].toString())
         localStorage.setItem('isLoggedIn', 'true')
         this.router.navigate(['/services']).then(() => {
