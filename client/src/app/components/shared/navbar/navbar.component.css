@@ -196,13 +196,24 @@ body.landing #page-wrapper {
   -webkit-animation: none;
   -ms-animation: none;
   animation: none;
-  background-color: #1e2833;
+  /* background-color: #1e2833; */
   color: rgba(255, 255, 255, 0.75);
+  background: none;
   position: absolute;
 }
 
 #header.alt nav>ul>li a:not(.button).icon:before {
   color: rgba(255, 255, 255, 0.75);
+}
+
+#header.nav-alt>h3>a, #header.nav-alt>nav>ul>li>a   {
+  color: #1e2833;
+}
+
+#header.nav-alt .button {
+  background-color: transparent;
+  box-shadow: inset 0 0 0 2px #1e2833;
+  color: #fff;
 }
 
 #header.alt nav>ul>li.active a:not(.button) {

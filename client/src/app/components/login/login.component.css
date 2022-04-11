@@ -226,3 +226,6 @@ body {
     background-color: #7e0cf5;
     opacity: .2; }
   
+    .btn-primary {
+      border-color: #1e2833;
+  }
