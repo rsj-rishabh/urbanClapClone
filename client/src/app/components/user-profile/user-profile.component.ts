@@ -13,6 +13,14 @@ export class UserProfileComponent implements OnInit {
 
     constructor(private http: HttpClient, private router: Router) { }
 
-    ngOnInit(): void { }
+    userInfo = {
+        name: localStorage.getItem('name'),
+        username: localStorage.getItem('username'),
+        email: localStorage.getItem('email'),
+        gender: localStorage.getItem('gender')
+    }
 
+    ngOnInit(): void { 
+        console.log(this.userInfo)
+    }
 }
