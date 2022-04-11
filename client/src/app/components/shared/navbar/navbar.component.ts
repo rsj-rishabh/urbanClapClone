@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Router } from '@angular/router';
+import { NavigationEnd, NavigationStart, Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
 export class NavbarComponent implements OnInit {
 
   isLoggedIn:boolean = false;
+  currentRoute:string = '';
 
   logout() {
     localStorage.setItem('isLoggedIn', 'false');
@@ -18,7 +19,8 @@ export class NavbarComponent implements OnInit {
     this.router.navigate(['/']);
   }
 
-  constructor(private http: HttpClient,public router:Router) { }
+  constructor(private http: HttpClient,public router:Router) {  
+   }
 
 
   ngOnInit(): void {
@@ -28,6 +30,16 @@ export class NavbarComponent implements OnInit {
     else {
       this.isLoggedIn = false;
     }
+
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationStart) {
+        this.currentRoute = event.url;
+      }
+    });
+
+    // this.currentRoute = this.router.url;
+    // console.log('Hi');
+    // console.log(this.currentRoute);
   }
 
 }

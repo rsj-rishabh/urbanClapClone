@@ -191,6 +191,16 @@ body.landing #page-wrapper {
   position: absolute;
 }
 
+#header.nav-alt {
+  -moz-animation: none;
+  -webkit-animation: none;
+  -ms-animation: none;
+  animation: none;
+  background-color: #1e2833;
+  color: rgba(255, 255, 255, 0.75);
+  position: absolute;
+}
+
 #header.alt nav>ul>li a:not(.button).icon:before {
   color: rgba(255, 255, 255, 0.75);
 }
