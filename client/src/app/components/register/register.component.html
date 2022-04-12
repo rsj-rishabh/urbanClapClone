@@ -1,7 +1,7 @@
 <div class="content">
   <div class="container">
     <div class="row">
-      <div class="col-md-6">
+      <div class="col-md-6 signup-img">
         <img src="../../../assets/images/undraw_signup.svg" alt="Image" class="img-fluid">
       </div>
       <div class="col-md-6 contents">
@@ -14,32 +14,32 @@
 
             <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
 
-              <div class="form-group mb-4">
-                <input type="text" formControlName="name" placeholder="Full Name">
+              <div class="form-group mb-4 form-input-style">
+                <input type="text" formControlName="name" placeholder="Full Name" (mouseover)="highlight($event)" (mouseout)="dampen($event)">
               </div>
 
-              <div class="form-group mb-4">
-                <input type="text" formControlName="username" placeholder="Username">
+              <div class="form-group mb-4 form-input-style">
+                <input type="text" formControlName="username" placeholder="Username" (mouseover)="highlight($event)" (mouseout)="dampen($event)">
               </div>
 
-              <div class="form-group mb-4">
-                <input type="email" formControlName="email" placeholder="E-mail">
+              <div class="form-group mb-4 form-input-style">
+                <input type="email" formControlName="email" placeholder="E-mail" (mouseover)="highlight($event)" (mouseout)="dampen($event)">
               </div>
 
-              <div class="form-group mb-4">
-                <select class="form-group mb-4" formControlName="gender">
+              <div class="form-group mb-4 form-input-style">
+                <select formControlName="gender" id="gender-select" (mouseover)="highlight($event)" (mouseout)="dampen($event)">
                   <option value="">Select gender</option>
                   <option value="M">Male</option>
                   <option value="F">Female</option>
                 </select>
               </div>
 
-              <div class="form-group last mb-4">
-                <input type="password" formControlName="password" placeholder="Set Password">
+              <div class="form-group last mb-4 form-input-style">
+                <input type="password" formControlName="password" placeholder="Set Password" (mouseover)="highlight($event)" (mouseout)="dampen($event)">
               </div>
 
-              <div class="form-group last mb-4">
-                <input type="password" formControlName="confirmPassword" placeholder="Confirm Password">
+              <div class="form-group last mb-4 form-input-style">
+                <input type="password" formControlName="confirmPassword" placeholder="Confirm Password" (mouseover)="highlight($event)" (mouseout)="dampen($event)">
               </div>
 
               <!--
@@ -52,7 +52,9 @@
               </div>
               -->
 
-              <input type="submit" value="Sign Up" class="btn btn-block btn-primary">
+              <div class="center-align">
+                <input type="submit" value="Sign Up" class="btn btn-block btn-primary">
+              </div>
 
             </form>
 

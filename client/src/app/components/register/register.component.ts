@@ -125,4 +125,14 @@ export class RegisterComponent implements OnInit {
   constructor(private http: HttpClient) { }
 
   ngOnInit(): void { }
+
+  highlight(event: any): void {
+    event.target.style['border-bottom'] = "1px solid rgba(30, 40, 51, 0.9)";      
+    event.target.style['opacity'] = "0.9";           
+  }
+
+  dampen(event: any): void {
+    event.target.style['border-bottom'] = "1px solid rgba(30, 40, 51, 0.6)";      
+    event.target.style['opacity'] = "0.6";           
+  }
 }
