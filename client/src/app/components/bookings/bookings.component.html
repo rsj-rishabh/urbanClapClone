@@ -8,14 +8,28 @@
 
         <section class="" id="main">
             <div class="row">
-                <div class="col-6 col-12-narrower" *ngFor="let service of myBookingsData; let i = index">
+                <div class="col-6 col-12-narrower" *ngFor="let serviceB of myBookingsData; let i = index">
                     <section class="box special">
                         <h3>{{myBookingsName[i]}}</h3>
                         <h5>{{myBookingsDesc[i]}}</h5>
-                        <p>{{service['date']}} {{service['start_time']}} to {{service['end_time']}}</p>
+                        <p>{{serviceB['date']}} {{serviceB['start_time']}} to {{serviceB['end_time']}}</p>
                         <ul class="actions special">
-                            <li><a class="button alt" (click)="cancelBooking(service['id'])">Cancel</a></li>
+                            <li><a class="button alt" (click)="cancelBooking(serviceB['id'])">Cancel</a></li>
                         </ul>
+                    </section>
+                </div>
+            </div>
+        </section>
+
+        <h3>Cancelled bookings</h3>
+
+        <section class="" id="main">
+            <div class="row">
+                <div class="col-6 col-12-narrower" *ngFor="let serviceC of cancelledBookingsData; let i = index">
+                    <section class="box special">
+                        <h3>{{cancelledBookingsName[i]}}</h3>
+                        <h5>{{cancelledBookingsDesc[i]}}</h5>
+                        <p>{{serviceC['date']}} {{serviceC['start_time']}} to {{serviceC['end_time']}}</p>
                     </section>
                 </div>
             </div>

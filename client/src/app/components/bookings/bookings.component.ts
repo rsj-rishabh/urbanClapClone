@@ -15,22 +15,34 @@ export class BookingsComponent implements OnInit {
   myBookingsName:string[] = [];
   myBookingsDesc:string[] = [];
 
+  cancelledBookingsData = [];
+  cancelledBookingsName:string[] = [];
+  cancelledBookingsDesc:string[] = [];
+
   imageURL = GlobalConstants.imageURL;
 
   constructor(private http: HttpClient, public router:Router) { }
 
-  getServiceName(id:number) {
+  getServiceName(id:number, cancel:boolean) {
     this.http.get<any>(GlobalConstants.apiURL+'getServiceInfo?serviceId='+id)
       .subscribe(data => {
-        this.myBookingsName.push( data.name );
+        if (cancel) {
+          this.cancelledBookingsName.push( data.name );
+        } else {
+          this.myBookingsName.push( data.name );
+        }
       }
     )
   }
 
-  getServiceDescription(id:number) {
+  getServiceDescription(id:number, cancel:boolean) {
     this.http.get<any>(GlobalConstants.apiURL+'getServiceInfo?serviceId='+id)
       .subscribe(data => {
-        this.myBookingsDesc.push( data.description )
+        if (cancel) {
+          this.cancelledBookingsDesc.push( data.name );
+        } else {
+          this.myBookingsDesc.push( data.name );
+        }
       }
     )
   }
@@ -53,12 +65,12 @@ export class BookingsComponent implements OnInit {
   ngOnInit(): void {
     this.http.get<any>(GlobalConstants.apiURL+'getBookings?userId='+localStorage.getItem('id'))
       .subscribe(data => {
-        console.log("-----------------/ My bookings page /-----------------")
+        console.log("-----------------/ Current Bookings /-----------------")
         console.log(data);
         
         for (let i=0; i<data.length; i++) {
-          this.getServiceName(data[i]['service_id']);
-          this.getServiceDescription(data[i]['service_id']);
+          this.getServiceName(data[i]['service_id'], false);
+          this.getServiceDescription(data[i]['service_id'], false);
         }
 
         console.log(this.myBookingsName);
@@ -68,6 +80,26 @@ export class BookingsComponent implements OnInit {
 
       }
     )
+
+    this.http.get<any>(GlobalConstants.apiURL+'getCancelledBookings?userId='+localStorage.getItem('id'))
+      .subscribe(data => {
+        console.log("-----------------/ Cancelled Bookings /-----------------")
+        console.log(data);
+        
+        for (let i=0; i<data.length; i++) {
+          this.getServiceName(data[i]['service_id'], true);
+          this.getServiceDescription(data[i]['service_id'], true);
+        }
+
+        console.log(this.cancelledBookingsName);
+        console.log(this.cancelledBookingsDesc);
+
+        this.cancelledBookingsData = data;
+
+      }
+    )
+
+    
   }
 
 }
