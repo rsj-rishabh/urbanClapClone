@@ -48,6 +48,7 @@ func (a *App) DBMigrate() {
 		Description: "Any type of AC maintanence such as filter cleaning, part replacement, etc.",
 		Category:    "Electronics",
 		ImageName:   "air_conditioning.jpg",
+		Price:       80,
 	})
 	a.DB.Create(&model.Service{
 		Id:          2,
@@ -55,6 +56,7 @@ func (a *App) DBMigrate() {
 		Description: "Sanitary and household plumbing. No sewage service.",
 		Category:    "Household",
 		ImageName:   "plumbing.jpg",
+		Price:       100,
 	})
 	a.DB.Create(&model.Service{
 		Id:          3,
@@ -62,6 +64,7 @@ func (a *App) DBMigrate() {
 		Description: "Haricut, massage, nailwork, makeup, etc.",
 		Category:    "Personal Care",
 		ImageName:   "saloon.jpg",
+		Price:       25,
 	})
 	a.DB.Create(&model.Service{
 		Id:          4,
@@ -69,6 +72,7 @@ func (a *App) DBMigrate() {
 		Description: "Furniture frame repair, drilling, fitting new furniture, etc.",
 		Category:    "Household",
 		ImageName:   "furniture_repair.jpg",
+		Price:       70,
 	})
 	a.DB.Create(&model.Service{
 		Id:          5,
@@ -76,6 +80,7 @@ func (a *App) DBMigrate() {
 		Description: "Pest control, wildlife evac, alligator emergency, etc.",
 		Category:    "Animal/Pet",
 		ImageName:   "pest_control.jpg",
+		Price:       150,
 	})
 
 	// Create booking table

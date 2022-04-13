@@ -21,6 +21,7 @@ type Service struct {
 	Description string `gorm:"size:200" json:"description"`
 	Category    string `gorm:"size:30; default: 'Other'" json:"category"`
 	ImageName   string `gorm:"size:80; default: 'default.jpg'" json:"image_name"`
+	Price       int    `gorm:"default:100" json:"price"`
 }
 
 //Booking
