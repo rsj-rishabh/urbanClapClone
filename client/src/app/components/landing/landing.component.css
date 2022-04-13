@@ -273,3 +273,16 @@ header br {
 header.major {
   padding: 0 4em;
 }
+
+/* Custom */
+
+#main {
+  margin-top: -14em;
+}
+
+.landing-main {
+  padding: 4em 0;
+  margin: 0 auto;
+  max-width: calc(100% - 5em);
+  width: 60em;
+}
