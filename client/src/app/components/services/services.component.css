@@ -77,6 +77,12 @@
     display: block;
 }
 
+.image-padding {
+    padding-left: 72px;
+    padding-top: 72px;
+    padding-right: 72px;
+}
+
 ul.actions.special {
   -moz-justify-content: center;
   -webkit-justify-content: center;
