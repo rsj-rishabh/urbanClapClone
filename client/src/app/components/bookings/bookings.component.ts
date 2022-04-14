@@ -39,9 +39,9 @@ export class BookingsComponent implements OnInit {
     this.http.get<any>(GlobalConstants.apiURL+'getServiceInfo?serviceId='+id)
       .subscribe(data => {
         if (cancel) {
-          this.cancelledBookingsDesc.push( data.name );
+          this.cancelledBookingsDesc.push( data.description );
         } else {
-          this.myBookingsDesc.push( data.name );
+          this.myBookingsDesc.push( data.description );
         }
       }
     )
