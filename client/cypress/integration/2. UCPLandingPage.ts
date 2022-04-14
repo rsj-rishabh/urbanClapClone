@@ -16,7 +16,7 @@ describe('Urban Clap Pro Landing Page Test', () => {
     it('has the Sign Up button', () => {
         cy.get('#banner ul li')
         .find('a')
-        .should('have.attr','href','/signup')
+        .should('have.attr','href','/register')
         .should('have.class','button primary')
         .should('contain.text','Sign Up');
     });
