@@ -1,49 +1,86 @@
-## API Documentation
+# API Documentation
 
 The urbanClapClone's API is a JSON-based API. All requests are made to endpoints beginning with: 'http://localhost:3000/api'.
 Requests can be made with http.
 
 
-1. "/getServices" 
+## 1. getServices
 
-This API endpoint retrieves the list of services that the end-user can avail. This is a GET request.
-The services are be divided into the following categories:
+This API endpoint retrieves the list of services that the end-user can avail. 
 
-a. Electronics
-b. Household
-c. Personal Care
-d. Animal/Pet
+*Request type:* **GET**  
+*Output type:* **JSON Array**  
 
-The JSON returned by this API has the following form:
+*Sample request:* http://localhost:3000/api/getServices  
 
-{
-        "id": 1,
-        "name": "AC Maintanence",
-        "description": "Any type of AC maintanence such as filter cleaning, part replacement, etc.",
-        "category": "Electronics"
-}
+*Sample output:*  
+[  
+&ensp;    {  
+&ensp;&ensp;        "id": 1,  
+&ensp;&ensp;        "name": "AC Maintanence",  
+&ensp;&ensp;        "description": "Any type of AC maintanence such as filter cleaning, part replacement, etc.",  
+&ensp;&ensp;        "category": "Electronics",  
+&ensp;&ensp;        "image_name": "air_conditioning.jpg",  
+&ensp;&ensp;        "price": 80  
+&ensp;    },  
+&ensp;    {  
+&ensp;&ensp;        "id": 2,  
+&ensp;&ensp;        "name": "Plumbing",  
+&ensp;&ensp;        "description": "Sanitary and household plumbing. No sewage service.",  
+&ensp;&ensp;        "category": "Household",  
+&ensp;&ensp;        "image_name": "plumbing.jpg",  
+&ensp;&ensp;        "price": 100  
+&ensp;    },  
+&ensp;    {  
+&ensp;&ensp;        "id": 3,  
+&ensp;&ensp;        "name": "Saloon",  
+&ensp;&ensp;        "description": "Haricut, massage, nailwork, makeup, etc.",  
+&ensp;&ensp;        "category": "Personal Care",  
+&ensp;&ensp;        "image_name": "saloon.jpg",  
+&ensp;&ensp;        "price": 25  
+&ensp;    }  
+]  
 
+*Service DB Schema:*  
 | Parameter     | Type    | Details                            |
 | ------------- |:-------:| ----------------------------------:|
 | id            | Integer | Unique identifier for the service. |
 | name          | String  | Name of the service.               |
 | description   | String  | Description of the service.        |
-| category      | String  | Category of the service.           |
-
-2. "/createService"
+| category      | String  | Category of the service.           |  
+  
+  
+## 2. createService
 
 This API endpoint creates a new service as specified by the end-user. This is a POST request.
 This  is sent with the default "Content-Type" header of "application/x-www-form-urlencoded" 
-which sends the request as a single query string with name/value pairs separated by '&'.
+which sends the request as a single query string with inline parameters.
 
-The format of the JSON to be sent in this POST request is as follows:
+*Request type:* **POST**  
+*Input body type:* **JSON Object**  
+*Output type:* **JSON Object**  
 
-{
-        "name": "New Service",
-        "description": "New Service description",
-        "category": "Electronics/Household/Personal Care/Animal/Pet"
-}
+*Sample request:* http://localhost:3000/api/createService  
 
+*Sample input:*  
+{  
+&ensp;    "name": "Tutoring",  
+&ensp;    "description": "Take help in assignments and more.",  
+&ensp;    "category": "Home tution",  
+&ensp;    "price": 15  
+}  
+
+*Sample output:*  
+{  
+&ensp;    "id": 6,  
+&ensp;    "name": "Tutoring",  
+&ensp;    "description": "Take help in assignments and more.",  
+&ensp;    "category": "Home tution",  
+&ensp;    "image_name": "default.jpg",  
+&ensp;    "price": 15  
+}  
+  
+  
 3. "/register"
 
 This API endpoint registers a new user. This is a POST request. This  is sent with the default 
