@@ -42,19 +42,19 @@ This API endpoint retrieves the list of services that the end-user can avail.
 ]  
 
 *Service DB Schema:*  
-| Parameter     | Type    | Details                            |
-| ------------- |:-------:| ----------------------------------:|
-| id            | Integer | Unique identifier for the service. |
-| name          | String  | Name of the service.               |
-| description   | String  | Description of the service.        |
-| category      | String  | Category of the service.           |  
+
+| Parameter     | Type    | Details                                        |
+| ------------- |:-------:| ----------------------------------------------:|
+| id            | Integer | Unique identifier for the service. PRIMARY KEY |
+| name          | String  | Name of the service.                           |
+| description   | String  | Description of the service.                    |
+| category      | String  | Category of the service.                       |  
   
   
 ## 2. createService
 
 This API endpoint creates a new service as specified by the end-user. This is a POST request.
-This  is sent with the default "Content-Type" header of "application/x-www-form-urlencoded" 
-which sends the request as a single query string with inline parameters.
+This is sent with the default "Content-Type" header of "application/x-www-form-urlencoded".
 
 *Request type:* **POST**  
 *Input body type:* **JSON Object**  
@@ -81,50 +81,76 @@ which sends the request as a single query string with inline parameters.
 }  
   
   
-3. "/register"
+## 3. register
 
-This API endpoint registers a new user. This is a POST request. This  is sent with the default 
-"Content-Type" header of "application/x-www-form-urlencoded" which sends the request as a single 
-query string with name/value pairs separated by '&'.
+This API endpoint registers a new user. 
+This is sent with the default "Content-Type" header of "application/x-www-form-urlencoded"
 
-The format of the JSON to be sent in this POST request is as follows:
+*Request type:* **POST**  
+*Input body type:* **JSON Object**  
+*Output type:* **JSON Object**  
 
-{
-        "name": "New  Name",
-        "username": "New Username",
-        "email": "New Email"
-        "gender":"M/F"
-        "password":"ExPw1234"
-}
+*Sample request:* http://localhost:3000/api/register  
 
-| Parameter     | Type    | Details                                       |
-| ------------- |:-------:| ---------------------------------------------:|
-| id            | Integer | Unique identifier for the user.               |
-| name          | String  | Name of the user. Must contain First and 
-                            Last name separated by space.                 |
-| username      | String  | Username of the user.                         |
-| email         | String  | Email ID of the user. Must be of the form
-                            'xxxxx@xxx.xxx'                               |
-| gender        | String  | Gender of the user. Can be either 'M' or 'F'. |
-| password      | String  | Password for the user. Has to be between 7 to 
-                            14 characters in length and must contain 
-                            atleast one lower case character, one upper 
-                            case character and one number.                | 
+*Sample input:*  
+{  
+&ensp;    "name": "alex",  
+&ensp;    "email": "alex@ufl.edu",  
+&ensp;    "gender": "F",  
+&ensp;    "username": "alex",  
+&ensp;    "password": "alex1"  
+}  
 
-4. "/login"
+*Sample output:*  
+{  
+&ensp;    "id": 4,  
+&ensp;    "name": "alex",  
+&ensp;    "username": "alex",  
+&ensp;    "password": "alex1",  
+&ensp;    "email": "alex@ufl.edu",  
+&ensp;    "gender": "F"  
+}  
 
-This API endpoint logs in a new user. This is a POST request. This request is sent with the default 
-"Content-Type" header of "application/x-www-form-urlencoded" which sends the request as a single 
-query string with name/value pairs separated by '&'. If the user credentials match with that in the
-database, it returns the user details in JSON format as mentioned in the description for "/register"
-or it returns a '404 Not Found' error.
+*User DB Schema*  
 
-The format of the JSON to be sent in this POST request is as follows:
+| Parameter     | Type    | Details                                                                    |
+| ------------- |:-------:| --------------------------------------------------------------------------:|
+| id            | Integer | Unique identifier for the user. PRIMARY KEY                                |
+| name          | String  | Name of the user. Must contain First and <br> Last name separated by space.|
+| username      | String  | Username of the user.                                                      |
+| email         | String  | Email ID of the user. Must be of the form <br> 'xxxxx@xxxxxx'              |
+| gender        | String  | Gender of the user. Can be either 'M' or 'F'.                              |
+| password      | String  | Password for the user. Has to be between 7 to <br> 14 characters in length and must contain <br> atleast one lower case character, one upper <br> case character and one number.                        | 
 
-{
-        "username": "Logging In Username",
-        "password":"Logging In password"
-}
+
+## 4. login
+
+This API endpoint logs in a new user. This request is sent with the default 
+"Content-Type" header of "application/x-www-form-urlencoded". If the user credentials match with that in the
+database, it returns the user details in JSON format else it returns a *404 Not Found* error.
+
+*Request type:* **POST**  
+*Input body type:* **JSON Object**  
+*Output type:* **JSON Object**  
+
+*Sample request:* http://localhost:3000/api/login  
+
+*Sample input:*  
+{  
+&ensp;    "username": "dummy",  
+&ensp;    "password": "dumdum"  
+}  
+
+*Sample output:*  
+{  
+&ensp;    "id": 1,  
+&ensp;    "name": "Dummy Duck",  
+&ensp;    "username": "dummy",  
+&ensp;    "password": "dumdum",  
+&ensp;    "email": "dummy@ufl.edu",  
+&ensp;    "gender": "M"  
+}  
+
 
 5. "/getBookings/{custId}"
 
