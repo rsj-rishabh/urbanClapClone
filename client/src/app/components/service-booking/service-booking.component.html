@@ -2,14 +2,14 @@
     <div class="container">
       <div class="row">
         <div class="col-md-6">
-          <img src="images/undraw_remotely_2j6y.svg" alt="Image" class="img-fluid">
+          <img src="{{imageURL + 'undraw_booking.svg' }}" alt="Image" class="img-fluid">
         </div>
         <div class="col-md-6 contents">
           <div class="row justify-content-center">
             <div class="col-md-8">
               <div class="mb-4">
                 <h3>Book A Service</h3>
-                <p class="mb-4">Service Name Here</p>
+                <p class="mb-4">{{serviceName}}</p>
               </div>
   
               <form [formGroup]="bookingForm" (ngSubmit)="onSubmit()">
@@ -24,8 +24,9 @@
                   <input type="time" formControlName="time" value="22:00">
                 </div>
   
-                <input type="submit" value="Book" class="btn btn-block btn-primary">
-  
+                <div class="center-align">
+                  <input type="submit" value="Book" class="btn btn-block btn-primary">
+                </div>
               </form>
   
             </div>

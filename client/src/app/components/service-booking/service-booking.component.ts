@@ -16,6 +16,10 @@ export class ServiceBookingComponent implements OnInit {
     time: new FormControl('')
   });
 
+  serviceId = 0;
+  serviceName = '';
+  imageURL = GlobalConstants.imageURL;
+
   constructor(private http: HttpClient,public router:Router,private route:ActivatedRoute) { }
 
   onSubmit() {
@@ -23,14 +27,13 @@ export class ServiceBookingComponent implements OnInit {
     if (this.bookingForm.value.date == '' || this.bookingForm.value.time == '') {
       alert ('Please select appropriate date and time.')
     } else {
-      var serviceId = 0
-      this.route.queryParams.subscribe(params => serviceId = params['service_id'])
+      
 
       var endTime: number = +this.bookingForm.value.time.split(':')[0] + 1
 
       var inpObject = {
         'user_id': Number(localStorage.getItem('id')),
-        'service_id': Number(serviceId),
+        'service_id': Number(this.serviceId),
         'date': this.bookingForm.value.date,
         'start_time': this.bookingForm.value.time,
         'end_time': endTime.toString() + ':' + this.bookingForm.value.time.split(':')[1]
@@ -56,6 +59,12 @@ export class ServiceBookingComponent implements OnInit {
     }
   }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {
+    this.route.queryParams.subscribe(params => {
+      this.serviceId = params['service_id']
+      this.serviceName = params['service_name']
+    })
+
+   }
 
 }
