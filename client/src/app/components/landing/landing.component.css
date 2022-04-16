@@ -417,3 +417,7 @@ header.major p {
     background: #90b0ba;
     color: #ffffff;
 }
+
+.box.features .features-row section span i {
+  color: white;
+}
