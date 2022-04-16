@@ -286,3 +286,134 @@ header.major {
   max-width: calc(100% - 5em);
   width: 60em;
 }
+
+header.major {
+  padding: 1em 5em;
+  text-align: center;
+}
+
+header.major h2 {
+  margin: 0;
+}
+
+.landing-main h2 {
+  text-align: center;
+  font-size: 2.25em;
+  line-height: 1.5em;
+  letter-spacing: -0.035em;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #646464;
+  font-weight: 300;
+  line-height: 1em;
+  margin: 0 0 0.5em 0;
+}
+
+header.major p {
+  display: inline-block;
+  border-top: solid 2px #e5e5e5;
+  color: #777;
+  margin: 1.5em 0 0 0;
+  padding: 1.5em 0 0 0;
+  font-style: normal;
+}
+
+.box .image.featured:last-child {
+  border-radius: 0 0 6px 6px;
+  margin-bottom: -3em;
+  margin-top: 3em;
+}
+.box .image.featured {
+  border-radius: 0;
+  display: block;
+  margin: 3em 0 3em -3em;
+  position: relative;
+  width: calc(100% + 6em);
+}
+.box > :last-child {
+  margin-bottom: 0;
+}
+.image {
+  border-radius: 6px;
+  border: 0;
+  display: inline-block;
+  position: relative;
+}
+
+.box.features .features-row:first-child {
+  border-top: 0;
+}
+
+.box.features .features-row {
+  border-top: solid 2px #e5e5e5;
+  position: relative;
+}
+
+.box.features .features-row:first-child section {
+  padding-top: 0;
+}
+.box.features .features-row section:nth-child(2n-1) {
+  padding-left: 0;
+}
+.box.features .features-row section {
+  float: left;
+  padding: 3em;
+  width: 50%;
+}
+
+.icon.major.accent2 {
+  background: #e89980;
+  color: #ffffff;
+}
+.icon.major.accent3 {
+  background: #7fcdb8;
+  color: #ffffff;
+}
+.icon.major.accent4 {
+  background: #90b0ba;
+  color: #ffffff;
+}
+
+.icon.major.accent5 {
+  background: #e5cb95;
+  color: #ffffff;
+}
+
+.icon.major {
+  background: #666;
+  border-radius: 100%;
+  color: #ffffff;
+  cursor: default;
+  display: inline-block;
+  height: 5.5em;
+  line-height: 5.5em;
+  margin: 0 0 2em 0;
+  width: 5.5em;
+}
+.icon {
+  text-decoration: none;
+  border-bottom: none;
+  position: relative;
+}
+
+.box.features .features-row section :last-child {
+  margin-bottom: 0;
+  color: #777;
+}
+
+.box.features .features-row:last-child {
+  padding-bottom: 0;
+}
+.box.features .features-row:last-child section {
+  padding-bottom: 0;
+}
+
+.icon.major.accent4 {
+    background: #90b0ba;
+    color: #ffffff;
+}
