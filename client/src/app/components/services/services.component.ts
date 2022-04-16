@@ -16,8 +16,8 @@ export class ServicesComponent implements OnInit {
   
   constructor(private http: HttpClient, private router: Router) { }
 
-  bookService(serviceId: string, serviceName: string) {
-    this.router.navigate(['/bookService'], {queryParams: {service_id: serviceId, service_name: serviceName}});
+  bookService(service: any) {
+    this.router.navigate(['/bookService'], {queryParams: {service_id: service['id'], service_name: service['name'], service_price: service['price']}});
   }
 
   ngOnInit() {

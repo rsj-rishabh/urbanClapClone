@@ -9,19 +9,20 @@
             <div class="col-md-8">
               <div class="mb-4">
                 <h3>Book A Service</h3>
-                <p class="mb-4">{{serviceName}}</p>
+                  <p class="mb-4 center-align">{{serviceName}}</p>
+                  <p class="mb-4 center-align">Price: ${{servicePrice}}</p>
               </div>
   
               <form [formGroup]="bookingForm" (ngSubmit)="onSubmit()">
   
                 <p>Enter date for service</p>
                 <div class="form-group mb-4">
-                  <input type="date" formControlName="date" value="01/01/2022">
+                  <input type="date" formControlName="date" value="01/01/2022" (mouseover)="highlight($event)" (mouseout)="dampen($event)">
                 </div>
   
                 <p>Enter time for service</p>
                 <div class="form-group mb-4">
-                  <input type="time" formControlName="time" value="22:00">
+                  <input type="time" formControlName="time" value="22:00" (mouseover)="highlight($event)" (mouseout)="dampen($event)">
                 </div>
   
                 <div class="center-align">

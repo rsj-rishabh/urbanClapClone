@@ -18,6 +18,7 @@ export class ServiceBookingComponent implements OnInit {
 
   serviceId = 0;
   serviceName = '';
+  servicePrice = '';
   imageURL = GlobalConstants.imageURL;
 
   constructor(private http: HttpClient,public router:Router,private route:ActivatedRoute) { }
@@ -63,8 +64,19 @@ export class ServiceBookingComponent implements OnInit {
     this.route.queryParams.subscribe(params => {
       this.serviceId = params['service_id']
       this.serviceName = params['service_name']
+      this.servicePrice = params['service_price']
     })
 
    }
+
+  highlight(event: any): void {
+    event.target.style['border-bottom'] = "1px solid rgba(30, 40, 51, 0.9)";      
+    event.target.style['opacity'] = "0.9";           
+  }
+
+  dampen(event: any): void {
+    event.target.style['border-bottom'] = "1px solid rgba(30, 40, 51, 0.6)";      
+    event.target.style['opacity'] = "0.6";           
+  }
 
 }

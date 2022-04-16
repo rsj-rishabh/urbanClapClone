@@ -4,7 +4,15 @@ body {
   
   p {
     color: #b3b3b3;
-    font-weight: 300; }
+    font-weight: 300; 
+    font-size: x-large;  
+  }
+
+  form p{
+    color: #b3b3b3;
+    font-weight: 300; 
+    font-size: large;
+  }
   
   h1, h2, h3, h4, h5, h6,
   .h1, .h2, .h3, .h4, .h5, .h6 {
@@ -37,8 +45,8 @@ body {
       margin-bottom: 0;
       padding: 15px 15px;
       border-bottom: none;
-      position: relative;
-      border-bottom: 1px solid #e6edf1; }
+      position: relative;   
+    }
       .content .contents .form-group label, .content .bg .form-group label {
         position: absolute;
         top: 50%;
@@ -54,6 +62,8 @@ body {
         background: transparent; 
         width: 100%;
         border: none;
+        border-bottom: 1px solid rgba(30, 40, 51, 0.6);
+        opacity: 0.6
       }
 
       .content .contents .form-group input, .content .bg .form-group input:focus {
