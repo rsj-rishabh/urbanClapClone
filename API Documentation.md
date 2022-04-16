@@ -15,30 +15,30 @@ This API endpoint retrieves the list of services that the end-user can avail.
 
 *Sample output:*  
 [  
-&ensp;    {  
-&ensp;&ensp;        "id": 1,  
-&ensp;&ensp;        "name": "AC Maintanence",  
-&ensp;&ensp;        "description": "Any type of AC maintanence such as filter cleaning, part replacement, etc.",  
-&ensp;&ensp;        "category": "Electronics",  
-&ensp;&ensp;        "image_name": "air_conditioning.jpg",  
-&ensp;&ensp;        "price": 80  
-&ensp;    },  
-&ensp;    {  
-&ensp;&ensp;        "id": 2,  
-&ensp;&ensp;        "name": "Plumbing",  
-&ensp;&ensp;        "description": "Sanitary and household plumbing. No sewage service.",  
-&ensp;&ensp;        "category": "Household",  
-&ensp;&ensp;        "image_name": "plumbing.jpg",  
-&ensp;&ensp;        "price": 100  
-&ensp;    },  
-&ensp;    {  
-&ensp;&ensp;        "id": 3,  
-&ensp;&ensp;        "name": "Saloon",  
-&ensp;&ensp;        "description": "Haricut, massage, nailwork, makeup, etc.",  
-&ensp;&ensp;        "category": "Personal Care",  
-&ensp;&ensp;        "image_name": "saloon.jpg",  
-&ensp;&ensp;        "price": 25  
-&ensp;    }  
+&emsp;    {  
+&emsp;&emsp;        "id": 1,  
+&emsp;&emsp;        "name": "AC Maintanence",  
+&emsp;&emsp;        "description": "Any type of AC maintanence such as filter cleaning, part replacement, etc.",  
+&emsp;&emsp;        "category": "Electronics",  
+&emsp;&emsp;        "image_name": "air_conditioning.jpg",  
+&emsp;&emsp;        "price": 80  
+&emsp;    },  
+&emsp;    {  
+&emsp;&emsp;        "id": 2,  
+&emsp;&emsp;        "name": "Plumbing",  
+&emsp;&emsp;        "description": "Sanitary and household plumbing. No sewage service.",  
+&emsp;&emsp;        "category": "Household",  
+&emsp;&emsp;        "image_name": "plumbing.jpg",  
+&emsp;&emsp;        "price": 100  
+&emsp;    },  
+&emsp;    {  
+&emsp;&emsp;        "id": 3,  
+&emsp;&emsp;        "name": "Saloon",  
+&emsp;&emsp;        "description": "Haricut, massage, nailwork, makeup, etc.",  
+&emsp;&emsp;        "category": "Personal Care",  
+&emsp;&emsp;        "image_name": "saloon.jpg",  
+&emsp;&emsp;        "price": 25  
+&emsp;    }  
 ]  
 
 *Service DB Schema:*  
@@ -64,20 +64,20 @@ This is sent with the default "Content-Type" header of "application/x-www-form-u
 
 *Sample input:*  
 {  
-&ensp;    "name": "Tutoring",  
-&ensp;    "description": "Take help in assignments and more.",  
-&ensp;    "category": "Home tution",  
-&ensp;    "price": 15  
+&emsp;    "name": "Tutoring",  
+&emsp;    "description": "Take help in assignments and more.",  
+&emsp;    "category": "Home tution",  
+&emsp;    "price": 15  
 }  
 
 *Sample output:*  
 {  
-&ensp;    "id": 6,  
-&ensp;    "name": "Tutoring",  
-&ensp;    "description": "Take help in assignments and more.",  
-&ensp;    "category": "Home tution",  
-&ensp;    "image_name": "default.jpg",  
-&ensp;    "price": 15  
+&emsp;    "id": 6,  
+&emsp;    "name": "Tutoring",  
+&emsp;    "description": "Take help in assignments and more.",  
+&emsp;    "category": "Home tution",  
+&emsp;    "image_name": "default.jpg",  
+&emsp;    "price": 15  
 }  
   
   
@@ -94,21 +94,21 @@ This is sent with the default "Content-Type" header of "application/x-www-form-u
 
 *Sample input:*  
 {  
-&ensp;    "name": "alex",  
-&ensp;    "email": "alex@ufl.edu",  
-&ensp;    "gender": "F",  
-&ensp;    "username": "alex",  
-&ensp;    "password": "alex1"  
+&emsp;    "name": "alex",  
+&emsp;    "email": "alex@ufl.edu",  
+&emsp;    "gender": "F",  
+&emsp;    "username": "alex",  
+&emsp;    "password": "alex1"  
 }  
 
 *Sample output:*  
 {  
-&ensp;    "id": 4,  
-&ensp;    "name": "alex",  
-&ensp;    "username": "alex",  
-&ensp;    "password": "alex1",  
-&ensp;    "email": "alex@ufl.edu",  
-&ensp;    "gender": "F"  
+&emsp;    "id": 4,  
+&emsp;    "name": "alex",  
+&emsp;    "username": "alex",  
+&emsp;    "password": "alex1",  
+&emsp;    "email": "alex@ufl.edu",  
+&emsp;    "gender": "F"  
 }  
 
 *User DB Schema*  
@@ -137,54 +137,66 @@ database, it returns the user details in JSON format else it returns a *404 Not 
 
 *Sample input:*  
 {  
-&ensp;    "username": "dummy",  
-&ensp;    "password": "dumdum"  
+&emsp;    "username": "dummy",  
+&emsp;    "password": "dumdum"  
 }  
 
 *Sample output:*  
 {  
-&ensp;    "id": 1,  
-&ensp;    "name": "Dummy Duck",  
-&ensp;    "username": "dummy",  
-&ensp;    "password": "dumdum",  
-&ensp;    "email": "dummy@ufl.edu",  
-&ensp;    "gender": "M"  
+&emsp;    "id": 1,  
+&emsp;    "name": "Dummy Duck",  
+&emsp;    "username": "dummy",  
+&emsp;    "password": "dumdum",  
+&emsp;    "email": "dummy@ufl.edu",  
+&emsp;    "gender": "M"  
 }  
 
 
-5. "/getBookings/{custId}"
+## 5. getBookings
 
-This API endpoint retrieves the list of service bookings a user has made. This is a GET request.
-This request is sent with the parameter "custId" which id the "id" field of the logged-in user.
-Returns a '404 Not Found' error if there are no bookings or if the "custId" is invalid.
+This API endpoint retrieves the list of services booked by a user.
+This request is sent with the parameter *userId* which is the *id* field of the user.
+Returns a *404 Not Found* error if there are no bookings or if the *userId* is invalid.
 
-The format of the JSON returned by this GET request is as follows:
+*Request type:* **GET**    
+*Output type:* **JSON Array**  
 
-{
-    "id": 1,
-    "user_id": 1,
-    "service_id": 1,
-    "date": "2022-02-15",
-    "start_time": "12:30",
-    "end_time": "13:30",
-    "is_cancelled": false
-}
+*Sample request:* http://localhost:3000/api/getBookings?userId=1  
 
-| Parameter     | Type    | Details                                       |
-| ------------- |:-------:| ---------------------------------------------:|
-| id            | Integer | Unique identifier for the service booking.    |
-| user_id       | Integer | Unique identifier for the user who booked this 
-                            particular service.                           |
-| service_id    | Integer | Unique identifier for the service booked by  
-                            the user.                                     |
-| date          | String  | Date on which the booking was made by the 
-                            user. Format: "YYYY-MM-DD".                   |
-| start_time    | String  | Time at which the service booking commences.
-                            Format: "HH:MM".                              |
-| end_time      | String  | Time at which the service booking ends.
-                            Format: "HH:MM".                              |
-| is_cancelled  | Boolean | Cancellation status of the booking. Can be 
-                            true or false.                                | 
+*Sample output:*  
+[  
+&emsp;    {  
+&emsp;&emsp;        "id": 1,  
+&emsp;&emsp;        "user_id": 1,  
+&emsp;&emsp;        "service_id": 1,  
+&emsp;&emsp;        "date": "2022-02-15",  
+&emsp;&emsp;        "start_time": "12:30",  
+&emsp;&emsp;        "end_time": "13:30",  
+&emsp;&emsp;        "is_cancelled": false  
+&emsp;    },  
+&emsp;    {  
+&emsp;&emsp;        "id": 2,  
+&emsp;&emsp;        "user_id": 1,  
+&emsp;&emsp;        "service_id": 2,  
+&emsp;&emsp;        "date": "2022-02-15",  
+&emsp;&emsp;        "start_time": "16:30",  
+&emsp;&emsp;        "end_time": "17:30",  
+&emsp;&emsp;        "is_cancelled": false  
+&emsp;    }  
+]  
+
+*Bookings DB Schema*
+
+| Parameter     | Type    | Details                                                               |
+| ------------- |:-------:| ---------------------------------------------------------------------:|
+| id            | Integer | Unique identifier for the service booking. PRIMARY KEY                |
+| user_id       | Integer | Unique identifier for the user who booked this particular service.    |
+| service_id    | Integer | Unique identifier for the service booked by the user.                 |
+| date          | String  | Date on which the booking was made by the user. Format: "YYYY-MM-DD". |
+| start_time    | String  | Time at which the service booking commences. Format: "HH:MM".         |
+| end_time      | String  | Time at which the service booking ends Format: "HH:MM".               |
+| is_cancelled  | Boolean | Cancellation status of the booking. Can be true or false.             | 
+
 
 6. "/bookService"
 
