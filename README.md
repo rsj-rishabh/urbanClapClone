@@ -60,7 +60,7 @@ https://user-images.githubusercontent.com/16275122/164362430-5eb46987-dc7d-4a94-
 ## Cypress Test (Video):
 
 
-https://user-images.githubusercontent.com/16275122/164362773-d79c7f00-bee1-4a6d-aa7d-0e2277a77848.mp4
+https://user-images.githubusercontent.com/16275122/164602963-9dd3905d-c221-4dad-b849-01418978ad1e.MP4
 
 
 #
