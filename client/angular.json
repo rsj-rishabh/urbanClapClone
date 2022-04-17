@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "clientCode": {
+    "client": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:application": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/client-code",
+            "outputPath": "dist/client",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -73,10 +73,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "clientCode:build:production"
+              "browserTarget": "client:build:production"
             },
             "development": {
-              "browserTarget": "clientCode:build:development"
+              "browserTarget": "client:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -84,7 +84,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "clientCode:build"
+            "browserTarget": "client:build"
           }
         },
         "test": {
@@ -107,11 +107,11 @@
         "cypress-run": {
           "builder": "@cypress/schematic:cypress",
           "options": {
-            "devServerTarget": "clientCode:serve"
+            "devServerTarget": "client:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "clientCode:serve:production"
+              "devServerTarget": "client:serve:production"
             }
           }
         },
@@ -125,18 +125,18 @@
         "e2e": {
           "builder": "@cypress/schematic:cypress",
           "options": {
-            "devServerTarget": "clientCode:serve",
+            "devServerTarget": "client:serve",
             "watch": true,
             "headless": false
           },
           "configurations": {
             "production": {
-              "devServerTarget": "clientCode:serve:production"
+              "devServerTarget": "client:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "clientCode"
+  "defaultProject": "client"
 }
