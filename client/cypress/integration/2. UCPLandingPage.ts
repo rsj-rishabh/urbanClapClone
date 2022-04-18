@@ -1,13 +1,6 @@
-describe('Urban Clap Clone Landing Page Test', () => {
-    before(() => {
-      cy.visit('http://localhost:4200/');
-    });
-  
-    it('has the correct title', () => {
-      cy.title().should('equal', 'UC Pro');
-    });
+describe('Urban Clap Pro Landing Page Test', () => {
 
-    it('displays the correct title', () => {
+    it('displays the correct application name', () => {
         cy.get('#banner h2').should('contain.text','Urban Clap Pro');
     });
 
@@ -22,15 +15,6 @@ describe('Urban Clap Clone Landing Page Test', () => {
         .should('have.attr','href','/signup')
         .should('have.class','button primary')
         .should('contain.text','Sign Up');
-    });
-
-    it('has the Checkout Services button', () => {
-      cy.get('#banner ul li')
-      .next()
-      .find('a')
-      .should('have.attr','href','/services')
-      .should('have.class','button')
-      .should('contain.text','Checkout Services');
     });
 
     it('has the Checkout Services button', () => {
