@@ -202,3 +202,41 @@ func TestCreateAUser(t *testing.T) {
 	}
 
 }
+
+func TestGetBookings(t *testing.T) {
+
+	req, _ := http.NewRequest("GET", "/getBookings", nil)
+	q := req.URL.Query()
+	q.Add("userId", "1")
+	req.URL.RawQuery = q.Encode()
+	w := httptest.NewRecorder()
+	handler := http.HandlerFunc(a.GetBookings)
+	handler.ServeHTTP(w, req)
+
+	assert.Equal(t, 200, w.Code)
+}
+
+func TestCancelBooking(t *testing.T) {
+
+	var jsonStr = []byte(`{"user_id":1,"service_id":1}`)
+	req, _ := http.NewRequest("POST", "/cancelBooking", bytes.NewBuffer(jsonStr))
+	w := httptest.NewRecorder()
+	handler := http.HandlerFunc(a.CancelBooking)
+	handler.ServeHTTP(w, req)
+
+	assert.Equal(t, 200, w.Code)
+
+}
+
+func TestGetCancelledBookings(t *testing.T) {
+
+	req, _ := http.NewRequest("GET", "/getCancelledBookings", nil)
+	q := req.URL.Query()
+	q.Add("userId", "1")
+	req.URL.RawQuery = q.Encode()
+	w := httptest.NewRecorder()
+	handler := http.HandlerFunc(a.GetCancelledBookings)
+	handler.ServeHTTP(w, req)
+
+	assert.Equal(t, 200, w.Code)
+}
