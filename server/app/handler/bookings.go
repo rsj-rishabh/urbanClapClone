@@ -6,7 +6,6 @@ import (
 	"net/http"
 	"strconv"
 
-	"github.com/gorilla/mux"
 	"github.com/jinzhu/gorm"
 	"github.com/rsj-rishabh/urbanClapClone/server/app/model"
 )
@@ -50,10 +49,10 @@ func CreateBooking(db *gorm.DB, w http.ResponseWriter, r *http.Request) {
 
 //Booking Cancellation API
 func GetCancelledBookings(db *gorm.DB, w http.ResponseWriter, r *http.Request) {
-	vars := mux.Vars(r)
+	// vars := mux.Vars(r)
 
-	userId := vars["userId"]
-	i, err := strconv.Atoi(userId)
+	userId := r.URL.Query()["userId"]
+	i, err := strconv.Atoi(userId[0])
 	if err == nil {
 		fmt.Print("Good")
 	}
@@ -61,6 +60,7 @@ func GetCancelledBookings(db *gorm.DB, w http.ResponseWriter, r *http.Request) {
 	if err := db.Where("user_id = ? AND is_cancelled = ?", i, true).Find(&cancelledBookings).Error; err != nil {
 		respondError(w, http.StatusNotFound, err.Error())
 	}
+	fmt.Println(cancelledBookings.UserId)
 	respondJSON(w, http.StatusOK, cancelledBookings)
 
 }
@@ -97,10 +97,13 @@ func CancelBooking(db *gorm.DB, w http.ResponseWriter, r *http.Request) {
 }
 
 func GetBookings(db *gorm.DB, w http.ResponseWriter, r *http.Request) {
-	vars := mux.Vars(r)
+	// vars := mux.Vars(r)
 
-	custId := vars["custId"]
-	i, err := strconv.Atoi(custId)
+	// custId := vars["custId"]
+	userId := r.URL.Query()["userId"]
+	i, err := strconv.Atoi(userId[0])
+	fmt.Println("user id")
+	fmt.Println(i)
 	if err == nil {
 		fmt.Print("Good")
 	}
@@ -108,15 +111,19 @@ func GetBookings(db *gorm.DB, w http.ResponseWriter, r *http.Request) {
 	if booking == nil {
 		return
 	}
+
 	respondJSON(w, http.StatusOK, booking)
 }
 
 // getUserOr404 gets a booking instance if exists, or respond the 404 error otherwise
 func getBookingOr404(db *gorm.DB, custId int, w http.ResponseWriter, r *http.Request) *model.Booking {
 	booking := model.Booking{}
-	if err := db.First(&booking, custId).Error; err != nil {
+	if err := db.Where("user_id = ? AND is_cancelled = ?", custId, false).Find(&booking).Error; err != nil {
 		respondError(w, http.StatusNotFound, err.Error())
-		return nil
 	}
+	// if err := db.First(&booking, custId).Error; err != nil {
+	// 	respondError(w, http.StatusNotFound, err.Error())
+	// 	return nil
+	// }
 	return &booking
 }
