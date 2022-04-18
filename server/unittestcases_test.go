@@ -240,3 +240,24 @@ func TestGetCancelledBookings(t *testing.T) {
 
 	assert.Equal(t, 200, w.Code)
 }
+
+func TestGetServices(t *testing.T) {
+
+	req, _ := http.NewRequest("GET", "/getServices", nil)
+	w := httptest.NewRecorder()
+	handler := http.HandlerFunc(a.GetAllServices)
+	handler.ServeHTTP(w, req)
+	assert.Equal(t, 200, w.Code)
+
+}
+
+func TestGetServicesInCity(t *testing.T) {
+	var jsonStr = []byte(`{"cityname":"Boston"}`)
+	req, _ := http.NewRequest("POST", "/getServicesOfCity", bytes.NewBuffer(jsonStr))
+	w := httptest.NewRecorder()
+	handler := http.HandlerFunc(a.GetServicesInCity)
+	handler.ServeHTTP(w, req)
+
+	assert.Equal(t, 200, w.Code)
+
+}
