@@ -1,8 +1,12 @@
 package main
 
 import (
+	"os"
+	"testing"
+
 	"github.com/rsj-rishabh/urbanClapClone/server/app"
 	"github.com/rsj-rishabh/urbanClapClone/server/app/model"
+	"github.com/rsj-rishabh/urbanClapClone/server/config"
 )
 
 // var a main.App
@@ -137,4 +141,12 @@ func setUpTestDb() {
 		CityName:  "Boston",
 		ServiceId: 2,
 	}))
+}
+
+func TestMain(m *testing.M) {
+	config := config.GetConfig()
+	a.Initialize(config)
+	setUpTestDb()
+	code := m.Run()
+	os.Exit(code)
 }
