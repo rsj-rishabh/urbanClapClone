@@ -1,12 +1,16 @@
 package main
 
 import (
+	"bytes"
+	"net/http"
+	"net/http/httptest"
 	"os"
 	"testing"
 
 	"github.com/rsj-rishabh/urbanClapClone/server/app"
 	"github.com/rsj-rishabh/urbanClapClone/server/app/model"
 	"github.com/rsj-rishabh/urbanClapClone/server/config"
+	"github.com/stretchr/testify/assert"
 )
 
 // var a main.App
@@ -149,4 +153,52 @@ func TestMain(m *testing.M) {
 	setUpTestDb()
 	code := m.Run()
 	os.Exit(code)
+}
+
+func TestGetAUser(t *testing.T) {
+
+	var jsonStr = []byte(`{"username":"dummy","password":"dumdum"}`)
+
+	req, _ := http.NewRequest("POST", "/login", bytes.NewBuffer(jsonStr))
+	req.Header.Set("Access-Control-Allow-Origin", "*")
+	req.Header.Set("Content-Type", "application/x-www-form-urlencoded")
+	req.Header.Set("Access-Control-Allow-Methods", "POST")
+	req.Header.Set("Access-Control-Allow-Headers", "Content-Type")
+
+	w := httptest.NewRecorder()
+	handler := http.HandlerFunc(a.GetUser)
+	handler.ServeHTTP(w, req)
+
+	if status := w.Code; status != http.StatusOK {
+		t.Errorf("handler returned wrong status code: got %v want %v",
+			status, http.StatusOK)
+	}
+	assert.Equal(t, 200, w.Code)
+}
+
+func TestCreateAUser(t *testing.T) {
+
+	var jsonStr = []byte(`{"Id":4,"Name":"xyz","Username":"xyz","Password":"xyz@pqr.com","Email":"xyz@gmail.com","Gender":"F"}`)
+
+	req, _ := http.NewRequest("POST", "/user", bytes.NewBuffer(jsonStr))
+
+	req.Header.Set("Access-Control-Allow-Origin", "*")
+	req.Header.Set("Content-Type", "application/x-www-form-urlencoded")
+	req.Header.Set("Access-Control-Allow-Methods", "POST")
+	req.Header.Set("Access-Control-Allow-Headers", "Content-Type")
+
+	w := httptest.NewRecorder()
+	handler := http.HandlerFunc(a.CreateUser)
+	handler.ServeHTTP(w, req)
+
+	if status := w.Code; status != http.StatusCreated {
+		t.Errorf("handler returned wrong status code: got %v want %v",
+			status, http.StatusCreated)
+	}
+	expected := `{"id":4,"name":"xyz","username":"xyz","password":"xyz@pqr.com","email":"xyz@gmail.com","gender":"F"}`
+	if w.Body.String() != expected {
+		t.Errorf("handler returned unexpected body: got %v want %v",
+			w.Body.String(), expected)
+	}
+
 }
