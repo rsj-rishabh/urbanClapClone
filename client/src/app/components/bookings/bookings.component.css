@@ -1,6 +1,7 @@
 .container {
     margin-top: 5em;
     text-align: center;
+    font-family: 'Source Sans Pro', sans-serif;
 }
 
 ul.actions.special {
@@ -10,9 +11,44 @@ ul.actions.special {
     justify-content: center;
     width: 100%;
     margin-left: 0;
+    list-style: none;
 }
 
 ul.actions.special li:first-child {
     padding-left: 0;
 }
 
+/* Custom */
+
+.center-align {
+    text-align: center;
+}
+
+.book-btn {
+    margin-top: 6em;
+    margin-bottom: -1em;
+}
+
+.center-align button {
+    /* width: 64%; */
+    background-color: #1e2833;
+    padding: 12px 20px;
+    border-radius: 6px;
+    border-color: #1e2833;
+}
+
+.center-align button a {
+    text-decoration: none;
+    font-family: 'Source Sans Pro', sans-serif;
+    color: white;
+    font-size: large;
+}
+
+.center-align button:hover {
+    background-color: white;
+    border: 1px solid #1e2833;
+    color: #1e2833;
+}
+.center-align button a:hover {
+    color: #1e2833;
+}
