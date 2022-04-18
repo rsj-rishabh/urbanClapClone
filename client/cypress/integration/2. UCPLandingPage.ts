@@ -1,5 +1,9 @@
 describe('Urban Clap Pro Landing Page Test', () => {
 
+    before(() => {
+      cy.visit('http://localhost:4200/');
+    });  
+
     it('displays the correct application name', () => {
         cy.get('#banner h2').should('contain.text','Urban Clap Pro');
     });
