@@ -40,7 +40,7 @@ func (a *App) setRouters() {
 	a.Post("/createService", a.CreateService)
 	a.Post("/register", a.CreateUser)
 	a.Post("/login", a.GetUser)
-	a.Get("/getBookings/{custId}", a.GetBookings)
+	a.Get("/getBookings", a.GetBookings)
 	a.Post("/bookService", a.CreateBooking)
 	a.Post("/getServicesOfCity", a.GetServicesInCity)
 	a.Post("/cancelBooking", a.CancelBooking)

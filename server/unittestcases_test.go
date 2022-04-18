@@ -1,19 +1,28 @@
-package app
+package main
 
 import (
+	"github.com/rsj-rishabh/urbanClapClone/server/app"
 	"github.com/rsj-rishabh/urbanClapClone/server/app/model"
 )
 
-// DBMigrate will create and migrate the tables, and then make the some relationships if necessary
-func (a *App) DBMigrate() {
-	// Drop the table if it exists
+// var a main.App
+
+var a = &app.App{}
+var dbName string = "test.db"
+
+var users []model.User
+var bookings []model.Booking
+var user model.User
+var booking model.Booking
+
+func setUpTestDb() {
+	// Connection to the database with default configuration
 	a.DB.AutoMigrate().DropTable(&model.User{})
 	a.DB.AutoMigrate().DropTable(&model.Service{})
 	a.DB.AutoMigrate().DropTable(&model.Booking{})
-	a.DB.AutoMigrate().DropTable(&model.CityServiceMapping{})
 
 	// Migrate the schema
-	a.DB.AutoMigrate(&model.User{}, &model.Service{}, &model.Booking{}, &model.CityServiceMapping{})
+	a.DB.AutoMigrate(&model.User{}, &model.Service{}, &model.Booking{})
 
 	// Create users table
 	a.DB.Create(&model.User{
@@ -40,8 +49,6 @@ func (a *App) DBMigrate() {
 		Email:    "snow@ufl.edu",
 		Gender:   "F",
 	})
-
-	// Create services table
 	a.DB.Create(&model.Service{
 		Id:          1,
 		Name:        "AC Maintanence",
