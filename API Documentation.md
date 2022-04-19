@@ -198,79 +198,93 @@ Returns a *404 Not Found* error if there are no bookings or if the *userId* is i
 | is_cancelled  | Boolean | Cancellation status of the booking. Can be true or false.             | 
 
 
-6. "/bookService"
+## 6. bookService
 
-This API endpoint creates a new booking for a service by the end-user. This is a POST request.
-This request is sent with the default "Content-Type" header of "application/x-www-form-urlencoded"
-which sends the request as a single query string with name/value pairs separated by '&'. If the "start_time"
-field is greater than the "end_time" field, it returns a '500 Internal Server Error' status with the message
-'Time slot unavailable'.
+This API endpoint creates a new booking for a service by the end-user.
+This request is sent with the default "Content-Type" header of "application/x-www-form-urlencoded". It returns a *500 Internal Server Error* status with the message *Time slot unavailable* if it is booked by another user for the same time slot.  
 
-The format of the JSON to be sent in this POST request is as follows:
+*Request type:* **POST**  
+*Input body type:* **JSON Object**  
+*Output type:* **JSON Object**  
 
-{
-    "user_id": "User ID of the user",
-    "service_id": "ID of the service",
-    "date": "YYYY-MM-DD",
-    "start_time": "HH:MM",
-    "end_time": "HH:MM",
-    "is_cancelled": true
-}
+*Sample request:* http://localhost:3000/api/bookService  
 
-7. "/getServicesOfCity"
+*Sample input:*  
+{  
+&emsp;    "user_id": 1,  
+&emsp;    "service_id": 2,  
+&emsp;    "date": "2022-02-23",  
+&emsp;    "start_time": "11:30",  
+&emsp;    "end_time": "12:30"  
+}  
 
-This API endpoint returns the list of particular type of services offered in a city. This is a POST request.
-This request is sent with the default "Content-Type" header of "application/x-www-form-urlencoded"
-which sends the request as a single query string with name/value pairs separated by '&'.
+*Sample output:*  
+{  
+&emsp;    "id": 4,  
+&emsp;    "user_id": 1,  
+&emsp;    "service_id": 2,  
+&emsp;    "date": "2022-02-23",  
+&emsp;    "start_time": "11:30",  
+&emsp;    "end_time": "12:30",  
+&emsp;    "is_cancelled": false  
+}  
 
-The format of the JSON to be sent in this POST request is as follows:
+## 7. cancelBooking
 
-{
-	"city_name":  "xyzw"
-	"service_id": 1
-}
-
-| Parameter     | Type    | Details                            |
-| ------------- |:-------:| ----------------------------------:|
-| id            | Integer | Unique identifier for the 
-                            city-service mapping.              |
-| city_name     | String  | Name of the city where the service
-                            is offered.                        |
-| service_id    | String  | Unique identifier for the service. |
-
-8. "/cancelBooking"
-
-This API endpoint cancels a particular booking for a service by the end-user. This is a POST request.
-This request is sent with the default "Content-Type" header of "application/x-www-form-urlencoded"
-which sends the request as a single query string with name/value pairs separated by '&'. The request either 
-sets the "is_cancelled" field of the booking to true and returns a '200 OK' status along with the message 
-'Booking is cancelled' or if the booking has already been cancelled it returns a 'Booking already cancelled'
+This API endpoint cancels a particular booking for a service by the end-user.
+This request is sent with the default "Content-Type" header of "application/x-www-form-urlencoded". The request either 
+sets the *is_cancelled* field of the booking to *true* and returns a *200 OK* status along with the message 
+*Booking is cancelled* or if the booking has already been cancelled it returns a *Booking already cancelled*
 message. 
 
-The format of the JSON to be sent in this POST request is as follows:
+*Request type:* **GET**  
+*Output type:* **String**  
 
-{
-    "user_id": "User ID of the user",
-    "service_id": "ID of the service"
+*Sample request:* http://localhost:3000/api/cancelBooking?id=1  
+
+*Sample output:*  
+"Booking is cancelled"  
+
+## 8. getCancelledBookings
+
+This API endpoint retrieves the list of cancelled services by the end-user.
+This matches the *user_id* of the parameter in the request URL and finds Bookings which have *is_cancelled*
+field set to *true*. If the *user_id* field cannot be found, it returns a *404 Not Found* error.
+
+*Request type:* **GET**  
+*Output type:* **JSON Array**  
+
+*Sample request:* http://localhost:3000/api/getCancelledBookings?userId=1  
+
+*Sample output:*  
+[  
+&emsp;    {  
+&emsp;&emsp;        "id": 1,  
+&emsp;&emsp;        "user_id": 1,  
+&emsp;&emsp;        "service_id": 1,  
+&emsp;&emsp;        "date": "2022-02-15",  
+&emsp;&emsp;        "start_time": "12:30",  
+&emsp;&emsp;        "end_time": "13:30",  
+&emsp;&emsp;        "is_cancelled": true  
+&emsp;    }  
+]  
+
+
+## 9. getServiceInfo
+
+This API endpoint returns information about a service when given its *id*.
+
+*Request type:* **GET**  
+*Output type:* **JSON Object**  
+
+*Sample request:* http://localhost:3000/api/getServiceInfo?serviceId=1  
+
+*Sample output:*  
+{  
+&emsp;        "id": 1,  
+&emsp;        "name": "AC Maintanence",  
+&emsp;        "description": "Any type of AC maintanence such as filter cleaning, part replacement, etc.",  
+&emsp;        "category": "Electronics",  
+&emsp;        "image_name": "air_conditioning.jpg",  
+&emsp;        "price": 80  
 }
-
-9. "/getCancelledBookings"
-
-This API endpoint retrieves the list of cancelled services by the end-user. This is a GET request.
-This matches the "user_id" of the JSON in the request and finds Bookings which have "is_cancelled"
-field set to true along with a '200 OK' status. If the "user_id" field cannot be found, it returns 
-a '404 Not Found' error.
-
-The format of the JSON returned by this GET request is as follows:
-
-{
-    "id": "ID of the booking",
-    "user_id": "User ID of the user",
-    "service_id": "ID of the service",
-    "date": "YYYY-MM-DD",
-    "start_time": "HH:MM",
-    "end_time": "HH:MM",
-    "is_cancelled": true
-}
-
-
