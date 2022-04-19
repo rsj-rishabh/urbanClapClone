@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'UC Clone';
+  title = 'UC Pro';
   constructor(private http: HttpClient) { }
 }
 

@@ -7,11 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LandingComponent implements OnInit {
 
-  isLoggedIn = true;
+  isLoggedIn:boolean = false;
 
   constructor() { }
 
   ngOnInit(): void {
+    if (localStorage.getItem('isLoggedIn') == 'true') {
+      this.isLoggedIn = true;
+    }
+    else {
+      this.isLoggedIn = false;
+    }
   }
 
 }
