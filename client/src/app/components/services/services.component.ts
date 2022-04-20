@@ -17,7 +17,11 @@ export class ServicesComponent implements OnInit {
   constructor(private http: HttpClient, private router: Router) { }
 
   bookService(service: any) {
-    this.router.navigate(['/bookService'], {queryParams: {service_id: service['id'], service_name: service['name'], service_price: service['price']}});
+    if (localStorage.getItem('isLoggedIn') == 'false') {
+      alert('Please log-in to book to a service.')
+    } else {
+      this.router.navigate(['/bookService'], {queryParams: {service_id: service['id'], service_name: service['name'], service_price: service['price']}});
+    }
   }
 
   ngOnInit() {

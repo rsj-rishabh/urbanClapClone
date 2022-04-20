@@ -13,14 +13,7 @@ export class NavbarComponent implements OnInit {
   isLoggedIn:boolean = false;
   currentRoute:string = '';
 
-  logout() {
-    localStorage.setItem('isLoggedIn', 'false');
-    this.ngOnInit();
-    this.router.navigate(['/']);
-  }
-
-  constructor(private http: HttpClient,public router:Router) {  
-   }
+  constructor(private http: HttpClient,public router:Router) { }
 
 
   ngOnInit(): void {
