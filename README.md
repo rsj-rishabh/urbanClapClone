@@ -126,7 +126,7 @@ npm start
 
 2. Home - Landing (logged in)
 
-<img src="./doc_assets/final/adaptive_component.ong" height="480px"/>
+<img src="./doc_assets/final/adaptive_component.png" height="480px"/>
 <br><br>
 
 3. Signup
