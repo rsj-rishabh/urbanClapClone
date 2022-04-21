@@ -43,7 +43,14 @@ Link : https://github.com/rsj-rishabh/urbanClapClone/blob/master/API%20Documenta
 
 ## Cypress Test (Video):
 
-https://raw.githubusercontent.com/rsj-rishabh/urbanClapClone/master/backend_unit_testcases.mp4
+
+
+https://user-images.githubusercontent.com/16275122/164351128-cad901d1-cfc3-4174-87cf-67c452730605.mp4
+
+
+https://user-images.githubusercontent.com/16275122/164351141-daf5b4ec-7b81-49b5-9e53-d5927962b12c.mp4
+
+
 
 #
 
