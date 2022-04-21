@@ -1,0 +1,51 @@
+<header class="bg-dark py-5 service-header">
+    <div class="container px-lg-5 my-5">
+        <div class="text-center text-white">
+            <h1 class="display-4 fw-bolder">My Bookings</h1>
+        </div>
+    </div>
+</header>
+
+<section>
+    <div class="container">
+        <h3>Active Bookings</h3>
+        <!-- <div class="booking-toggle">
+            <button><a href="#">ONGOING</a></button>
+            <button><a href="#">HISTORY</a></button>
+        </div> -->
+
+        <section class="" id="main">
+            <div class="row">
+                <div class="col-6 col-12-narrower" *ngFor="let serviceB of myBookingsData; let i = index">
+                    <section class="box special">
+                        <h3>{{myBookingsName[i]}}</h3>
+                        <h5>{{myBookingsDesc[i]}}</h5>
+                        <p>{{serviceB['date']}} {{serviceB['start_time']}} to {{serviceB['end_time']}}</p>
+                        <ul class="actions special">
+                            <li><a class="button alt btn btn-danger" (click)="cancelBooking(serviceB['id'])">Cancel</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+            </div>
+        </section>
+
+        <h3>Cancelled bookings</h3>
+
+        <section class="" id="main">
+            <div class="row">
+                <div class="col-6 col-12-narrower" *ngFor="let serviceC of cancelledBookingsData; let i = index">
+                    <section class="box special">
+                        <h3>{{cancelledBookingsName[i]}}</h3>
+                        <h5>{{cancelledBookingsDesc[i]}}</h5>
+                        <p>{{serviceC['date']}} {{serviceC['start_time']}} to {{serviceC['end_time']}}</p>
+                    </section>
+                </div>
+            </div>
+        </section>
+
+        <div class="center-align book-btn">
+            <button><a href="/services">Book a Service</a></button>
+        </div>
+    </div>
+</section>

@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"net/http"
+	"strconv"
 
 	"github.com/jinzhu/gorm"
 	"github.com/rsj-rishabh/urbanClapClone/server/app/model"
@@ -32,7 +33,7 @@ func CreateUser(db *gorm.DB, w http.ResponseWriter, r *http.Request) {
 	respondJSON(w, http.StatusCreated, user)
 }
 
-func GetUser(db *gorm.DB, w http.ResponseWriter, r *http.Request) {
+func Login(db *gorm.DB, w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Access-Control-Allow-Origin", "*")
 	w.Header().Set("Content-Type", "application/x-www-form-urlencoded")
 	w.Header().Set("Access-Control-Allow-Methods", "POST")
@@ -68,4 +69,21 @@ func getUserOr404(db *gorm.DB, username string, password string, w http.Response
 	}
 
 	return &user
+}
+
+// getUserDetails gets a user's information to display in the user-profile
+func GetUserDetails(db *gorm.DB, w http.ResponseWriter, r *http.Request) {
+	user := model.User{}
+
+	serviceId := r.URL.Query()["userId"]
+	i, err := strconv.Atoi(serviceId[0])
+	if err == nil {
+		fmt.Println("No error")
+	}
+
+	if err := db.Where("id = ?", i).First(&user).Error; err != nil {
+		respondError(w, http.StatusNotFound, err.Error())
+	}
+
+	respondJSON(w, http.StatusOK, user)
 }

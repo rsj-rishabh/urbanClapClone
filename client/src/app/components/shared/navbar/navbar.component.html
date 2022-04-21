@@ -1,0 +1,24 @@
+<header id="header" [ngClass]="this.currentRoute == '/' || this.currentRoute == '/home' || this.currentRoute == '/services' || this.currentRoute == '/bookings' ? 'alt' : 'nav-alt'">
+  <h3><a routerLink="/home">Urban Clap Pro</a></h3>
+  <nav id="nav">
+    <ul>
+      <li style="white-space: nowrap;"><a href="index.html">Home</a></li>
+      <li style="white-space: nowrap;">
+        <a routerLink="/services" routerLinkActive="active">Book a Service</a>
+      </li>
+      <li *ngIf="isLoggedIn; else loggedOut" style="white-space: nowrap;">
+        <a routerLink="/bookings" routerLinkActive="active">My Bookings</a>
+        <a routerLink="/profile" routerLinkActive="active">Profile</a>
+        <a routerLink="/logout" routerLinkActive="active" class="button">Logout</a>
+      </li>
+      <ng-template #loggedOut>
+        <li style="white-space: nowrap;">
+          <a routerLink="/login" routerLinkActive="active">Sign In</a>
+        </li>
+        <li style="white-space: nowrap;">
+          <a routerLink="/register" routerLinkActive="active" class="button">Get Started</a>
+        </li>
+      </ng-template>
+    </ul>
+  </nav>
+</header>
