@@ -20,7 +20,52 @@ Check the root [repository description](https://github.com/rsj-rishabh/urbanClap
 
 ## Sprint 4 Deliverables:
 
-The deliverables for this sprint can be found by visiting : https://github.com/rsj-rishabh/urbanClapClone/milestone/4
+### **User stories (Goal)**:
+
+The user stories selected to run through the first sprint cycle are:
+* As a user, browse the service list
+* As a user, I want to choose the date and time of service
+* As a user, logout from the application succesfully.
+* As a user I want to chech my bookings
+
+### **Sprint Requirements (Review)**:
+Frontend:
+1.	Landing Page Details
+2.	Service Images
+3.	Active & Bookings
+4.	Profile Page
+5.  Bootstrap Icons and Bullet Design
+6.  Adaptive Navbar
+7.  Cypress Testing
+
+Backend:
+1.	Updating Image and Price Column In DB
+2.	Adding API for Service Cancellation
+3.  Adding API for user Profile
+4.  Unit Testing (User and Services)
+
+
+Additional Note:
+All APIs are RESTful and contain 4 major endpoints (CRUD) create, read, update and delete. The Backend uses POST and GET and all the data is parsed in JSON.
+
+
+### **Sprint Status (Accomplished)**:
+
+- Fixed Navbar Visibility
+- Added Adaptive Colors to navbar
+- Landing Page Hero Styling Change
+- Fixed Null Booking Ids
+- Fixed Signup and sigin form design
+- Added New Calender and Time Slot Design
+- Added New Default Image For Bookings
+- Designed MyBooking UI
+- Added API for Cancelled Bookings
+- Implemented APIs for Getting Price
+- Added User Profile API
+- Design User Profile Page
+- Added Cypress and Unit Tests
+- Fixed Minor UI Bugs
+- Added new Details in API Documentation
 
 #
 
@@ -37,26 +82,17 @@ Link : https://github.com/rsj-rishabh/urbanClapClone/blob/master/API%20Documenta
 
 ## Demo (Fuctionality):
 
-
 #
-
 
 ## Cypress Test (Video):
 
-
-
 https://user-images.githubusercontent.com/16275122/164351128-cad901d1-cfc3-4174-87cf-67c452730605.mp4
-
 
 https://user-images.githubusercontent.com/16275122/164351141-daf5b4ec-7b81-49b5-9e53-d5927962b12c.mp4
 
-
-
 #
 
-
 ## Backend Unit Test (Video):
-
 
 https://user-images.githubusercontent.com/16275122/164350003-f6675c66-d9b5-4100-8a9d-f96ca3acac1f.mp4
 
