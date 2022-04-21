@@ -82,6 +82,8 @@ Link : https://github.com/rsj-rishabh/urbanClapClone/blob/master/API%20Documenta
 
 ## Demo (Fuctionality):
 
+https://user-images.githubusercontent.com/16275122/164362430-5eb46987-dc7d-4a94-98bf-148e63f1d99f.mp4
+
 #
 
 ## Cypress Test (Video):
