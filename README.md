@@ -55,13 +55,13 @@ Link : https://github.com/rsj-rishabh/urbanClapClone/blob/master/API%20Documenta
 https://user-images.githubusercontent.com/16275122/164362430-5eb46987-dc7d-4a94-98bf-148e63f1d99f.mp4
 
 
-
-
 #
 
 ## Cypress Test (Video):
 
-https://user-images.githubusercontent.com/16275122/164362561-cf7d0cb8-b332-4a17-81c0-7b2c8bfee506.mp4
+
+https://user-images.githubusercontent.com/16275122/164362773-d79c7f00-bee1-4a6d-aa7d-0e2277a77848.mp4
+
 
 #
 
