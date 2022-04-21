@@ -3,7 +3,12 @@
   <h2>Urban Clap Pro</h2>
   <p>One Click booking for your home services. On Demand.</p>
   <ul class="actions special">
-    <li><a href="/signup" class="button primary">Sign Up</a></li>
+    <li *ngIf="!isLoggedIn; else loggedOut"><a href="/register" class="button primary">Sign Up</a></li>
+    <ng-template #loggedOut>
+      <li>
+        <a href="/" class="button primary">My Bookings</a>
+      </li>
+    </ng-template>
     <li><a href="/services" class="button">Checkout Services</a></li>
   </ul>
 </section>
