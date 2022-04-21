@@ -18,7 +18,7 @@ The <strong>“UrbanClapPro"</strong> web application aims to aggregate utility 
 ## Technology Stack:
 * Framework : Angular
 * Backend : GoLang
-* Database : SQL (GORM Library)
+* Database : MySQL (GORM Library)
 * Version Control: Git
 * Code Editor : Visual Studio Code
 
@@ -26,7 +26,7 @@ The <strong>“UrbanClapPro"</strong> web application aims to aggregate utility 
 
 ## Development Methodology:
 * Each contributor pushes code in their own branch (mostly named after them).
-* A pull request is created to merge the code to `master` branch which is our development branch.
+* A pull request is created to merge the code to `dev-{name}` branch which is our development branch.
 * After each sprint, the final code is merged with `main` branch which is our final working product.
 * A checkpoint branch is also created after each sprint for the purpose of tracking changes between two sprints.
 
@@ -49,7 +49,7 @@ Link : https://github.com/rsj-rishabh/urbanClapClone/blob/master/API%20Documenta
 
 #
 
-## Demo (Fuctionality):
+## Demo (Fuctionality Video):
 
 #
 
@@ -114,3 +114,52 @@ npm audit fix --force && npm install
 ```
 npm start
 ```
+
+#
+
+## Demo (Project Screenshots):
+
+1. Home - Landing (logged out)
+
+<img src="./doc_assets/final/landing.jpeg" height="480px"/>
+<br><br>
+
+2. Home - Landing (logged in)
+
+<img src="./doc_assets/final/adaptive_component.ong" height="480px"/>
+<br><br>
+
+3. Signup
+
+<img src="./doc_assets/final/signup.jpeg" height="480px"/>
+<br><br>
+
+3. Signup (Validation)
+
+<img src="./doc_assets/final/validation.png" height="480px"/>
+<br><br>
+
+5. Signin
+
+<img src="./doc_assets/final/signin.jpeg" height="480px"/>
+<br><br>
+
+6. Profile
+
+<img src="./doc_assets/final/profile.jpeg" height="480px"/>
+<br><br>
+
+7. Service List
+
+<img src="./doc_assets/final/services.jpeg" height="480px"/>
+<br><br>
+
+8. Service Scheduling
+
+<img src="./doc_assets/final/schedule.jpeg" height="480px"/>
+<br><br>
+
+9. Bookings
+
+<img src="./doc_assets/final/bookings.jpeg" height="480px"/>
+<br><br>
