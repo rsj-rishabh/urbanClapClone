@@ -49,6 +49,12 @@ Link : https://github.com/rsj-rishabh/urbanClapClone/blob/master/API%20Documenta
 
 #
 
+## Deployment:
+
+Frontend Link: https://urban-clap-pro.netlify.app/
+
+#
+
 ## Demo (Fuctionality Video):
 
 
@@ -60,7 +66,7 @@ https://user-images.githubusercontent.com/16275122/164362430-5eb46987-dc7d-4a94-
 ## Cypress Test (Video):
 
 
-https://user-images.githubusercontent.com/16275122/164602963-9dd3905d-c221-4dad-b849-01418978ad1e.MP4
+https://user-images.githubusercontent.com/16275122/164958069-fc150286-50e5-4800-b307-08b237f611b6.MP4
 
 
 #

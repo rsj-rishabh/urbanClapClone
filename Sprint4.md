@@ -88,11 +88,17 @@ https://user-images.githubusercontent.com/16275122/164362430-5eb46987-dc7d-4a94-
 
 ## Cypress Test (Video):
 
-https://user-images.githubusercontent.com/16275122/164602963-9dd3905d-c221-4dad-b849-01418978ad1e.MP4
+https://user-images.githubusercontent.com/16275122/164958069-fc150286-50e5-4800-b307-08b237f611b6.MP4
 
 #
 
 ## Backend Unit Test (Video):
 
 https://user-images.githubusercontent.com/16275122/164350003-f6675c66-d9b5-4100-8a9d-f96ca3acac1f.mp4
+
+#
+
+## Deployment:
+
+Frontend Link: https://urban-clap-pro.netlify.app/
 
