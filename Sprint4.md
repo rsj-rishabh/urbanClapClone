@@ -1,7 +1,7 @@
 # Sprint - 4
 
 ## Application Description:
-The “UrbanClapClone” (name to be finalized) web application aims to aggregate utility services that consumers can access based on their current location. The application would enable the end-user to select their preferred service, book an appointment at a convenient time, pay the resultant charge and give feedback (for future reference). While, the primary criterion for listing the services would be the user’s location, the web application would also facilitate filtering based on service type, availability, cost, past experience (if they have utilized the service before) and user ratings. The application aims to be a one stop shop that caters to all the utility needs for the end user at a given location.
+The “UrbanClapPro" web application aims to aggregate utility services such as beauty, electrical mainatainance, home cleaning, pest control etc. The application would enable the end-user to select their preferred service, book an appointment at a convenient time, pay the resultant charge and give feedback. The primary criterion of the web application would facility easy calenter and time slot booking to book the services according to your time and availability. The application aims to be a one stop shop that caters to all the utility needs for the end user. Out product promises easy bookign and cancellation without extra changes and you can maintain your booked services at one places easily. 
 
 #
 
